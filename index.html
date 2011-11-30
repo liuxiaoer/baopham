@@ -6,8 +6,6 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
 	<meta name="keywords" content="computer science, math, ubc, programming, student, blogs" />
 	<meta name="description" content="BP's personal website" />
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<!--[if IE]><![endif]-->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -215,7 +213,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 alias la='ls -A'
 alias ll='ls -l'
 alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
-<span class="posthidden" id="3">
+<div class="posthidden" id="3">
 #Extract packages
 extract () {
     if [ -f $1 ] ; then
@@ -281,7 +279,7 @@ total (){
 }
 </code>
 </pre>
-					</span>
+					</div>
 					<p class="links"><a href="javascript:expandcollapse('3')">[+/-]</a></p>
 				</div>
 			</div>
@@ -295,7 +293,7 @@ total (){
 					<p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
 					<p>	Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
 						Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
-					<span class="posthidden" id="2">
+					<div class="posthidden" id="2">
 <pre><code>
 #!/bin/bash
 TPY=${TM_PYTHON:-python}
@@ -326,7 +324,7 @@ APPLESCRIPT
 					<p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
 					<p>DONE!</p>
 					<p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
-					</span>
+					</div>
 					<p class="links"><a href="javascript:expandcollapse('2')">[+/-]</a></p>
 				</div>
 			</div>
@@ -344,7 +342,7 @@ APPLESCRIPT
 							<li>Opera 10.6+</li>
 							<li>Apple Safari 4+</li>
 						</ul>
-					<span class="posthidden" id="1">
+					<div class="posthidden" id="1">
 					<p><i>From wikipedia</i>:</p>
 						<blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
 							<strong>Rules:</strong>
@@ -362,7 +360,7 @@ APPLESCRIPT
 						<button id="run" type="button">Run</button>
 						<button id="stop" type="button">Stop</button> 
 						<button id="clear" type="button">Clear</button>
-					</span>
+					</div>
 					</div>
 					<script type="text/javascript">
 					// Game of Life
