@@ -246,12 +246,12 @@ while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;don
 #This one doesn't seem to work anymore
 # Define a word - USAGE: define dog
 define (){
-    lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 > /tmp/templookup.txt
+    lynx -dump "http://www.google.com/search?hl=en&amp;q=define%3A+${1}&amp;btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 &gt; /tmp/templookup.txt
                 if [[ -s  /tmp/templookup.txt ]] ;then	
                     until ! read response
                         do
                         echo "${response}"
-                        done < /tmp/templookup.txt
+                        done &lt; /tmp/templookup.txt
                     else
                         echo "Sorry $USER, I can't find the term \"${1}\""				
                 fi	
@@ -266,7 +266,7 @@ calc (){
 #weather "Des Moines"
 weather (){
     declare -a WEATHERARRAY
-    WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&lr=&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=weather+${1}&btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
+    WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
     echo ${WEATHERARRAY[@]}
 }
 
@@ -301,7 +301,7 @@ total (){
 TPY=${TM_PYTHON:-python}
 
 esc () {
-STR="$1" ruby <<"RUBY"
+STR="$1" ruby &lt;&lt;"RUBY"
    str = ENV['STR']
    str = str.gsub(/'/, "'\\\\''")
    str = str.gsub(/[\\"]/, '\\\\\\0')
@@ -309,7 +309,7 @@ STR="$1" ruby <<"RUBY"
 RUBY
 }
 
-osascript <<- APPLESCRIPT
+osascript &lt;&lt;- APPLESCRIPT
 	tell application "iTerm"
 	    activate
 		make new terminal
