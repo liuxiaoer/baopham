@@ -1,0 +1,20 @@
+application: bphamworld
+version: 3
+runtime: python
+api_version: 1
+
+
+inbound_services:
+- mail
+
+handlers:
+- url: /bao
+  static_dir: bao
+  
+- url: /favicon\.ico
+  static_files: bao/images/favicon.ico
+  upload: bao/images/favicon\.ico
+
+- url: /.*
+  script: main.py
+

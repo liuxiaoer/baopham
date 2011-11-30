@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Bao Pham</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="default.css" rel="stylesheet" type="text/css" media="screen" />
+	<!--Game of Life-->
+	<script src = "jquery.js" type="text/javascript"></script>
+	<script src = "LifeGame.js" type="text/javascript"></script>
+	<!--script src = "maze.js" type="text/javascript"--><!--/script-->
+</head>
+<body>
+<!-- start header -->
+<div id="logo">
+	<h1 id="logo-text">BPm's<span class="gray">World</span></h1>
+</div>
+<div id="menu">
+	<ul>
+		<li class="current_page_item"><a href="#">Homepage</a></li>
+		<!-- <li><a href="#">Resume</a></li>
+		<li><a href="#">Contact me</a></li> -->
+	</ul>
+</div>
+<!-- end header -->
+<!-- start page -->
+<div id="page">
+	<div id="page-bg">
+		<div id="latest-post"> <img src="images/newbao.jpg" alt="" width="140" height="180" class="right" />
+			<h1>Welcome to My Personal Website!</h1>
+			<p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href="http://ubc.ca">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. This website is created for me to explore new technologies and practice my skills.</p>
+			<p>I'm interested in algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).
+		</div>
+		<!-- start content -->
+		<div id="content">
+			<!--Game Of Life-->
+			<div class="post">
+				<h2 class="title"><a href="#">Conway's Game of Life</a></h2>
+				<p class="byline"><small>Posted on May 13, 2011 by <a href="#">Bao Pham</a></small></p>
+				<div class="entry">
+					<p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (browsers supported HTML5 required).
+						<ul><strong>Supported Browsers:</strong>
+							<li>Firefox 4+</li>
+							<li>Google Chrome</li>
+							<li>Opera 10.6+</li>
+							<li>Apple Safari 4+</li>
+						</ul>
+					</p>
+					<p><i>From wikipedia</i>:</p>
+					<div><blockquote>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.<br>
+						<strong>Rules:</strong>
+						<ol>
+							<li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+							<li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+							<li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+							<li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
+						</ol>
+		  
+						</blockquote>
+					</div>
+					<canvas id="canvas_life"></canvas>
+					<div id="buttons_life">
+						<button id="generate" type="button">Generate Random Cells</button>
+						<button id="run" type="button">Run</button>
+						<button id="stop" type="button">Stop</button> 
+						<button id="clear" type="button">Clear</button>
+					</div>
+					
+				</div>
+				<!-- <p class="links"><a href="#" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">No Comments</a></p> -->
+			</div>
+			<!--end Game of Life-->
+			
+			<!--Maze Solver-->
+			<!-- <div class="post">
+				<h2 class="title"><a href="#">Maze</a></h2>
+				<p class="byline"><small>Posted on June 1, 2011 by <a href="#">Jason Kok</a></small></p>
+				<div class="entry">
+					<p>Jason, my boyfriend (a way more experienced programmer) borrowed the idea of my school project, from CS221 <strong>Basic Data Structures and Algorithms</strong> and wrote a JavaScript Maze Generator/Solver (also using HTML5 canvas to display animations)</p>
+					<p>He uses the algorithms Breadth First Search and Depth First Search to generate and solve the maze.</p>
+				
+					<canvas id="canvas_maze" width = 600, height = 280></canvas> 
+					<div id="buttons_maze">
+						<button id="generate1">Generate</button>
+						<button id="DFS">DFS</button>
+						<button id="BFS">BFS</button>
+					</div>
+				</div>
+				<p class="links"><a href="#" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">No Comments</a></p>
+			</div> -->
+			<!--end Maze Solver-->
+		</div>
+		<!-- end content -->
+		
+		<!-- start sidebar -->
+		<!-- <div id="sidebar">
+					<ul>
+						<li>
+							<h2>Categories</h2>
+							<ul>
+								<li><a href="#">Algorithms</a></li>
+								<li><a href="#">Matrix Computations</a></li>
+								<li><a href="#">Gallery</a></li>
+								<li><a href="#">Resume</a></li>
+								<li><a href="#">Contacts</a></li>
+							</ul>
+						</li>
+						<li>
+							<h2>Archives</h2>
+							<ul>
+								<li><a href="#">September</a> (23)</li>
+								<li><a href="#">August</a> (31)</li>
+								<li><a href="#">July</a> (31)</li>
+								<li><a href="#">June</a> (30)</li>
+								<li><a href="#">May</a> (31)</li>
+							</ul>
+						</li>
+					</ul>
+				</div> -->
+		<!-- end sidebar -->
+		
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+
+<div id="footer">
+	<p>&copy;2011 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+</div>
+
+<script>
+// Game of Life
+$(function() {
+	$("#generate").attr('disabled', '');
+	$("#run").attr('disabled', '');
+	$("#buttons_maze").find("button").attr("disabled", '');
+	// generateGrid();
+	// generateMaze(false);
+});
+var gen = false;
+$("#generate").click(function(){
+	$(this).attr('disabled', 'disabled');
+	$("#run").attr('disabled', '');
+	gen = true;
+	generate();
+});
+
+$("#run").click(function(){
+	if(gen===true){
+		$(this).attr('disabled', 'disabled');
+		cellManager.stop = false;
+		run();
+	} 
+});
+
+$("#stop").click(function(){
+	$("#run").attr('disabled', '');
+	cellManager.stop = true;
+});
+
+$("#clear").click(function(){
+	$("#generate").attr('disabled', '');
+	$("#run").attr('disabled', '');
+	gen = false;
+	cellManager.stop = true;
+	clear();
+});
+
+// Maze
+// $("#generate1").click(function() {
+// 	generateGrid();
+// 	$("#buttons_maze").find("button").attr("disabled", "disabled");
+// 	generateMaze(true);
+// });
+// $("#DFS").click(function() {
+// 	$("#buttons_maze").find("button").attr("disabled", "disabled");
+// 	solveMaze();
+// });
+// $("#BFS").click(function() {
+// 	$("#buttons_maze").find("button").attr("disabled", "disabled");
+// 	BFS();	
+// });
+
+
+</script>
+</body>
+</html>
