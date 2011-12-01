@@ -257,9 +257,8 @@ img.right {
 	width: 180px;
 }
 
-.matrix-post .buttons {
+.matrix .buttons {
 	float: right;
-    clear: both;
 }
 
 
