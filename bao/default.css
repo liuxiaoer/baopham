@@ -250,7 +250,7 @@ img.right {
 	padding: 10px;
 }
 
-.matrix-post #buttons {
+.matrix-post #compute {
 	padding: 10px;
 }
 .matrix-post .row > input {
@@ -258,6 +258,7 @@ img.right {
 }
 
 .matrix-post .buttons {
+    display: inline;
 	float: right;
 }
 
