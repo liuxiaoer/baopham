@@ -40,12 +40,27 @@ class PDF(webapp.RequestHandler):
 		f = open(os.path.dirname(__file__) + '/Resume.pdf', 'r')
 		self.response.out.write(f.read())
 
+class Javascript_category(webapp.RequestHandler):
+    def get(self):
+        self.response.out.write(template.render('javascript.html', {}))
+
+class HTML5_category(webapp.RequestHandler):
+    def get(self):
+        self.response.out.write(template.render('html5.html', {}))
+
+class Bookmarks_category(webapp.RequestHandler):
+    def get(self):
+        self.response.out.write(template.render('bookmarks.html', {}))
+
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
 										('/resume', Resume), 
 										('/contact', Contact),
 										('/sent', Contact2),
-										('/download_resume', PDF)],
+										('/download_resume', PDF),
+                                        ('/javascript', Javascript_category),
+                                        ('/html5', HTML5_category),
+                                        ('/bookmarks', Bookmarks_category)],
                                         debug=False)
     util.run_wsgi_app(application)
 
