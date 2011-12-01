@@ -258,7 +258,7 @@ img.right {
 }
 
 .matrix-post .buttons {
-    display: inline;
+    line-height: 1.1;
 	float: right;
 }
 
