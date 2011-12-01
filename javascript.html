@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Bao Pham</title>
+	<title>JavaScript</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
 	<meta name="keywords" content="computer science, math, ubc, programming, student, blogs" />
 	<meta name="description" content="BP's personal website" />
@@ -44,7 +44,7 @@
 
 <div id="menu">
 	<ul>
-		<li class="current_page_item"><a href="/">Homepage</a></li>
+		<li><a href="/">Homepage</a></li>
 		<li><a href="/resume">Resume</a></li>
 		<li><a href="/contact">Contact me</a></li>
 	</ul>
@@ -53,10 +53,8 @@
 <!-- start page -->
 <div id="page">
 	<div id="page-bg">
-		<div id="latest-post"> <img src="bao/images/newbao.jpg" alt="" width="180" height="180" class="right" />
-			<h1>Welcome to My Personal Website!</h1>
-            <p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href='http://ubc.ca/' target="_blank">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. I created this website as a place for me to explore new technologies, practice my skills and blog on things that I find interesting.</p>
-			<p>I'm interested in algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
+		<div class="category"> 
+            <h1>JavaScript Posts</h1>
 		</div>
 		<!-- start content -->
 		<div id="content">
@@ -121,141 +119,6 @@
 				</div>
 			</div>			
 			<!--end matrix-->
-			<!--bashrc-->
-			<div class="post">
-				<h2 class="title" id="bashrc">.bashrc</h2>
-				<p class="byline"><small>Posted on November 12, 2011 by <a href="/">Bao Pham</a></small></p>
-				<div class="entry">
-					<p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
-                    <!--hide-->
-                    <div id="3" style="display:none">
-<pre><code>
-#Configure iTerm's tab title to display current directory 
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
-
-alias la='ls -A'
-alias ll='ls -l'
-alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
-
-#Extract packages
-extract () {
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)   tar xjf $1        ;;
-            *.tar.gz)    tar xzf $1     ;;
-            *.bz2)       bunzip2 $1       ;;
-            *.rar)       rar x $1     ;;
-            *.gz)        gunzip $1     ;;
-            *.tar)       tar xf $1        ;;
-            *.tbz2)      tar xjf $1      ;;
-            *.tgz)       tar xzf $1       ;;
-            *.zip)       unzip $1     ;;
-            *.Z)         uncompress $1  ;;
-            *.7z)        7z x $1    ;;
-            *)           echo "'$1' cannot be extracted via
-extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
-
-clock (){ 
-while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
-}
-
-#This one doesn't seem to work anymore
-# Define a word - USAGE: define dog
-define (){
-    lynx -dump "http://www.google.com/search?hl=en&amp;q=define%3A+${1}&amp;btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 &gt; /tmp/templookup.txt
-                if [[ -s  /tmp/templookup.txt ]] ;then	
-                    until ! read response
-                        do
-                        echo "${response}"
-                        done &lt; /tmp/templookup.txt
-                    else
-                        echo "Sorry $USER, I can't find the term \"${1}\""				
-                fi	
-    \rm -f /tmp/templookup.txt
-}
-
-calc (){
-   echo "scale=4; $1" | bc 
-}
-
-# Weather by us zip code - Can be called two ways # weather 50315 #
-#weather "Des Moines"
-weather (){
-    declare -a WEATHERARRAY
-    WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
-    echo ${WEATHERARRAY[@]}
-}
-
-#Get the time when the file's last modified. Usage: time dir_of_file filename
-filetime (){
-   ls -l $1 | awk '{if ($9 == lib) {print $6 "-" $7 "-" $8}}' lib=$2
-}
-
-#Get total number of files in dir
-total (){
-	ls -1 $1 | wc -l
-}
-</code>
-</pre>
-                    </div>
-                    <!--end hide-->
-					<p class="links"><a href="javascript:void(0)" onclick="toggle('3', this)">more</a></p>
-				</div>
-			</div>
-			<!--end bashrc-->
-			<!--Textmate-->
-			<div class="post">
-				<h2 class="title" id="textmate">TextMate - Configure Python Bundle for iTerm</h2>
-                <p class="byline"><small>Posted on November 18, 2011 by <a href="/">Bao Pham</a></small></p>
-
-				<div class="entry">
-					<p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
-					<p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
-					<p>Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
-                    Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
-                    <!--hide-->
-					<div id="2" style="display:none">
-<pre><code>
-#!/bin/bash
-TPY=${TM_PYTHON:-python}
-
-esc () {
-STR="$1" ruby &lt;&lt;"RUBY"
-   str = ENV['STR']
-   str = str.gsub(/'/, "'\\\\''")
-   str = str.gsub(/[\\"]/, '\\\\\\0')
-   print "'#{str}'"
-RUBY
-}
-
-osascript &lt;&lt;- APPLESCRIPT
-	tell application "iTerm"
-	    activate
-		make new terminal
-		tell the first terminal 
-			launch session "Default Session"
-			tell the last session
-				write text "python $TM_FILEPATH"
-			end tell
-		end tell
-	end tell
-APPLESCRIPT
-</code>
-</pre>
-					<p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
-					<p>DONE!</p>
-					<p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
-					</div>
-                    <!--end hide-->
-					<p class="links"><a href="javascript:void(0)" onclick="toggle('2', this)">more</a></p>
-				</div>
-			</div>
-		
 			<!--Game Of Life-->
 			<div class="post">
 				<h2 class="title" id="life">JavaScript and Canvas: Conway's Game of Life</h2>
