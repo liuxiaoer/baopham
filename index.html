@@ -126,6 +126,8 @@
 				<p class="byline"><small>Posted on November 12, 2011 by <a href="/">Bao Pham</a></small></p>
 				<div class="entry">
 					<p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
+                    <!--hide-->
+                    <div id="3" style="display:none">
 <pre><code>
 #Configure iTerm's tab title to display current directory 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
@@ -133,7 +135,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 alias la='ls -A'
 alias ll='ls -l'
 alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
-                    <span id="3" style="display:none">
+
 #Extract packages
 extract () {
     if [ -f $1 ] ; then
@@ -199,7 +201,8 @@ total (){
 }
 </code>
 </pre>
-					</span>
+					</div>
+                    <!--end hide-->
 					<p class="links"><a href="javascript:void(0)" onclick="toggle('3', this)">more</a></p>
 				</div>
 			</div>
@@ -213,8 +216,9 @@ total (){
 					<p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
 					<p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
 					<p>	Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
-						Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
-					<span id="2" style="display:none">
+                    Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
+                    <!--hide-->
+					<div id="2" style="display:none">
 <pre><code>
 #!/bin/bash
 TPY=${TM_PYTHON:-python}
@@ -245,7 +249,8 @@ APPLESCRIPT
 					<p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
 					<p>DONE!</p>
 					<p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
-					</span>
+					</div>
+                    <!--end hide-->
 					<p class="links"><a href="javascript:void(0)" onclick="toggle('2', this)">more</a></p>
 				</div>
 			</div>
@@ -263,7 +268,8 @@ APPLESCRIPT
 							<li>Opera 10.6+</li>
 							<li>Apple Safari 4+</li>
 						</ul>
-					<span id="1" style="display:none">
+                    <!--hide-->
+					<div id="1" style="display:none">
 					<p><i>From wikipedia</i>:</p>
 						<blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
 							<strong>Rules:</strong>
@@ -281,8 +287,9 @@ APPLESCRIPT
 						<button id="run" type="button">Run</button>
 						<button id="stop" type="button">Stop</button> 
 						<button id="clear" type="button">Clear</button>
-					</span>
 					</div>
+                    </div>
+                    <!--end hide-->
                     <script src = "bao/LifeGame.js" type="text/javascript"></script>
 				</div>
 				<p class="links"><a href="javascript:void(0)" onclick="toggle('1', this)">more</a></p>
