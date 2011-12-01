@@ -115,3 +115,79 @@ function check(matrix){
     }
     return true; 
 }
+
+function computeMatrix(){
+    $(".add").click(function(){
+            var inputMatrix = $(this).closest(".matrix").find(".inputMatrix");
+            inputMatrix.append("<div class='row'><input type='text'></input></div>");
+            });
+    $(".remove").click(function(){
+            var rows = $(this).closest(".matrix").find(".inputMatrix").find(".row");
+            var lastRow = rows[rows.length-1];
+            $(lastRow).remove();
+            });
+    $("#compute").click(function() {
+            var inputs_A = $(".matrixA").find("input:text");
+            arrayA = [];
+            for(var i=0; i<inputs_A.length; i++){
+            var val = $(inputs_A[i]).val();
+            if($.trim(val) != ''){
+            arrayA.push(val.split(','));
+            }
+            }   					
+            var inputs_B = $(".matrixB").find("input:text");
+            arrayB = [];
+            for(var i=0; i<inputs_B.length; i++){
+            var val = $(inputs_B[i]).val();
+            if($.trim(val) != ''){
+            arrayB.push(val.split(','));
+            }
+            } 
+            if(check(arrayA) && check(arrayB)) {
+            var matrixA = [];
+            for(var i=0; i<arrayA.length; i++){
+            matrixA[i] = [];
+            for(var j=0; j<arrayA[0].length; j++){
+                matrixA[i][j] = parseInt(arrayA[i][j]);
+            }
+            }
+
+            var validB = check(arrayB);
+            var matrixB = [];
+            for(var i=0; i<arrayB.length; i++){
+                matrixB[i] = [];
+                for(var j=0; j<arrayB[0].length; j++){
+                    matrixB[i][j] = parseInt(arrayB[i][j]);
+                }
+            } 
+            func = $("input:radio[@name='method']:checked").val();
+            var answer = $("#answer");
+            answer.empty();
+            if(func == 'multiply'){
+                var ans = multiply(matrixA, matrixB);
+                answer.append(prettify(ans));
+            }
+            else if(func == 'add'){
+                var ans = add(matrixA, matrixB);
+                answer.append(prettify(ans));  
+            }
+            else if(func == 'subtract'){
+                var ans = subtract(matrixA, matrixB);
+                answer.append(prettify(ans));             
+            }
+            else if(func == 'transpose'){
+                if(matrixA.length != 0){
+                    ansA = transpose(matrixA);
+                    answer.append($('<div />').append(prettify(ansA, 'Matrix 1')));
+                }
+                if(matrixB.length != 0){
+                    ansB = transpose(matrixB);
+                    answer.append($('<div />').append(prettify(ansB, 'Matrix 2')));
+                }
+            }
+            }
+    })
+
+}
+
+computeMatrix();
