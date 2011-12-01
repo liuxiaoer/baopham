@@ -258,8 +258,8 @@ img.right {
 }
 
 .matrix-post .buttons {
-    line-height: 1.1;
 	float: right;
+    clear: both;
 }
 
 
