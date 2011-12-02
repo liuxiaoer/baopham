@@ -8,12 +8,14 @@ inbound_services:
 - mail
 
 handlers:
-- url: /bao
-  static_dir: bao
+- url: /styles
+  static_dir: styles
+- url: /scripts
+  static_dir: scripts
   
 - url: /favicon\.ico
-  static_files: bao/images/favicon.ico
-  upload: bao/images/favicon\.ico
+  static_files: styles/images/favicon.ico
+  upload: styles/images/favicon\.ico
 
 - url: /.*
   script: main.py

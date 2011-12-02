@@ -6,17 +6,16 @@ from google.appengine.ext.webapp import template
 from google.appengine.api import mail
 
 import os
-# import google.appengine.api.memcache
-# memcache.flush_all()
-# memcache.set(key="static-version", value=os.environ['2'])
+
+path = os.path.join(os.path.dirname(__file__), 'templates')
 
 class MainHandler(webapp.RequestHandler):
 	def get(self):
- 		self.response.out.write(template.render('index.html', {}))
+ 		self.response.out.write(template.render(path + '/index.html', {}))
 
 class Contact(webapp.RequestHandler):
 	def get(self):	
- 		self.response.out.write(template.render('contact.html', {}))
+ 		self.response.out.write(template.render(path + '/contact.html', {}))
 	
 class Contact2(webapp.RequestHandler):
 	def post(self):
@@ -27,30 +26,30 @@ class Contact2(webapp.RequestHandler):
 		message.to = "BP <gbao.pham@gmail.com>"
 		message.body = "From: " + sender + "\nMessage:\n" + body 
 		message.send()
-		self.response.out.write(template.render('contact2.html', {}))
+		self.response.out.write(template.render(path + '/contact2.html', {}))
  		
 class Resume(webapp.RequestHandler):
 	def get(self):	
- 		self.response.out.write(template.render('resume.html', {}))
+ 		self.response.out.write(template.render(path + '/resume.html', {}))
 
 class PDF(webapp.RequestHandler):
 	def get(self):
 		self.response.headers['Content-Type'] = "application/txt"
 		self.response.headers['Content-Disposition'] = "attachment; filename=resume.pdf"
-		f = open(os.path.dirname(__file__) + '/Resume.pdf', 'r')
+		f = open(os.path.dirname(__file__) + '/files/Resume.pdf', 'r')
 		self.response.out.write(f.read())
 
 class Javascript_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render('javascript.html', {}))
+        self.response.out.write(template.render(path + '/javascript.html', {}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render('html5.html', {}))
+        self.response.out.write(template.render(path + '/html5.html', {}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render('bookmarks.html', {}))
+        self.response.out.write(template.render(path + '/bookmarks.html', {}))
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
