@@ -51,6 +51,10 @@ class Bookmarks_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/bookmarks.html', {}))
 
+class sitemap(webapp.RequestHandler):
+    def get(self):
+        self.response.out.write(template.render(path + '/sitemap.xml', {}))
+
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
 										('/resume', Resume), 
@@ -59,7 +63,8 @@ def main():
 										('/download_resume', PDF),
                                         ('/javascript', Javascript_category),
                                         ('/html5', HTML5_category),
-                                        ('/bookmarks', Bookmarks_category)],
+                                        ('/bookmarks', Bookmarks_category),
+                                        ('/sitemap', sitemap)],
                                         debug=False)
     util.run_wsgi_app(application)
 
