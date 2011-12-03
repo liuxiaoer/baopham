@@ -22,7 +22,7 @@ class Contact2(webapp.RequestHandler):
 		sender = self.request.get("email", default_value=str)
 		subject = self.request.get("subject")
 		body = self.request.get("message", default_value=str)
-		message = mail.EmailMessage(sender="BP <gbaopham@gmail.com>", subject=subject)
+		message = mail.EmailMessage(sender="Website Viewer <gbaopham@gmail.com>", subject=subject)
 		message.to = "BP <gbao.pham@gmail.com>"
 		message.body = "From: " + sender + "\nMessage:\n" + body 
 		message.send()
