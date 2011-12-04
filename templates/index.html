@@ -200,6 +200,29 @@ filetime (){
 total (){
 	ls -1 $1 | wc -l
 }
+
+#safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
+function rm (){
+    if [ $# -eq 0 ]; then
+            echo "usage: trashit <files...>" &gt;&amp;2
+            exit 2;
+    fi
+
+    for file in "$@"; do
+            # get just file name 
+            destfile="`basename \"$file\"`"
+            suffix='';
+            i=0;
+
+            # If that file already exists, change the name
+            while [ -e "$HOME/.Trash/${destfile}${suffix}" ]; do
+                    suffix=" - copy $i";
+                    i=`expr $i + 1`
+            done
+
+            mv -vi "$file" "$HOME/.Trash/${destfile}${suffix}"
+    done
+}
 </code>
 </pre>
                     </div>
