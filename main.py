@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 from google.appengine.ext import webapp
-from google.appengine.ext.webapp import util
-from google.appengine.ext.webapp import template
+from google.appengine.ext.webapp import util, template
 from google.appengine.api import mail
 
 import os
@@ -18,15 +17,19 @@ class Contact(webapp.RequestHandler):
  		self.response.out.write(template.render(path + '/contact.html', {}))
 	
 class Contact2(webapp.RequestHandler):
-	def post(self):
-		sender = self.request.get("email", default_value=str)
-		subject = self.request.get("subject")
-		body = self.request.get("message", default_value=str)
-		message = mail.EmailMessage(sender="Website Viewer <gbaopham@gmail.com>", subject=subject)
-		message.to = "BP <gbao.pham@gmail.com>"
-		message.body = "From: " + sender + "\nMessage:\n" + body 
-		message.send()
-		self.response.out.write(template.render(path + '/contact2.html', {}))
+    def post(self):
+        try:
+            sender = self.request.get("email", default_value=str)
+            subject = self.request.get("subject")
+            body = self.request.get("message", default_value=str)
+            message = mail.EmailMessage(sender="Website Viewer <gbaopham@gmail.com>", subject=subject)
+            message.to = "BP <gbao.pham@gmail.com>"
+            message.body = "From: " + sender + "\nMessage:\n" + body
+            message.send()
+            self.response.out.write(template.render(path + '/contact2.html', {}))
+        except apiproxy_errors.OverQuotaError, m:
+            logging.error(m)
+            self.response.out.write('The email could not be sent. Please try again later.')
  		
 class Resume(webapp.RequestHandler):
 	def get(self):	
@@ -51,9 +54,15 @@ class Bookmarks_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/bookmarks.html', {}))
 
-class sitemap(webapp.RequestHandler):
+class Sitemap(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/sitemap.xml', {}))
+
+class ErrorHandler(webapp.RequestHandler):
+    def get(self):
+        self.error(404)
+        self.response.out.write(template.render(path + '/404.html', {}))
+
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
@@ -64,7 +73,8 @@ def main():
                                         ('/javascript', Javascript_category),
                                         ('/html5', HTML5_category),
                                         ('/bookmarks', Bookmarks_category),
-                                        ('/sitemap', sitemap)],
+                                        ('/sitemap', Sitemap),
+                                        ('/.*', ErrorHandler)],
                                         debug=False)
     util.run_wsgi_app(application)
 
