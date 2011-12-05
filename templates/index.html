@@ -191,14 +191,34 @@ weather (){
     echo ${WEATHERARRAY[@]}
 }
 
-#Get the time when the file's last modified. Usage: time dir_of_file filename
+#Get the time when the file's last modified. Usage: filetime file
 filetime (){
-   ls -l $1 | awk '{if ($9 == lib) {print $6 "-" $7 "-" $8}}' lib=$2
+    for arg
+    do
+        if [ -f $arg ] 
+        then
+            dir=`dirname $arg`
+            name=`basename $arg`
+            time=`ls -l $dir | awk '{if ($9 == file) {print $6 "-" $7 "-" $8}}' file=$name`
+            echo "$arg: $time"
+        else
+            echo "$arg is not a file"
+        fi
+    done
 }
 
 #Get total number of files in dir
 total (){
-	ls -1 $1 | wc -l
+    for arg
+    do
+        if [ -d $arg ]
+        then
+            total=`ls -1 "$arg" | wc -l` 
+            echo "$arg: $total files"
+        else
+            echo "$arg is not a directory"
+        fi     
+    done
 }
 
 #safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
