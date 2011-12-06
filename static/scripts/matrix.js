@@ -105,7 +105,25 @@ function prettify(matrix, name){
     return html;
 }
 
+function prettify2(matrix, name){
+    if(name == null){
+        name = 'Answer';
+    }
+    var html = name + ' = [ ';
+    for(var i=0; i<matrix.length; i++){
+        html += '[ ';
+        for(var j=0; j<matrix[0].length; j++){
+            html += matrix[i][j] + ' ';
+        }
+        html += '] ';
+    }
+    html += ' ]';
+    return html;
+}
+
+
 function check(matrix){
+    if(matrix.length == 0) return true;
     var cols = matrix[0].length;
     for(var i=0; i<matrix.length; i++){
         if(matrix[i].length != cols){
@@ -120,72 +138,104 @@ function computeMatrix(){
     $(".add").click(function(){
             var inputMatrix = $(this).closest(".matrix").find(".inputMatrix");
             inputMatrix.append("<div class='row'><input type='text'></input></div>");
-            });
+    });
     $(".remove").click(function(){
             var rows = $(this).closest(".matrix").find(".inputMatrix").find(".row");
             var lastRow = rows[rows.length-1];
             $(lastRow).remove();
-            });
+    });
     $("#compute").click(function() {
             var inputs_A = $(".matrixA").find("input:text");
             arrayA = [];
             for(var i=0; i<inputs_A.length; i++){
-            var val = $(inputs_A[i]).val();
-            if($.trim(val) != ''){
-            arrayA.push(val.split(','));
-            }
+                var val = $(inputs_A[i]).val();
+                if($.trim(val) != ''){
+                arrayA.push(val.split(','));
+                }
             }   					
             var inputs_B = $(".matrixB").find("input:text");
             arrayB = [];
             for(var i=0; i<inputs_B.length; i++){
-            var val = $(inputs_B[i]).val();
-            if($.trim(val) != ''){
-            arrayB.push(val.split(','));
-            }
-            } 
-            if(check(arrayA) && check(arrayB)) {
-            var matrixA = [];
-            for(var i=0; i<arrayA.length; i++){
-            matrixA[i] = [];
-            for(var j=0; j<arrayA[0].length; j++){
-                matrixA[i][j] = parseInt(arrayA[i][j]);
-            }
-            }
-
-            var validB = check(arrayB);
-            var matrixB = [];
-            for(var i=0; i<arrayB.length; i++){
-                matrixB[i] = [];
-                for(var j=0; j<arrayB[0].length; j++){
-                    matrixB[i][j] = parseInt(arrayB[i][j]);
+                var val = $(inputs_B[i]).val();
+                if($.trim(val) != ''){
+                    arrayB.push(val.split(','));
                 }
             } 
+            if(check(arrayA) && check(arrayB)) {
+                var matrixA = [];
+                    for(var i=0; i<arrayA.length; i++){
+                        matrixA[i] = [];
+                        for(var j=0; j<arrayA[0].length; j++){
+                            matrixA[i][j] = parseInt(arrayA[i][j]);
+                        }
+                    }
+
+                var matrixB = [];
+                for(var i=0; i<arrayB.length; i++){
+                    matrixB[i] = [];
+                    for(var j=0; j<arrayB[0].length; j++){
+                        matrixB[i][j] = parseInt(arrayB[i][j]);
+                    }
+                } 
+            }
             func = $("input:radio[@name='method']:checked").val();
             var answer = $("#answer");
             answer.empty();
             if(func == 'multiply'){
                 var ans = multiply(matrixA, matrixB);
                 answer.append(prettify(ans));
+                answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
+                $("#not_display_correctly").click(function(){
+                    answer.append($('<div />').append(prettify2(ans)));
+                });
             }
             else if(func == 'add'){
                 var ans = add(matrixA, matrixB);
                 answer.append(prettify(ans));  
+                answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
+                $("#not_display_correctly").click(function(){
+                    answer.append($('<div />').append(prettify2(ans)));
+                });
             }
             else if(func == 'subtract'){
                 var ans = subtract(matrixA, matrixB);
-                answer.append(prettify(ans));             
+                answer.append(prettify(ans)); 
+                answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
+                $("#not_display_correctly").click(function(){
+                    answer.append($('<div />').append(prettify2(ans)));
+                });
             }
             else if(func == 'transpose'){
-                if(matrixA.length != 0){
+                console.log(matrixB);
+                if(matrixA.length != 0 && matrixB.length != 0){
                     ansA = transpose(matrixA);
                     answer.append($('<div />').append(prettify(ansA, 'Matrix 1')));
-                }
-                if(matrixB.length != 0){
                     ansB = transpose(matrixB);
                     answer.append($('<div />').append(prettify(ansB, 'Matrix 2')));
+                    answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
+                     $("#not_display_correctly").click(function(){
+                        answer.append($('<div />').append(prettify2(ansA, 'Matrix 1')));
+                        answer.append($('<div />').append(prettify2(ansB, 'Matrix 2')));
+                    });
+
+                }
+                else if(matrixA.length != 0){
+                    ansA = transpose(matrixA);
+                    answer.append($('<div />').append(prettify(ansA, 'Matrix 1')));
+                    answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
+                    $("#not_display_correctly").click(function(){
+                        answer.append($('<div />').append(prettify2(ansA, 'Matrix 1')));
+                    });
+                }
+                else if(matrixB.length != 0){
+                    ansB = transpose(matrixB);
+                    answer.append($('<div />').append(prettify(ansB, 'Matrix 2')));
+                    answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
+                    $("#not_display_correctly").click(function(){
+                        answer.append($('<div />').append(prettify2(ansB, 'Matrix 2')));
+                    });
                 }
             }
-            }
-    })
+    });
 
 }

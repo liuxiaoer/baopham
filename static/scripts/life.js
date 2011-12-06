@@ -140,14 +140,14 @@ function startLife(){
             $("#generate").attr('disabled', '');
             $("#run").attr('disabled', '');
             $("#buttons_maze").find("button").attr("disabled", '');
-            });
+    });
     var gen = false;
     $("#generate").click(function(){
             $(this).attr('disabled', 'disabled');
             $("#run").attr('disabled', '');
             gen = true;
             generate();
-            });
+    });
 
     $("#run").click(function(){
             if(gen===true){
@@ -155,12 +155,12 @@ function startLife(){
             cellManager.stop = false;
             run();
             } 
-            });
+    });
 
     $("#stop").click(function(){
             $("#run").attr('disabled', '');
             cellManager.stop = true;
-            });
+    });
 
     $("#clear").click(function(){
             $("#generate").attr('disabled', '');
@@ -168,6 +168,6 @@ function startLife(){
             gen = false;
             cellManager.stop = true;
             clear();
-            });
+    });
 }
 
