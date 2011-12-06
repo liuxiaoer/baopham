@@ -95,7 +95,7 @@
                 <div class="entry">
                     <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
                     <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);" style="float: left;">
-                        <table cellspacing="0" border="1">
+                        <table style="border-collapse: collapse" cellspacing="0" border="1">
                             <tr>
                                 <td id="1" class="black odd" draggable="true">&#9820;</td>
                                 <td id="2" class="black even" draggable="true">&#9822;</td>
