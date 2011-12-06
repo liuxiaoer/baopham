@@ -58,6 +58,142 @@
 		<!-- start content -->
 		<div id="content">
 			<noscript id="warning">Your javascript is disabled. Please enable your javascript to properly view the page =)</noscript>
+                        <div class="post">
+                <h2 class="title" id="chess">Chess</h2>
+                <p class="byline"><small>Posted on Dec 5, 2011 by <a href="/">Bao pham</a></small></p>
+                <script type="text/javascript">
+                    function dragStart(event) {
+                        event.dataTransfer.effectAllowed = 'move';
+                        event.dataTransfer.setData("Text", event.target.getAttribute('id'));
+                    }
+
+                    function dragOver(event) {
+                        return false;
+                    }
+
+                    function drop(event) {
+                        var coordinate = event.dataTransfer.getData("Text");
+                        var element = document.getElementById(coordinate);
+                        var targetClasses = event.target.getAttribute('class').split(' ');
+                        var elementClasses = element.getAttribute('class').split(' ');
+                        //You don't want to kill your own pieces
+                        if(targetClasses[0] != elementClasses[0]){
+                            event.target.innerHTML = element.innerHTML; // Move piece to new cell
+                            var newclass = elementClasses[0] + ' ' + targetClasses[1];
+                            event.target.setAttribute('class', newclass);
+                            element.innerHTML = ""; // Clear old cell
+                            element.setAttribute('class', 'none ' + elementClasses[1]); //Change the old cell's class names
+                        }
+                        event.preventDefault(); 
+                        return false;
+                    }
+                </script>
+
+                <div class="entry">
+                    <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
+                    <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);" style="float: left;">
+                        <table cellspacing="0" border="1">
+                            <tr>
+                                <td id="1" class="black odd" draggable="true">&#9820;</td>
+                                <td id="2" class="black even" draggable="true">&#9822;</td>
+                                <td id="3" class="black odd" draggable="true">&#9821;</td>
+                                <td id="4" class="black even" draggable="true">&#9819;</td>
+                                <td id="5" class="black odd" draggable="true">&#9818;</td>
+                                <td id="6" class="black even" draggable="true">&#9821;</td>
+                                <td id="7" class="black odd" draggable="true">&#9822;</td>
+                                <td id="8" class="black even" draggable="true">&#9820;</td>
+                            </tr>
+                            <tr>
+                                <td id="9" class="black even" draggable="true">&#9823;</td>
+                                <td id="10" class="black odd" draggable="true">&#9823;</td>
+                                <td id="11" class="black even" draggable="true">&#9823;</td>
+                                <td id="12" class="black odd" draggable="true">&#9823;</td>
+                                <td id="13" class="black even" draggable="true">&#9823;</td>
+                                <td id="14" class="black odd" draggable="true">&#9823;</td>
+                                <td id="15" class="black even" draggable="true">&#9823;</td>
+                                <td id="16" class="black odd" draggable="true">&#9823;</td>
+                            </tr>
+                            <tr>
+                                <td id="17" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="18" class="none even" draggable="true">&nbsp;</td>
+                                <td id="19" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="20" class="none even" draggable="true">&nbsp;</td>
+                                <td id="21" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="22" class="none even" draggable="true">&nbsp;</td>
+                                <td id="23" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="24" class="none even" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="25" class="none even" draggable="true">&nbsp;</td>
+                                <td id="26" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="27" class="none even" draggable="true">&nbsp;</td>
+                                <td id="28" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="29" class="none even" draggable="true">&nbsp;</td>
+                                <td id="30" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="31" class="none even" draggable="true">&nbsp;</td>
+                                <td id="32" class="none odd" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="33" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="34" class="none even" draggable="true">&nbsp;</td>
+                                <td id="35" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="36" class="none even" draggable="true">&nbsp;</td>
+                                <td id="37" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="38" class="none even" draggable="true">&nbsp;</td>
+                                <td id="39" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="40" class="none even" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="41" class="none even" draggable="true">&nbsp;</td>
+                                <td id="42" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="43" class="none even" draggable="true">&nbsp;</td>
+                                <td id="44" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="45" class="none even" draggable="true">&nbsp;</td>
+                                <td id="46" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="47" class="none even" draggable="true">&nbsp;</td>
+                                <td id="48" class="none odd" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="50" class="white odd" draggable="true">&#9817;</td>
+                                <td id="51" class="white even" draggable="true">&#9817;</td>
+                                <td id="52" class="white odd" draggable="true">&#9817;</td>
+                                <td id="53" class="white even" draggable="true">&#9817;</td>
+                                <td id="54" class="white odd" draggable="true">&#9817;</td>
+                                <td id="55" class="white even" draggable="true">&#9817;</td>
+                                <td id="56" class="white odd" draggable="true">&#9817;</td>
+                                <td id="57" class="white even" draggable="true">&#9817;</td>
+                            </tr>
+                            <tr>
+                                <td id="58" class="white even" draggable="true">&#9814;</td>
+                                <td id="59" class="white odd" draggable="true">&#9816;</td>
+                                <td id="60" class="white even" draggable="true">&#9815;</td>
+                                <td id="61" class="white odd" draggable="true">&#9813;</td>
+                                <td id="62" class="white even" draggable="true">&#9812;</td>
+                                <td id="63" class="white odd" draggable="true">&#9815;</td>
+                                <td id="64" class="white even" draggable="true">&#9816;</td>
+                                <td id="65" class="white odd" draggable="true">&#9814;</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <article style="float: right;">
+                        <section id="editable" contenteditable="true" style="width: 300px; height: 200px; border: 1px dotted; overflow: auto;">
+                        <h3>Go ahead, edit me!</h3>
+                        <p>Write down your strategies so you won't forget!</p>
+                        </section>
+                        <div style="padding-top: 5px;">
+                            <input type="button" id="resetChess" value="Reset game" />
+                        </div>
+                    </article>
+                    <div style="clear: both;">&nbsp;</div>
+                    <script type="text/javascript">
+                        $("#resetChess").click( function () {
+                            window.location = window.location; 
+                         });
+                    </script>
+                </div>
+            </div>
+            <!-- end chess-->
+
 			<!--Game Of Life-->
 			<div class="post">
 				<h2 class="title" id="life">JavaScript and Canvas: Conway's Game of Life</h2>
@@ -73,7 +209,7 @@
                             <li>Internet Explorer 9</li>
 						</ul>
                     <!--hide-->
-					<div id="1" style="display:none">
+					<div id="1_hide" style="display:none">
 					<p><i>From wikipedia</i>:</p>
 						<blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
 							<strong>Rules:</strong>
@@ -96,7 +232,7 @@
                     <!--end hide-->
                     <script type="text/javascript">startLife()</script>
 				</div>
-				<p class="links"><a href="javascript:void(0)" onclick="toggle('1', this)">more</a></p>
+				<p class="links"><a href="javascript:void(0)" onclick="toggle('1_hide', this)">more</a></p>
 			</div>
 			<!--end Game of Life-->			
 		</div>
