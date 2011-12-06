@@ -334,7 +334,7 @@ filetime (){
         then
             dir=`dirname $arg`
             name=`basename $arg`
-            time=`ls -l $dir | awk '{if ($9 == file) {print $6 "-" $7 "-" $8}}' file=$name`
+            time=`ls -lA $dir | awk '{if ($9 == file) {print $6 "-" $7 "-" $8}}' file=$name`
             echo "$arg: $time"
         else
             echo "$arg is not a file"
@@ -348,8 +348,10 @@ total (){
     do
         if [ -d $arg ]
         then
-            total=`ls -1 "$arg" | wc -l` 
-            echo "$arg: $total files"
+            visible=`ls -1 "$arg" | wc -l` 
+            total=`ls -A -1 "$arg" | wc -l`
+            echo "$arg: $visible visible files"
+            echo "$arg: $total visible and hidden files"
         else
             echo "$arg is not a directory"
         fi     
@@ -484,8 +486,8 @@ APPLESCRIPT
                 <li>
                 <h2>Categories</h2>
                 <ul>
-                    <li><a href="/javascript">JavaScript</a></li>
-                    <li><a href="/html5">HTML5</a></li>
+                    <li><a href="/javascript">JavaScript</a>(2)</li>
+                    <li><a href="/html5">HTML5</a>(2)</li>
                     <li><a href="/bookmarks">Bookmarks</a></li>
                     <li><a href="/resume">Resume</a></li>
                     <li><a href="/contact">Contact</a></li>
