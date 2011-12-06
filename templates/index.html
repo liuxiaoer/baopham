@@ -24,17 +24,7 @@
                 link.innerHTML = 'less';
             }
         } 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-27192907-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })()
 	</script>
-	
 </head>
 <body>
 <!-- start header -->
@@ -61,6 +51,173 @@
 		<!-- start content -->
 		<div id="content">
 			<noscript id="warning">Your javascript is disabled. Please enable your javascript to properly view the page =)</noscript>
+            <!--chess-->
+            <div class="post">
+                <h2 class="title" id="chess">Chess</h2>
+                <p class="byline"><small>Posted on Dec 5, 2011 by <a href="/">Bao pham</a></small></p>
+                <style>
+                    .odd {
+                        background-color: white;
+                        width: 38px;
+                        height: 38px;
+                        text-align: center;
+                    }
+                    .even {
+                        background-color: gray;
+                        width: 38px;
+                        height: 38px;
+                        text-align: center;
+                    }
+                </style>
+                <script type="text/javascript">
+                    function dragStart(event) {
+                        event.dataTransfer.effectAllowed = 'move';
+                        event.dataTransfer.setData("Text", event.target.getAttribute('id'));
+                    }
+
+                    function dragOver(event) {
+                        return false;
+                    }
+
+                    function drop(event) {
+                        var coordinate = event.dataTransfer.getData("Text");
+                        var element = document.getElementById(coordinate);
+                        var targetClasses = event.target.getAttribute('class').split(' ');
+                        var elementClasses = element.getAttribute('class').split(' ');
+                        //You don't want to kill your own pieces
+                        if(targetClasses[0] != elementClasses[0]){
+                            event.target.innerHTML = element.innerHTML; // Move piece to new cell
+                            var newclass = elementClasses[0] + ' ' + targetClasses[1];
+                            event.target.setAttribute('class', newclass);
+                            element.innerHTML = ""; // Clear old cell
+                            element.setAttribute('class', 'none ' + elementClasses[1]); //Change the old cell's class names
+                        }
+                        event.preventDefault(); 
+                        return false;
+                    }
+                </script>
+
+                <div class="entry">
+                    <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5.</p>
+                    <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);" style="float: left;">
+                        <table cellspacing=0 border="1">
+                            <tr>
+                                <td id="1" class="black odd" draggable="true">&#9820;</td>
+                                <td id="2" class="black even" draggable="true">&#9822;</td>
+                                <td id="3" class="black odd" draggable="true">&#9821;</td>
+                                <td id="4" class="black even" draggable="true">&#9819;</td>
+                                <td id="5" class="black odd" draggable="true">&#9818;</td>
+                                <td id="6" class="black even" draggable="true">&#9821;</td>
+                                <td id="7" class="black odd" draggable="true">&#9822;</td>
+                                <td id="8" class="black even" draggable="true">&#9820;</td>
+                            </tr>
+                            <tr>
+                                <td id="9" class="black even" draggable="true">&#9823;</td>
+                                <td id="10" class="black odd" draggable="true">&#9823;</td>
+                                <td id="11" class="black even" draggable="true">&#9823;</td>
+                                <td id="12" class="black odd" draggable="true">&#9823;</td>
+                                <td id="13" class="black even" draggable="true">&#9823;</td>
+                                <td id="14" class="black odd" draggable="true">&#9823;</td>
+                                <td id="15" class="black even" draggable="true">&#9823;</td>
+                                <td id="16" class="black odd" draggable="true">&#9823;</td>
+                            </tr>
+                            <tr>
+                                <td id="17" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="18" class="none even" draggable="true">&nbsp;</td>
+                                <td id="19" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="20" class="none even" draggable="true">&nbsp;</td>
+                                <td id="21" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="22" class="none even" draggable="true">&nbsp;</td>
+                                <td id="23" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="24" class="none even" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="25" class="none even" draggable="true">&nbsp;</td>
+                                <td id="26" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="27" class="none even" draggable="true">&nbsp;</td>
+                                <td id="28" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="29" class="none even" draggable="true">&nbsp;</td>
+                                <td id="30" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="31" class="none even" draggable="true">&nbsp;</td>
+                                <td id="32" class="none odd" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="33" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="34" class="none even" draggable="true">&nbsp;</td>
+                                <td id="35" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="36" class="none even" draggable="true">&nbsp;</td>
+                                <td id="37" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="38" class="none even" draggable="true">&nbsp;</td>
+                                <td id="39" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="40" class="none even" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="41" class="none even" draggable="true">&nbsp;</td>
+                                <td id="42" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="43" class="none even" draggable="true">&nbsp;</td>
+                                <td id="44" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="45" class="none even" draggable="true">&nbsp;</td>
+                                <td id="46" class="none odd" draggable="true">&nbsp;</td>
+                                <td id="47" class="none even" draggable="true">&nbsp;</td>
+                                <td id="48" class="none odd" draggable="true">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td id="50" class="white odd" draggable="true">&#9817;</td>
+                                <td id="51" class="white even" draggable="true">&#9817;</td>
+                                <td id="52" class="white odd" draggable="true">&#9817;</td>
+                                <td id="53" class="white even" draggable="true">&#9817;</td>
+                                <td id="54" class="white odd" draggable="true">&#9817;</td>
+                                <td id="55" class="white even" draggable="true">&#9817;</td>
+                                <td id="56" class="white odd" draggable="true">&#9817;</td>
+                                <td id="57" class="white even" draggable="true">&#9817;</td>
+                            </tr>
+                            <tr>
+                                <td id="58" class="white even" draggable="true">&#9814;</td>
+                                <td id="59" class="white odd" draggable="true">&#9816;</td>
+                                <td id="60" class="white even" draggable="true">&#9815;</td>
+                                <td id="61" class="white odd" draggable="true">&#9813;</td>
+                                <td id="62" class="white even" draggable="true">&#9812;</td>
+                                <td id="63" class="white odd" draggable="true">&#9815;</td>
+                                <td id="64" class="white even" draggable="true">&#9816;</td>
+                                <td id="65" class="white odd" draggable="true">&#9814;</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="float: right;">
+                        <section id="editable" contenteditable="true">
+                        <h3>Go ahead, edit me!</h3>
+                        <p>Write down your strategies so you won't forget!</p>
+                        </section>
+                        <div>
+                            <input type="button" id="clear" value="Clear changes" />
+                        </div>
+                    </div>
+                    <div style="clear: both;">&nbsp;</div>
+                    <script>
+                        var editable = document.getElementById('editable');
+
+                        addEvent(editable, 'blur', function () {
+                            localStorage.setItem('contenteditable', this.innerHTML);
+                            document.designMode = 'off';
+                        });
+
+                        addEvent(editable, 'focus', function () {
+                            document.designMode = 'on';
+                        });
+
+                        addEvent(document.getElementById('clear'), 'click', function () {
+                            localStorage.clear();
+                            window.location = window.location; // refresh
+                        });
+
+                        if (localStorage.getItem('contenteditable')) {
+                            editable.innerHTML = localStorage.getItem('contenteditable');
+                        }
+                    </script>
+
+                </div>
+            </div>
+            <!-- end chess-->
 			<!--matrix-->
 			<div class="post">
 				<h2 class="title" id="matrix">JavaScript: Matrix Calculator</h2>
@@ -376,6 +533,16 @@ APPLESCRIPT
 <div id="footer">
 	<p>&copy;2011 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
 </div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27192907-1']);
+    _gaq.push(['_trackPageview']);
 
+    (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })()
+</script>
 </body>
 </html>
