@@ -322,7 +322,7 @@ pre {
 }
 
 [contenteditable]:hover:not(:focus) {
-    outline: 1px dotted #CCCCCC;
+    outline: 1px double #CCCCCC;
 }
 
 .odd {
