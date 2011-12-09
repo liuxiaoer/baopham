@@ -32,7 +32,7 @@ function getNotes() {
         var notes = localStorage.getItem('userScribble');
     }
     else {
-        var notes = "<h3>Go ahead, edit me</h3><p>Write down your strategies so you won't forget and for next time you visit my blog!</p><p>Click \"clear local storage\" if you don't want your notes to be remembered";
+        var notes = "<h3>Go ahead, edit me</h3><p>Write down your strategies so you won't forget and for next time you visit my blog!</p>";
     }
     document.getElementById('editable').innerHTML = notes;
 }
