@@ -12,14 +12,20 @@ inbound_services:
 handlers:
 - url: /css
   static_dir: static/css
+
 - url: /scripts
   static_dir: static/scripts
+
 - url: /images
   static_dir: static/css/images
   
 - url: /favicon\.ico
   static_files: static/css/images/favicon.ico
   upload: static/css/images/favicon\.ico
+
+- url: /robots\.txt
+  static_files: static/robots.txt
+  upload: static/robots\.txt
 
 - url: /.*
   script: main.py
