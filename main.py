@@ -62,18 +62,19 @@ class ErrorHandler(webapp.RequestHandler):
     def get(self):
         self.error(404)
         #self.response.out.write(template.render(path + '/404.html', {}))        
-        self.response.out.write('''<html>
-                                        <head>
-                                            <title>Page not found</title>
-                                        </head>
-                                        <body>
-                                            <h1>Page not found</h1>
-                                            <hr>
-                                            <p>Sorry, but the requested page could not be found</p>
+        self.response.out.write('''
+        <html>
+            <head>
+                <title>Page not found</title>
+            </head>
+            <body>
+                <h1>Page not found</h1>
+                <hr>
+                <p>Sorry, but the requested page could not be found</p>
 
-                                        </body>
-                                    </html>
-                                ''')
+            </body>
+        </html>
+                ''')
 
 
 
