@@ -254,6 +254,16 @@
 # Configure iTerm's tab title to display current directory 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
+# Show git branch in bash prompt
+# e.g: export PS1="\[\033[0;32m\]\u@\h\[\033[0;32m\] \w\$(__git_ps1)\$\[\033[00m\] " 
+__git_ps1 () 
+{ 
+    local b="$(git symbolic-ref HEAD 2&gt;/dev/null)";
+    if [ -n "$b" ]; then
+        printf " (%s)" "${b##refs/heads/}";
+    fi
+} 
+
 alias la='ls -A'
 alias ll='ls -l'
 alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
@@ -283,21 +293,6 @@ extract()" ;;
 
 clock (){ 
 while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
-}
-
-# This one doesn't seem to work anymore
-# Define a word - USAGE: define dog
-define (){
-    lynx -dump "http://www.google.com/search?hl=en&amp;q=define%3A+${1}&amp;btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 &gt; /tmp/templookup.txt
-                if [[ -s  /tmp/templookup.txt ]] ;then	
-                    until ! read response
-                        do
-                        echo "${response}"
-                        done &lt; /tmp/templookup.txt
-                    else
-                        echo "Sorry $USER, I can't find the term \"${1}\""				
-                fi	
-    \rm -f /tmp/templookup.txt
 }
 
 calc (){
