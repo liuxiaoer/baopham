@@ -269,7 +269,7 @@ alias ll='ls -l'
 alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
 
 # Extract packages
-extract () {
+extract() {
     if [ -f $1 ] ; then
         case $1 in
             *.tar.bz2)   tar xjf $1        ;;
@@ -291,24 +291,24 @@ extract()" ;;
     fi
 }
 
-clock (){ 
-while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
+clock() { 
+    while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
 }
 
-calc (){
+calc() {
    echo "scale=4; $1" | bc 
 }
 
 # Weather by us zip code - Can be called two ways # weather 50315 #
 # weather "Des Moines"
-weather (){
+weather() {
     declare -a WEATHERARRAY
     WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
     echo ${WEATHERARRAY[@]}
 }
 
 # Get the time when the file's last modified. Usage: filetime file
-filetime (){
+filetime() {
     for arg
     do
         if [ -f $arg ] 
@@ -324,7 +324,7 @@ filetime (){
 }
 
 # Get total number of files in dir
-total (){
+total() {
     for arg
     do
         if [ -d $arg ]
@@ -340,7 +340,7 @@ total (){
 }
 
 # safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
-function rm (){
+function rm() {
     if [ $# -eq 0 ]; then
             echo "usage: trashit <files...>" &gt;&amp;2
             exit 2;
@@ -360,6 +360,10 @@ function rm (){
 
             mv -vi "$file" "$HOME/.Trash/${destfile}${suffix}"
     done
+}
+
+grow() {
+    echo -e $'\e]9;'${1}'\007' ; return  ;
 }
 </code>
 </pre>
