@@ -81,8 +81,6 @@ class ErrorHandler(webapp.RequestHandler):
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
 										('/resume', Resume), 
-										('/contact', Contact),
-										('/sent', Contact2),
 										('/download_resume', PDF),
                                         ('/javascript', Javascript_category),
                                         ('/html5', HTML5_category),
