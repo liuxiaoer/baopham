@@ -2,9 +2,10 @@
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util, template
+from google.appengine.runtime import apiproxy_errors
 from google.appengine.api import mail
-
 import os
+import logging
 
 path = os.path.join(os.path.dirname(__file__), 'templates')
 
@@ -80,14 +81,14 @@ class ErrorHandler(webapp.RequestHandler):
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
-										('/resume', Resume), 
-										('/download_resume', PDF),
-                                        ('/javascript', Javascript_category),
-                                        ('/html5', HTML5_category),
-                                        ('/bookmarks', Bookmarks_category),
-                                        ('/sitemap', Sitemap),
-                                        ('/.*', ErrorHandler)],
-                                        debug=False)
+                                          ('/resume', Resume), 
+                                          ('/download_resume', PDF),
+                                          ('/javascript', Javascript_category),
+                                          ('/html5', HTML5_category),
+                                          ('/bookmarks', Bookmarks_category),
+                                          ('/sitemap', Sitemap),
+                                          ('/.*', ErrorHandler)],
+                                         debug=False)
     util.run_wsgi_app(application)
 
 if __name__ == '__main__':
