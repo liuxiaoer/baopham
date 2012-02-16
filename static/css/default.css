@@ -113,7 +113,7 @@ img.right {
 	padding: 11px 30px 0 30px;
     text-decoration: none;
 	font-weight: bold;
-	color: #333333;
+	color: black;
 }
 
 #menu a:hover {
@@ -130,7 +130,7 @@ img.right {
 #page {
 	width: 1000px;
 	margin: 0 auto;
-	background: #FFFFFF;
+    /*background: #FFFFFF;*/
 }
 
 #page-bg {
@@ -274,8 +274,6 @@ img.right {
 	float: right;
 }
 
-
-
 /* Additional classes */
 .gray  { color: #CCC; }
 
@@ -304,16 +302,11 @@ img.right {
 }
 /*code blocks*/
 pre {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
     background-color: #FAFAFA;
 	overflow: auto;
 	font-family:monospace;
 	font-size:11px;
-    border-color: #E1E1E1 -moz-use-text-color;
+    border-color: #E1E1E1 ;
     border-style: dashed none;
     border-width: 1px;
     color: #333333;
@@ -327,7 +320,7 @@ pre {
 }
 
 .odd {
-    background-color: white;
+    background-color: #F8F8F8 ;
     width: 39px;
     height: 39px;
     text-align: center;
@@ -339,11 +332,4 @@ pre {
     height: 39px;
     text-align: center;
     font-size: 29px;
-}
-
-#editable {
-    width: 300px;
-    height; 200px;
-    border: 1px dotted;
-    overflow: auto;
 }
