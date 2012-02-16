@@ -326,6 +326,12 @@ pre {
     outline: 1px double #CCCCCC;
 }
 
+#chess_table {
+    border-collapse: collapse;
+    /*border-spacing: 0;*/
+    /*border: 1px solid; */
+    
+}
 .odd {
     background-color: white;
     width: 39px;
