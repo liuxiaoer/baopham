@@ -2,35 +2,35 @@
 Design by Free CSS Templates
 http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
-*/
+ */
 
 body {
-	margin: 0;
-	padding: 0;
-	background: #333333 url(images/img01.jpg) repeat-x;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #666666;
+    margin: 0;
+    padding: 0;
+    background: #333333 url(images/img01.jpg) repeat-x;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #666666;
 }
 
 h1, h2, h3 {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 h1 {
-	font-size: 2em;
+    font-size: 2em;
 }
 
 h2 {
-	font-size: 1.6em;
+    font-size: 1.6em;
 }
 
 h3 {
-	font-size: 1em;
+    font-size: 1em;
 }
 
 ul {
-	list-style-image: url(images/img07.gif);
+    list-style-image: url(images/img07.gif);
 }
 
 a {
@@ -38,141 +38,142 @@ a {
     color: #2540C5;
 }
 a:visited {
-	color: #551A8B;
+    color: #551A8B;
 }
 a:hover {	
-	color: #000000;
+    color: #000000;
 }
 
 a img {
-	border: none;
+    border: none;
 }
 
 img.left {
-	float: left;
-	margin: 0 20px 0 0;
+    float: left;
+    margin: 0 20px 0 0;
 }
 
 img.right {
-	float: right;
-	margin: -13px 0 0 20px;
+    float: right;
+    margin: -13px 0 0 20px;
 }
 
 /* Header */
 
 #logo {
-	width: 1000px;
-	height: 65px;
-	margin: 0 auto;
+    width: 1000px;
+    height: 65px;
+    margin: 0 auto;
 }
 
 #logo h1, #logo p {
-	margin: 0;
-	color: #FFFFFF;
+    margin: 0;
+    color: #FFFFFF;
 }
 
 #logo h1 {
-	float: left;
-	padding-top: 30px;
+    float: left;
+    padding-top: 30px;
 }
 
 #logo p {
-	float: right;
-	padding-top: 39px;
-	font-size: 1.2em;
+    float: right;
+    padding-top: 39px;
+    font-size: 1.2em;
 }
 
 #logo a {
-	text-decoration: none;
-	color: #FFFFFF;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #333333;
 }
 
 /* Menu */
 
 #menu {
-	width: 1000px;
-	height: 45px;
-	margin: 0 auto;
-	background: #F0EDF0 url(images/img02.gif) repeat-x;
+    width: 1000px;
+    height: 45px;
+    margin: 0 auto;
+    background: #F0EDF0 url(images/img02.gif) repeat-x;
 }
 
 #menu ul {
-	margin: 0;
-	padding: 5px 0 0 14px;
-	list-style: none;
+    margin: 0;
+    padding: 5px 0 0 14px;
+    list-style: none;
 }
 
 #menu li {
-	display: inline;
+    display: inline;
 }
 
 #menu a {
-	display: block;
-	float: left;
-	height: 29px;
-	padding: 11px 30px 0 30px;
+    display: block;
+    float: left;
+    height: 29px;
+    padding: 11px 30px 0 30px;
     text-decoration: none;
-	font-weight: bold;
-	color: black;
+    font-weight: bold;
+    color: black;
 }
 
 #menu a:hover {
     text-decoration: underline;
-	color: #000000;
+    color: #000000;
 }
 
 #menu .current_page_item a {
-	background: url(images/img06.jpg) repeat-x;
+    background: url(images/img06.jpg) repeat-x;
 }
 
 /* Page */
 
 #page {
-	width: 1000px;
-	margin: 0 auto;
+    width: 1000px;
+    margin: 0 auto;
     /*background: #FFFFFF;*/
 }
 
 #page-bg {
-	padding: 11px 24px;
-	background: url(images/img03.jpg) repeat-y;
+    padding: 11px 24px;
+    background: url(images/img03.jpg) repeat-y;
 }
 
 /* Latest Post */
 
 #latest-post {
-	padding: 20px;
-	border: 1px solid #E7E7E7;
+    padding: 20px;
+    border: 1px solid #E7E7E7;
 }
 
 /* Content */
 
 #content {
-	float: left;
-	width: 650px;
-	padding: 20px 0 0 20px;
+    float: left;
+    width: 650px;
+    padding: 20px 0 0 20px;
 }
 
 .post {
-	margin-bottom: 20px;
-	padding-bottom: 5px;
-	border-bottom: 1px solid #E7E7E7;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E7E7E7;
 }
 
 .title {
-	margin: 0;
+    margin: 0;
 }
 
 .title a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .title a:hover {
-	border-bottom: 1px dotted #999999;
+    border-bottom: 1px dotted #999999;
 }
 
 .byline {
-	margin: 0 0 20px 0;
+    margin: 0 0 20px 0;
 }
 
 .entry {
@@ -180,49 +181,49 @@ img.right {
 
 .links {
     padding-top: 5px;
-	text-align: right;
+    text-align: right;
     /*font-weight: bold;*/
 }
 
 /* Sidebar */
 
 #sidebar {
-	float: right;
-	width: 20%;
-	padding-right: 20px;
+    float: right;
+    width: 20%;
+    padding-right: 20px;
 }
 
 #sidebar ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 #sidebar li {
 }
 
 #sidebar li ul {
-	margin-bottom: 10px;
-	padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 #sidebar li li {
-	padding: 5px 20px 5px 35px;
-	background: url(images/img07.gif) no-repeat 20px 50%;
-	border-bottom: 1px solid #F3F3F3;
+    padding: 5px 20px 5px 35px;
+    background: url(images/img07.gif) no-repeat 20px 50%;
+    border-bottom: 1px solid #F3F3F3;
 }
 
 #sidebar h2 {
-	margin: 0;
-	padding: 24px 0 3px 20px;
-	border-bottom: 1px solid #E7E7E7;
-	letter-spacing: -1px;
-	font-size: 1.2em;
-	font-weight: bold;
+    margin: 0;
+    padding: 24px 0 3px 20px;
+    border-bottom: 1px solid #E7E7E7;
+    letter-spacing: -1px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 #sidebar a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #sidebar a:hover {
@@ -243,35 +244,35 @@ img.right {
 }
 /* Game of Life */
 #canvas_life {
-	border-style: solid;
-	width: 600px;
-	height: 280px;
+    border-style: solid;
+    width: 600px;
+    height: 280px;
 }
 
 #buttons_life{
-	padding-top: 15px;
+    padding-top: 15px;
 }
 
 /* Matrix */
 .matrix {
-	float: left;
-	padding-left: 20px;
+    float: left;
+    padding-left: 20px;
 }
 
 .matrix-post #selection {
-	clear: both;
-	padding: 10px;
+    clear: both;
+    padding: 10px;
 }
 
 .matrix-post #compute {
-	padding: 10px;
+    padding: 10px;
 }
 .row > input {
-	width: 180px;
+    width: 180px;
 }
 
 .matrix .buttons {
-	float: right;
+    float: right;
 }
 
 /* Additional classes */
@@ -279,33 +280,33 @@ img.right {
 
 /* Footer */
 #footer {
-	width: 1000px;
-	margin: 0 auto;
-	padding: 20px 0;
-/*	background: url(images/img08.gif) repeat-x;*/
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+    /*	background: url(images/img08.gif) repeat-x;*/
 }
 
 #footer p {
-	margin: 0;
-	text-align: center;
-	font-size: smaller;
-	color: #666666;
+    margin: 0;
+    text-align: center;
+    font-size: smaller;
+    color: #666666;
 }
 
 #footer a {
-	color: #666666;
+    color: #666666;
 }
 
 #warning {
-	color: red;
-	font-size: 15px;
+    color: red;
+    font-size: 15px;
 }
 /*code blocks*/
 pre {
     background-color: #FAFAFA;
-	overflow: auto;
-	font-family:monospace;
-	font-size:11px;
+    overflow: auto;
+    font-family:monospace;
+    font-size:11px;
     border-color: #E1E1E1 ;
     border-style: dashed none;
     border-width: 1px;
