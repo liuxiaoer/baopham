@@ -321,6 +321,7 @@ pre {
     padding: 5px;
 }
 
+/*Chess*/
 [contenteditable]:hover:not(:focus) {
     outline: 1px double #CCCCCC;
 }
@@ -338,4 +339,11 @@ pre {
     height: 39px;
     text-align: center;
     font-size: 29px;
+}
+
+#editable {
+    width: 300px;
+    height; 200px;
+    border: 1px dotted;
+    overflow: auto;
 }

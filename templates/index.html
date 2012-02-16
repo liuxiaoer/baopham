@@ -163,7 +163,7 @@
                         </table>
                     </div>
                     <div style="float: right;">
-                        <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);" style="width: 300px; height: 200px; border: 1px dotted; overflow: auto;">
+                        <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);">
                         </section>
                         <div style="padding-top: 5px;">
                             <input type="button" id="resetChess" value="Reset game" />
@@ -251,7 +251,7 @@
 				<div class="entry">
 					<p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
                     <!--hide-->
-                    <div id="3_hide" style="display:none">
+                    <div id="hide_3" style="display:none">
 <pre><code>
 # Configure iTerm's tab title to display current directory 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
@@ -343,7 +343,7 @@ total() {
 # safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
 function rm() {
     if [ $# -eq 0 ]; then
-            echo "usage: trashit <files...>" &gt;&amp;2
+            echo "usage: trashit &gt;files...&lt;" &gt;&amp;2
             exit 2;
     fi
 
@@ -370,7 +370,7 @@ growl() {
 </pre>
                     </div>
                     <!--end hide-->
-					<p class="links"><a href="javascript:void(0)" onclick="toggle('3_hide', this)">more</a></p>
+					<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_3', this)">more</a></p>
 				</div>
 			</div>
 			<!--end bashrc-->
@@ -385,7 +385,7 @@ growl() {
 					<p>Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
                     Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
                     <!--hide-->
-					<div id="2_hide" style="display:none">
+					<div id="hide_2" style="display:none">
 <pre><code>
 #!/bin/bash
 TPY=${TM_PYTHON:-python}
@@ -418,7 +418,7 @@ APPLESCRIPT
 					<p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
 					</div>
                     <!--end hide-->
-					<p class="links"><a href="javascript:void(0)" onclick="toggle('2_hide', this)">more</a></p>
+					<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_2', this)">more</a></p>
 				</div>
 			</div>
 		
@@ -437,7 +437,7 @@ APPLESCRIPT
                             <li>Internet Explorer 9</li>
 						</ul>
                     <!--hide-->
-					<div id="1_hide" style="display:none">
+					<div id="hide_1" style="display:none">
 					<p><i>From wikipedia</i>:</p>
 						<blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
 							<strong>Rules:</strong>
@@ -460,7 +460,7 @@ APPLESCRIPT
                     <!--end hide-->
                     <script type="text/javascript">startLife()</script>
 				</div>
-				<p class="links"><a href="javascript:void(0)" onclick="toggle('1_hide', this)">more</a></p>
+				<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
 			</div>
 			<!--end Game of Life-->			
 		</div>
