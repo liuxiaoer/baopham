@@ -302,18 +302,18 @@ img.right {
     font-size: 15px;
 }
 /*code blocks*/
-pre {
-    background-color: #FAFAFA;
-    overflow: auto;
-    font-family:monospace;
-    font-size:11px;
-    border-color: #E1E1E1 ;
-    border-style: dashed none;
-    border-width: 1px;
-    color: #333333;
-    line-height: 120%;
-    padding: 5px;
-}
+/*pre {*/
+    /*background-color: #FAFAFA;*/
+    /*overflow: auto;*/
+    /*font-family:monospace;*/
+    /*font-size:11px;*/
+    /*border-color: #E1E1E1 ;*/
+    /*border-style: dashed none;*/
+    /*border-width: 1px;*/
+    /*color: #333333;*/
+    /*line-height: 120%;*/
+    /*padding: 5px;*/
+/*}*/
 
 /*Chess*/
 [contenteditable]:hover:not(:focus) {

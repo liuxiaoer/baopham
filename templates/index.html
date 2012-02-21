@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Bao Pham</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
-	<meta name="keywords" content="Bao Pham, bphamworld, javascript, html5, computer science, math, ubc, programming, student, blogs" />
-	<meta name="description" content="Bao Pham's personal website" />
-	<link href="css/default.css" rel="stylesheet" type="text/css" media="screen" />	
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Bao Pham</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+    <meta name="keywords" content="Bao Pham, bphamworld, javascript, html5, computer science, math, ubc, programming, student, blogs" />
+    <meta name="description" content="Bao Pham's personal website" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" media="screen" />	
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-	<script src="scripts/jquery.js" type="text/javascript"></script>
+    <script src="scripts/jquery.js" type="text/javascript"></script>
     <script src="scripts/matrix.js" type="text/javascript"></script>
     <script src="scripts/life.js" type="text/javascript"></script>
     <script src="scripts/chess.js" type="text/javascript"></script>
+    <!--SyntaxHighlighter-->
+    <script src="scripts/shCore.js" type="text/javascript"></script>
+    <link href="css/shCore.css" rel="stylesheet" type="text/css"/>
+    <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+    <script src="scripts/shAutoloader.js" type="text/javascript"></script>
+
     <script type="text/javascript"> 
         function toggle (postid, link) { 
             var e = document.getElementById(postid);
@@ -25,10 +31,10 @@
                 link.innerHTML = 'less';
             }
         } 
+        //Google Analytics
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-27192907-1']);
         _gaq.push(['_trackPageview']);
-
         (function() {
          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -52,14 +58,14 @@
 <!-- start page -->
 <div id="page">
 	<div id="page-bg">
-		<div id="latest-post"> <img src="images/newbao.jpg" alt="Bao's picture" width="180" height="180" class="right" />
-			<h1>Welcome to My Personal Website!</h1>
+        <div id="latest-post"> <img src="images/newbao.jpg" alt="Bao's picture" width="180" height="180" class="right" />
+            <h1>Welcome to My Personal Website!</h1>
             <p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href='http://ubc.ca/' target="_blank">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. I created this website as a place for me to explore new technologies, practice my skills and blog on things that I find interesting.</p>
-			<p>I'm interested in web development, algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
-		</div>
-		<!-- start content -->
-		<div id="content">
-			<noscript id="warning">Your javascript is disabled. Please enable your javascript to properly view the page =)</noscript>
+            <p>I'm interested in web development, algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
+        </div>
+        <!-- start content -->
+        <div id="content">
+            <noscript id="warning">Your javascript is disabled. Please enable your javascript to properly view the page =)</noscript>
             <!--euler-->
             <div class="post">
                 <h2 class="title" id="euler">Project Euler: Awesome Site to Practice Your Math and Programming Skills</h2>
@@ -184,75 +190,75 @@
                 </div>
             </div>
             <!-- end chess-->
-			<!--matrix-->
-			<div class="post">
-				<h2 class="title" id="matrix">JavaScript: Matrix Calculator</h2>
-				<p class="byline"><small>Posted on November 27, 2011 by <a href="/">bphamworld</a></small></p>
-				<div class="entry matrix-post">
-					<p>A matrix calculator written in JavaScript :)</p>
-					<div class="matrix">	
-						<div>
+            <!--matrix-->
+            <div class="post">
+                <h2 class="title" id="matrix">JavaScript: Matrix Calculator</h2>
+                <p class="byline"><small>Posted on November 27, 2011 by <a href="/">bphamworld</a></small></p>
+                <div class="entry matrix-post">
+                    <p>A matrix calculator written in JavaScript :)</p>
+                    <div class="matrix">	
+                        <div>
                             Matrix 1:
                             <div class="buttons">
-								<input class="add" type="button" value="+"/>
-								<input class="remove" type="button" value="&#8211;"/>
-							</div>
-						</div>
-						<div class="matrixA inputMatrix">
-							<div class="row">
-								<input type="text" value="1, 2, 3"/>
-							</div>
-							<div class="row">
-								<input type="text" value="4, 5, 6"/>
-							</div>
-							<div class="row">
-								<input type="text" value="7, 8, 9"/>
-							</div>
-						</div>
-					</div>
-					<div class="matrix">
-						<div>
+                                <input class="add" type="button" value="+"/>
+                                <input class="remove" type="button" value="&#8211;"/>
+                            </div>
+                        </div>
+                        <div class="matrixA inputMatrix">
+                            <div class="row">
+                                <input type="text" value="1, 2, 3"/>
+                            </div>
+                            <div class="row">
+                                <input type="text" value="4, 5, 6"/>
+                            </div>
+                            <div class="row">
+                                <input type="text" value="7, 8, 9"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matrix">
+                        <div>
                             Matrix 2:
-							<div class="buttons">
-								<input class="add" type="button" value="+"/>
-								<input class="remove" type="button" value="&#8211;"/>
-							</div>
-						</div>
-						<div class="matrixB inputMatrix">
-							<div class="row">
-								<input type="text" value="1, 2, 3"/>
-							</div>
-							<div class="row">
-								<input type="text" value="4, 5, 6"/>
-							</div>
-							<div class="row">
-								<input type="text" value="7, 8, 9"/>
-							</div>
-						</div>		
-					</div>
-					<div id="selection">
-						<input type="radio" name="method" value="multiply" checked="checked">Multiplication
-						<input type="radio" name="method" value="transpose"/>Transpose
-						<input type="radio" name="method" value="add"/>Addition
-						<input type="radio" name="method" value="subtract"/>Subtraction
-					</div>
-					<div id="compute">
-						<input type="button" value="Compute"/>
-					</div>
-					<div id="answer"></div>
+                            <div class="buttons">
+                                <input class="add" type="button" value="+"/>
+                                <input class="remove" type="button" value="&#8211;"/>
+                            </div>
+                        </div>
+                        <div class="matrixB inputMatrix">
+                            <div class="row">
+                                <input type="text" value="1, 2, 3"/>
+                            </div>
+                            <div class="row">
+                                <input type="text" value="4, 5, 6"/>
+                            </div>
+                            <div class="row">
+                                <input type="text" value="7, 8, 9"/>
+                            </div>
+                        </div>		
+                    </div>
+                    <div id="selection">
+                        <input type="radio" name="method" value="multiply" checked="checked">Multiplication
+                        <input type="radio" name="method" value="transpose"/>Transpose
+                        <input type="radio" name="method" value="add"/>Addition
+                        <input type="radio" name="method" value="subtract"/>Subtraction
+                    </div>
+                    <div id="compute">
+                        <input type="button" value="Compute"/>
+                    </div>
+                    <div id="answer"></div>
                     <script type="text/javascript">computeMatrix()</script>
-				</div>
-			</div>			
-			<!--end matrix-->
-			<!--bashrc-->
-			<div class="post">
-				<h2 class="title" id="bashrc">.bashrc</h2>
-				<p class="byline"><small>Posted in November 12, 2011 by <a href="/">bphamworld</a></small></p>
-				<div class="entry">
-					<p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
+                </div>
+            </div>			
+            <!--end matrix-->
+            <!--bashrc-->
+            <div class="post">
+                <h2 class="title" id="bashrc">.bashrc</h2>
+                <p class="byline"><small>Posted in November 12, 2011 by <a href="/">bphamworld</a></small></p>
+                <div class="entry">
+                    <p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
                     <!--hide-->
                     <div id="hide_3" style="display:none">
-<pre><code>
+<pre class="brush: bash">
 # Configure iTerm's tab title to display current directory 
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
@@ -366,27 +372,26 @@ function rm() {
 growl() {
     echo -e $'\e]9;'${1}'\007' ; return  ;
 }
-</code>
 </pre>
                     </div>
                     <!--end hide-->
-					<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_3', this)">more</a></p>
-				</div>
-			</div>
-			<!--end bashrc-->
-			<!--Textmate-->
-			<div class="post">
-				<h2 class="title" id="textmate">TextMate - Configure Python Bundle for iTerm</h2>
+                    <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_3', this)">more</a></p>
+                </div>
+            </div>
+            <!--end bashrc-->
+            <!--Textmate-->
+            <div class="post">
+                <h2 class="title" id="textmate">TextMate - Configure Python Bundle for iTerm</h2>
                 <p class="byline"><small>Posted on November 18, 2011 by <a href="/">bphamworld</a></small></p>
 
-				<div class="entry">
-					<p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
-					<p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
-					<p>Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
+                <div class="entry">
+                    <p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
+                    <p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
+                    <p>Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
                     Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
                     <!--hide-->
-					<div id="hide_2" style="display:none">
-<pre><code>
+                    <div id="hide_2" style="display:none">
+<pre class="brush: applescript">
 #!/bin/bash
 TPY=${TM_PYTHON:-python}
 
@@ -411,62 +416,61 @@ osascript &lt;&lt;- APPLESCRIPT
 		end tell
 	end tell
 APPLESCRIPT
-</code>
 </pre>
-					<p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
-					<p>DONE!</p>
-					<p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
-					</div>
+                        <p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
+                        <p>DONE!</p>
+                        <p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
+                    </div>
                     <!--end hide-->
-					<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_2', this)">more</a></p>
-				</div>
-			</div>
+                    <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_2', this)">more</a></p>
+                </div>
+            </div>
 		
-			<!--Game Of Life-->
-			<div class="post">
-				<h2 class="title" id="life">JavaScript and Canvas: Conway's Game of Life</h2>
+            <!--Game Of Life-->
+            <div class="post">
+                <h2 class="title" id="life">JavaScript and Canvas: Conway's Game of Life</h2>
                 <p class="byline"><small>Posted on May 13, 2011 by <a href="/">bphamworld</a></small></p>
-				<div class="entry">
-					<p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
-					<strong>Supported Browsers:</strong>
-						<ul>
-							<li>Firefox 4+</li>
-							<li>Google Chrome</li>
-							<li>Opera 10.6+</li>
-							<li>Apple Safari 4+</li>
-                            <li>Internet Explorer 9</li>
-						</ul>
+                <div class="entry">
+                    <p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
+                    <strong>Supported Browsers:</strong>
+                    <ul>
+                        <li>Firefox 4+</li>
+                        <li>Google Chrome</li>
+                        <li>Opera 10.6+</li>
+                        <li>Apple Safari 4+</li>
+                        <li>Internet Explorer 9</li>
+                    </ul>
                     <!--hide-->
-					<div id="hide_1" style="display:none">
-					<p><i>From wikipedia</i>:</p>
-						<blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
-							<strong>Rules:</strong>
-							<ol>
-								<li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
-								<li>Any live cell with two or three live neighbours lives on to the next generation.</li>
-								<li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
-								<li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
-							</ol>
-						</blockquote>
+                    <div id="hide_1" style="display:none">
+                        <p><i>From wikipedia</i>:</p>
+                        <blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
+                            <strong>Rules:</strong>
+                            <ol>
+                                <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+                                <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+                                <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+                                <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
+                            </ol>
+                        </blockquote>
 
-					<canvas id="canvas_life"></canvas>
-					<div id="buttons_life">
-						<button id="generate" type="button">Generate Random Cells</button>
-						<button id="run" type="button">Run</button>
-						<button id="stop" type="button">Stop</button> 
-						<button id="clear" type="button">Clear</button>
-					</div>
+                        <canvas id="canvas_life"></canvas>
+                        <div id="buttons_life">
+                            <button id="generate" type="button">Generate Random Cells</button>
+                            <button id="run" type="button">Run</button>
+                            <button id="stop" type="button">Stop</button> 
+                            <button id="clear" type="button">Clear</button>
+                        </div>
                     </div>
                     <!--end hide-->
                     <script type="text/javascript">startLife()</script>
-				</div>
-				<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
-			</div>
-			<!--end Game of Life-->			
-		</div>
-		<!-- end content -->
+                </div>
+                <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
+            </div>
+            <!--end Game of Life-->			
+        </div>
+        <!-- end content -->
 		
-		<!-- start sidebar -->
+        <!-- start sidebar -->
         <div id="sidebar">
             <ul>
                 <li>
@@ -499,5 +503,12 @@ APPLESCRIPT
 <div id="footer">
 	<p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
 </div>
+<script type="text/javascript">
+    SyntaxHighlighter.autoloader(
+            'applescript     /scripts/shBrushAppleScript.js',
+            'bash            /scripts/shBrushBash.js'
+    );
+    SyntaxHighlighter.all();
+</script>
 </body>
 </html>
