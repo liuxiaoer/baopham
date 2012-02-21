@@ -18,9 +18,6 @@ handlers:
 
 - url: /images
   static_dir: static/css/images
-
-- url: /syntaxhl
-  static_dir: static/syntaxhighlighter
   
 - url: /favicon\.ico
   static_files: static/css/images/favicon.ico
