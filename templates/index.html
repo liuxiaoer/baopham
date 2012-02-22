@@ -14,12 +14,6 @@
     <script src="scripts/matrix.js" type="text/javascript"></script>
     <script src="scripts/life.js" type="text/javascript"></script>
     <script src="scripts/chess.js" type="text/javascript"></script>
-    <!--SyntaxHighlighter-->
-    <script src="scripts/shCore.js" type="text/javascript"></script>
-    <script src="scripts/shAutoloader.js" type="text/javascript"></script>
-    <link href="css/shCore.css" rel="stylesheet" type="text/css"/>
-    <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css"/>
-
     <script type="text/javascript"> 
         function toggle (postid, link) { 
             var e = document.getElementById(postid);
@@ -258,7 +252,7 @@
                     <p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
                     <!--hide-->
                     <div id="hide_3" style="display:none">
-                        <script type="syntaxhighlighter" class="brush: bash">
+                        <pre class="brush: bash">
                             # Configure iTerm's tab title to display current directory 
                             export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
@@ -372,7 +366,7 @@
                             growl() {
                                 echo -e $'\e]9;'${1}'\007' ; return  ;
                             }
-                        </script>
+                        </pre>
                     </div>
                     <!--end hide-->
                     <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_3', this)">more</a></p>
@@ -391,7 +385,7 @@
                     Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
                     <!--hide-->
                     <div id="hide_2" style="display:none">
-                        <script type="syntaxhighlighter" class="brush: applescript">
+                        <pre class="brush: applescript">
                             #!/bin/bash
                             TPY=${TM_PYTHON:-python}
 
@@ -416,7 +410,7 @@
                                     end tell
                                 end tell
                             APPLESCRIPT
-                        </script>
+                        </pre>
                         <p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
                         <p>DONE!</p>
                         <p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
@@ -503,12 +497,11 @@
 <div id="footer">
 	<p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
 </div>
-<script type="text/javascript">
-    SyntaxHighlighter.autoloader(
-            'applescript     /scripts/shBrushAppleScript.js',
-            'bash            /scripts/shBrushBash.js'
-    );
-    SyntaxHighlighter.all();
-</script>
 </body>
+<!--SyntaxHighlighter-->
+<link href="css/shCore.css" rel="stylesheet" type="text/css"/>
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+<script src="scripts/shCore.js" type="text/javascript"></script>
+<script src="scripts/shAutoloader.js" type="text/javascript"></script>
+<script src="scripts/syntaxmain.js" type="text/javascript"></script>
 </html>
