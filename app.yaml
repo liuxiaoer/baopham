@@ -13,8 +13,8 @@ handlers:
 - url: /css
   static_dir: static/css
 
-- url: /scripts
-  static_dir: static/scripts
+- url: /js
+  static_dir: static/js
 
 - url: /images
   static_dir: static/css/images
