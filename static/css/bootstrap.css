@@ -112,7 +112,7 @@ body {
   /* background-color: #333333; */
   /* color: #ffffff; */
    background: #333333 repeat-x;
-      color: #666666;
+   color: #666666;
 }
 a {
   color: #0088cc;
@@ -145,7 +145,6 @@ a:hover {
 }
 .span3 {
   width: 220px;
-  padding-left: 100px;
 }
 .span4 {
   width: 300px;
@@ -2517,7 +2516,7 @@ button.btn.small, input[type="submit"].btn.small {
   float: left;
   display: block;
   padding: 8px 20px 12px;
-  margin-left: -60px;
+  margin-left: -70px;
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
@@ -3500,7 +3499,7 @@ a.thumbnail:hover {
 /* ========= */
 #page {
     padding-top: 60px;
-    width: 1250px;
+    width: 1100px;
     margin: 0 auto;
     background: #FFFFFF;
 }
@@ -3511,13 +3510,13 @@ img.right {
 }
 
 .post {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
     border-bottom: 1px solid #E7E7E7;
 }
 
 .last-post {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-bottom: 10px;
 }
 
@@ -3539,11 +3538,46 @@ img.right {
     color: #0088CC;
 }
 
+#bookmarks li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* :target {  */
+/*     -moz-box-shadow:  0.2em 0.2em 0.3em #888; */
+/*  -webkit-box-shadow:  0.2em 0.2em 0.3em #888; */
+/*  padding-left: 10px; */
+/*  display: block; */
+/*  line-height: 40px; */
+/* } */
+
+footer p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    text-align: center;
+    /* font-size: smaller; */
+    color: #666666;
+}
+
+footer a {
+    color: #666666;
+}
+
+#content {
+    float: left;
+}
+
+#sidebar {
+    float: right;
+    width: 20%;
+}
+
 /* Game of Life */
 #canvas_life {
     border-style: solid;
-    width: 750px;
-    height: 320px;
+    width: 90%;
+    height: 50%;
 }
 
 #buttons_life{
@@ -3587,30 +3621,29 @@ img.right {
 /* Chess */
 table .odd {
     background-color: #F8F8F8 ;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     text-align: center;
-    font-size: 32px;
+    font-size: 34px;
 }
 table .even {
     background-color: #BDBDBD;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     text-align: center;
-    font-size: 32px;
+    font-size: 34px;
 } 
 
-footer p {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: 0;
-    text-align: center;
-    /* font-size: smaller; */
-    color: #666666;
+#editable {
+    width: 100%; 
+    height: 280px;
+    border: 1px dotted;
+    overflow: auto;
+    padding: 5px;
 }
 
-footer a {
-    color: #666666;
+#editable-sec {
+    width: 367px;
+    padding-top: 20px;
 }
-
 

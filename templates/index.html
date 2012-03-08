@@ -10,6 +10,7 @@
         <link href="css/bootstrap.css" rel="stylesheet"/>
         <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
         <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+        <link href="css/prettify.css" type="text/css" rel="stylesheet" />
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -20,29 +21,7 @@
         <script src="js/chess.js" type="text/javascript"></script>
         <script src="js/matrix.js" type="text/javascript"></script>
         <script src="js/life.js" type="text/javascript"></script>
-        <link href="css/prettify.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="js/prettify.js"></script>
-        <script type="text/javascript"> 
-            function toggle (postid, link) { 
-                var e = document.getElementById(postid);
-                if(e.style.display == ''){
-                    e.style.display = 'none';
-                    link.innerHTML = 'more';
-                } else {
-                    e.style.display = '';
-                    link.innerHTML = 'less';
-                }
-            } 
-            //Google Analytics
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-27192907-1']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-             })()
-        </script>
+
     </head>
 
     <body onload="prettyPrint()">
@@ -63,13 +42,13 @@
         <div id="page">
             <div class="container">
                 <div class="hero-unit">
-                    <h2>Welcome to My Personal Website</h2>  <img src="images/newbao.jpg" alt="Bao's picture" width="200" height="200" class="right" />
+                    <h2>Welcome to My Personal Website</h2>  <img src="images/newbao.jpg" alt="Bao's picture" width="190" height="190" class="right" />
                     <p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href='http://ubc.ca/' target="_blank">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. I created this website as a place for me to explore new technologies, practice my skills and blog on things that I find interesting.</p>
                     <p>I'm interested in web development, algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
                 </div> <!--/.hero-unit-->
 
                 <div class="row">
-                    <div class="span8">
+                    <div class="span7" id="content">
                         <!--bootstrap post-->
                         <div class="post">
                             <h2 id="bootstrap">Bootstrap Experiment</h2>
@@ -80,7 +59,6 @@
                             <p>This could be a permanent change or just temporary, who knows if tomorrow I will see something even cooler than this?</p>
                             <p>And finally, here is something for your curiosity: interested in how much different my old website looks compared to this one? Take a look <a href="http://4.bphamworld.appspot.com/">here</a> ... Free CSS Template heh &gt;&lt;</p>
                         </div> <!--/.post bootstrap-->
-                    
                         <!--euler post-->
                         <div class="post">
                             <h2 id="euler">Project Euler: Awesome Site to Practice Your Math and Programming Skills</h2>
@@ -96,7 +74,7 @@
                             <p class="byline"><small>Posted on Dec 5, 2011 by <a href="/">bphamworld</a></small></p>
                             <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
                             <!-- chess table -->
-                            <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);" style="float: left;">
+                            <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);">
                                 <table style="border-collapse: collapse" border="1">
                                     <tr>
                                         <td id="1" class="black odd" draggable="true">&#9820;</td>
@@ -180,14 +158,14 @@
                                     </tr>
                                 </table>
                             </div> <!--/chess table-->
-                            <div style="float: right;">
-                                <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);" style="width: 365px; height: 335px; border: 1px dotted; overflow: auto;">
+                            <div id="editable-sec">
+                                <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);">
                                 </section>
                                 <div style="padding-top: 5px;">
-                                    <input type="button" id="resetChess" value="Reset game" />
-                                    <input type="button" id="clearNotes" value="Clear local storage" />
+                                    <input class="btn" type="button" id="resetChess" value="Reset game" />
+                                    <input class="btn" type="button" id="clearNotes" value="Clear local storage" />
                                 </div>
-                                <p style="width: 300px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> turned off or doesn't support it unfortunately)</p>
+                                <p style="width: 350px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> turned off or doesn't support it unfortunately)</p>
                             </div> <!--/editable section-->
 
                             <div style="clear: both;">&nbsp;</div>
@@ -212,8 +190,8 @@
                                     <div>
                                         Matrix 1:
                                         <div class="buttons">
-                                            <input class="add" type="button" value="+"/>
-                                            <input class="remove" type="button" value="&#8211;"/>
+                                            <input class="add btn" type="button" value="+"/>
+                                            <input class="remove btn" type="button" value="&#8211;"/>
                                         </div>
                                     </div>
                                     <div class="matrixA inputMatrix">
@@ -232,8 +210,8 @@
                                     <div>
                                         Matrix 2:
                                         <div class="buttons">
-                                            <input class="add" type="button" value="+"/>
-                                            <input class="remove" type="button" value="&#8211;"/>
+                                            <input class="add btn" type="button" value="+"/>
+                                            <input class="remove btn" type="button" value="&#8211;"/>
                                         </div>
                                     </div>
                                     <div class="matrixB inputMatrix">
@@ -259,7 +237,7 @@
                                     <label for="substract">Subtraction</label>
                                 </div>
                                 <div id="compute">
-                                    <input type="button" value="Compute"/>
+                                    <input class="btn" type="button" value="Compute"/>
                                 </div>
                                 <div id="answer"></div>
                                 <script type="text/javascript">computeMatrix()</script>
@@ -461,10 +439,10 @@ APPLESCRIPT
 
                                 <canvas id="canvas_life"></canvas>
                                 <div id="buttons_life">
-                                    <button id="generate" type="button">Generate Random Cells</button>
-                                    <button id="run" type="button">Run</button>
-                                    <button id="stop" type="button">Stop</button> 
-                                    <button id="clear" type="button">Clear</button>
+                                    <button class="btn" id="generate" type="button">Generate Random Cells</button>
+                                    <button class="btn" id="run" type="button">Run</button>
+                                    <button class="btn" id="stop" type="button">Stop</button> 
+                                    <button class="btn" id="clear" type="button">Clear</button>
                                 </div>
                             </div>
                             <!--/hide-->
@@ -474,7 +452,7 @@ APPLESCRIPT
                     </div><!--/.span-->
 
                     <!-- side bar -->
-                    <div class="span3">
+                    <div class="span3" id="sidebar">
                         <div class="well sidebar-nav">
                             <ul class="nav nav-list">
                                 <li class="nav-header">Category</li>
@@ -484,16 +462,16 @@ APPLESCRIPT
 
                                 <li class="nav-header">Recent Posts</li>
                                 <li><a href="#bootstrap">Bootstrap Experiment</a></li>
-                                <li><a href="#euler">Project Euler: Awesome Site to Practice Your Math and ...</a></li>
+                                <li><a href="#euler">Project Euler: Awesome Site to Practice Your...</a></li>
                                 <li><a href="#chess">Chess</a></li>
                                 <li><a href="#matrix">JavaScript: Matrix Calculator</a></li>
                                 <li><a href="#bashrc">.bashrc</a></li>
-                                <li><a href="#textmate">TextMate - Configure Python Bundle for iTerm</a></li>
+                                <li><a href="#textmate">TextMate - Configure Python Bundle for...</a></li>
                                 <li><a href="#life">JavaScript and Canvas: Conway's Game of Life</a></li>
                             </ul>
                         </div> <!--/.well -->
                     </div> <!--/side bar-->
-
+                    <div style="clear: both;">&nbsp;</div>
                 </div> <!--/.row-->
 
                 <hr>
@@ -503,6 +481,27 @@ APPLESCRIPT
         <footer>
             <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Theme by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
         </footer>
+        <script type="text/javascript"> 
+            function toggle (postid, link) { 
+                var e = document.getElementById(postid);
+                if(e.style.display == ''){
+                    e.style.display = 'none';
+                    link.innerHTML = 'more';
+                } else {
+                    e.style.display = '';
+                    link.innerHTML = 'less';
+                }
+            } 
+            //Google Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27192907-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })()
+        </script>
     </body>
 </html>
 
