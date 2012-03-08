@@ -22,14 +22,14 @@
 
     </head>
 
-    <body>
+    <body onload="detectHash()">
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="brand" href="/"><b>BPm'sWorld</b></a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="/resume">Resume</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<b class="caret"></b></a>
@@ -256,6 +256,23 @@
              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
              })()
+        </script>
+        <script type="text/javascript">
+            function detectHash() {
+                function maybeScrollToHash() {
+                    if (window.location.hash && $(window.location.hash).length) {
+                        var newTop = $(window.location.hash).offset().top - 40;
+                        $(window).scrollTop(newTop);
+                    }
+                }
+
+                $(window).bind('hashchange', function() {
+                        maybeScrollToHash();
+                        });
+
+                maybeScrollToHash();
+            };
+            $('a[href="#bootstrap"]').on('click', detectHash());
         </script>
     </body>
 </html>
