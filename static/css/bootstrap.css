@@ -3605,6 +3605,9 @@ footer a {
     float: right;
 }
 
+#compute {
+    padding-bottom: 10px;
+}
 /* Radio buttons */
 #selection input.radio {
     display: inline;
