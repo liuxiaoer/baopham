@@ -60,9 +60,9 @@ input,button,textarea,select,optgroup,option {
 }
 input,button,textarea,select {*font-size:100%;
 }
-/*body{*/
-/*font: 13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;*/
-/*}*/
+/* body{ */
+/* font: 13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small; */
+/* } */
 select,input,button,textarea,button {
     font: 99% arial,helvetica,clean,sans-serif;
 }

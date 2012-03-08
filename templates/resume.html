@@ -1,44 +1,66 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
     <head>
-        <title>Resume</title>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Bao Pham, bphamworld, computer science, math, ubc, programming, student, blogs, resume" />
-        <meta name="description" content="Bao Pham's Resume" />
-        <link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="css/yui-yahoo.css" media="all" />
+        <meta charset="utf-8">
+        <title>Bao Pham</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Bao Pham"/>
+
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
+                <link rel="stylesheet" type="text/css" href="css/yui-yahoo.css" media="all" />
         <link rel="stylesheet" type="text/css" href="css/resume.css" media="all" />
-        <script type="text/javascript">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery.js"></script>
+        <script src="js/chess.js" type="text/javascript"></script>
+        <script src="js/matrix.js" type="text/javascript"></script>
+        <script src="js/life.js" type="text/javascript"></script>
+        <script type="text/javascript"> 
+            function toggle (postid, link) { 
+                var e = document.getElementById(postid);
+                if(e.style.display == ''){
+                    e.style.display = 'none';
+                    link.innerHTML = 'more';
+                } else {
+                    e.style.display = '';
+                    link.innerHTML = 'less';
+                }
+            } 
+            //Google Analytics
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-27192907-1']);
             _gaq.push(['_trackPageview']);
-
             (function() {
              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-             })();
-</script>
+             })()
+        </script>
     </head>
-    <body>
-        <!-- start header -->
-        <div id="logo">
-            <h1 id="logo-text"><a href="/">BPm's<span class="gray">World</span></a></h1>
-        </div>
-        <div id="menu">
-            <ul>
-                <li>
-                    <a href="/">Homepage</a>
-                </li>
-                <li class="current_page_item">
-                    <a href="/resume">Resume</a>
-                </li>
 
-            </ul>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/">BPm'sWorld</a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li><a href="/">Home</a></li>
+                            <li class="active"><a href="/resume">Resume</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-->
+            </div>
+
         </div>
-        <div id="page">
-            <div id="page-bg">
+
                 <div class="resume">
                     <div id="doc2" class="yui-t7">
                         <div id="inner">
@@ -140,7 +162,7 @@
                                                     <h2>Personal Website</h2>
                                                     <p>&#8226; <a href="/">This site!</a></p>
                                                     <p>&#8226; A site for me to learn and explore new technologies</p>	
-                                                    <p>&#8226; Includes interactive chess game, matrix calculator, Game of Life animation</p>                                               											</div>
+                                                    <p>&#8226; Includes interactive chess game, matrix calculator, Game of Life animation</p>                                               											                                    </div>
                                             </div>
                                         </div>													
                                         <div class="yui-gf">
@@ -178,7 +200,7 @@
                                                 </div>
                                                 <div class="job">
                                                     <h2>
-                                                        UBC Access & Diversity
+                                                        UBC Access &amp; Diversity
                                                     </h2>
                                                     <h3>
                                                         Note Taker
@@ -255,10 +277,13 @@
                         </div><!-- // inner -->
                     </div><!--// doc -->
                 </div>
-            </div>
-        </div>
-        <div id="footer">
-            <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
-        </div>
+
+                <!-- <hr> -->
+
+        <footer>
+            <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Theme by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+        </footer>
     </body>
 </html>
+
+

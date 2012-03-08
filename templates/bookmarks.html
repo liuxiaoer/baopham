@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Bookmarks</title>
+        <meta charset="utf-8">
+        <title>My Bookmarks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Bao Pham"/>
+
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
         <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
-        <meta name="keywords" content="Bao Pham, bphamworld, bookmarks, computer science, math, ubc, programming, student, blogs" />
-        <meta name="description" content="Bao Pham's personal website" />
-        <link href="css/default.css" rel="stylesheet" type="text/css" media="screen" />	
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script type="text/javascript">
+
+        <script type="text/javascript"> 
+              //Google Analytics
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-27192907-1']);
             _gaq.push(['_trackPageview']);
-
             (function() {
              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -22,94 +28,88 @@
              })()
         </script>
     </head>
-<body>
-    <!-- start header -->
-    <div id="logo">
-        <h1 id="logo-text"><a href="/">BPm's<span class="gray">World</span></a></h1>
-    </div>
 
-    <div id="menu">
-        <ul>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/resume">Resume</a></li>
-        </ul>
-    </div>
-    <!-- end header -->
-    <!-- start page -->
-    <div id="page">
-        <div id="page-bg">
-            <div id="category"> 
-                <h1>My Bookmarks</h1>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/"><b>BPm'sWorld</b></a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/resume">Resume</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-->
             </div>
-            <!-- start content -->
-            <div id="content">
-                <noscript id="warning">Your javascript is disabled. Please enable your javascript to properly view the page =)</noscript>
-                <div id="bookmarks">
-                    <ul>
-                        <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
-                        <li><a href="http://visualjquery.com/">Visual JQuery</a></li>
-                        <li><a href="http://qntm.org/files/perl/perl.html">Learn Perl in about 2 hours 30 minutes</a></li>
-                        <li><a href="http://touchmathematics.org/">Touch Mathematics</a></li>
-                        <li><a href="http://instagram-engineering.tumblr.com/">Instagram Engineering Challenge: The Unshredder</a></li>
-                        <li><a href="http://code.recollect.com/">Solving Instagram’s Unshredder with Mechanical Turk and $0.50</a></li>
-                        <li><a href="http://www.vim.org/scripts/script.php?script_id=2423">Vim Script for Gist</a> (for Github and Vim fans)</li>
-                        <li><a href="http://remysharp.com/2009/01/07/html5-enabling-script/">HTML5 Enabling Script</a> (for IE)</li>
-                        <li><a href="http://www.exsprite.com/">JavaScript Library for HTML5 Canvas</a></li>
-                        <li><a href="http://www.jamisbuck.org/presentations/rubyconf2011/index.html">"Algorithms" Is Not a Four-Letter Word</a> (very cool)</li>
-                        <li><a href="http://www.ibm.com/developerworks/linux/library/l-recurs/index.html">Mastering Recursive Programming</a></li>
-                        <li><a href="http://vanillajava.blogspot.com/2011/10/randomly-no-so-random.html">Vanilla Java: Randomly Not So Random</a></li>
-                        <li><a href="http://openstudy.com/">Open Study - Make The World Your Study Group</a></li>
-                        <li><a href="http://vimandvision.net/">Vim and Vision</a></li>
-                        <li><a href="https://github.com/cmpolis/Pagify">Pagify.js</a> (JQuery plugin for creating one page websites)</li>
-                        <li><a href="http://introducinghtml5.com/">Introducing HTML5</a> (recommended!!)</li>
-                        <li><a href="http://www.djangobook.com/en/2.0/">The Django Book</a></li>
-                        <li><a href="http://ditaa.org/ditaa/">Diagrams Through ASCII Art</a></li>
-                        <li><a href="http://speakerdeck.com/u/naoya/p/using-only-coffeescript-to-build-an-smartphone-application">Using Only CoffeScript to Build a SmartPhone Application</a></li>
-                        <li><a href="http://diycomputerscience.com/courses/course/the-elements-of-computing-systems">The Elements of Computing Systems (From NAND to Tetris)</a></li>
-                        <li><a href="http://coding.smashingmagazine.com/2010/04/20/seven-javascript-things-i-wish-i-knew-much-earlier-in-my-career/">Seven JavaScript Things I Wish I Knew Much Earlier In My Career</a></li>
-                        <li><a href="http://hacks.mozilla.org/2011/12/faster-canvas-pixel-manipulation-with-typed-arrays/">Faster Canvas Pixel Manipulation with Typed Arrays</a></li>
-                        <li><a href="http://arxiv.org/PS_cache/arxiv/pdf/1110/1110.1556v1.pdf">Jewish Math Problems</a></li>
-                        <li><a href="http://getpython3.com/diveintopython3/">Dive Into Python 3</a></li>
-                        <li><a href="http://slides.html5rocks.com/#landing-slide">Device Orientation in HTML5</a></li>
-                        <li><a href="http://rubylearning.org/class/">Ruby Learning</a></li>
-                    </ul>  
-                </div>  
-            </div>
-            <!-- end content -->
 
-            <!-- start sidebar -->
-            <div id="sidebar">
-                <ul>
-                    <li>
-                        <h2>Categories</h2>
-                        <ul>
-                            <li><a href="/javascript">JavaScript</a>(2)</li>
-                            <li><a href="/html5">HTML5</a>(2)</li>
-                            <li><a href="/bookmarks">Bookmarks</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h2>Recent Posts</h2>
-                        <ul>
-                            <li><a href="/#euler">Project Euler: Awesome Site to Practice Your Math...</a></li>
-                            <li><a href="/#chess">Chess</a></li>
-                            <li><a href="/#matrix">JavaScript: Matrix Calculator</a></li>
-                            <li><a href="/#bashrc">.bashrc</a></li>
-                            <li><a href="/#textmate">TextMate - Configure Python Bundle for iTerm</a></li>
-                            <li><a href="/#life">JavaScript and Canvas: Conway's Game of Life</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div> 
-            <!--end sidebar -->		
-            <div style="clear: both;">&nbsp;</div>
         </div>
-    </div>
-    <!-- end page -->
+        <div id="page">
+            <div class="container">
+                <div id="category"> 
+                    <h1>JavaScript Posts</h1>
+                </div>
+                <div class="row">
+                    <div id="bookmarks" class="span8">
+                        <ul>
+                            <li><a href="https://news.ycombinator.com/">Hacker News</a></li>
+                            <li><a href="http://visualjquery.com/">Visual JQuery</a></li>
+                            <li><a href="http://qntm.org/files/perl/perl.html">Learn Perl in about 2 hours 30 minutes</a></li>
+                            <li><a href="http://touchmathematics.org/">Touch Mathematics</a></li>
+                            <li><a href="http://instagram-engineering.tumblr.com/">Instagram Engineering Challenge: The Unshredder</a></li>
+                            <li><a href="http://code.recollect.com/">Solving Instagram’s Unshredder with Mechanical Turk and $0.50</a></li>
+                            <li><a href="http://www.vim.org/scripts/script.php?script_id=2423">Vim Script for Gist</a> (for Github and Vim fans)</li>
+                            <li><a href="http://remysharp.com/2009/01/07/html5-enabling-script/">HTML5 Enabling Script</a> (for IE)</li>
+                            <li><a href="http://www.exsprite.com/">JavaScript Library for HTML5 Canvas</a></li>
+                            <li><a href="http://www.jamisbuck.org/presentations/rubyconf2011/index.html">"Algorithms" Is Not a Four-Letter Word</a> (very cool)</li>
+                            <li><a href="http://www.ibm.com/developerworks/linux/library/l-recurs/index.html">Mastering Recursive Programming</a></li>
+                            <li><a href="http://vanillajava.blogspot.com/2011/10/randomly-no-so-random.html">Vanilla Java: Randomly Not So Random</a></li>
+                            <li><a href="http://openstudy.com/">Open Study - Make The World Your Study Group</a></li>
+                            <li><a href="http://vimandvision.net/">Vim and Vision</a></li>
+                            <li><a href="https://github.com/cmpolis/Pagify">Pagify.js</a> (JQuery plugin for creating one page websites)</li>
+                            <li><a href="http://introducinghtml5.com/">Introducing HTML5</a> (recommended!!)</li>
+                            <li><a href="http://www.djangobook.com/en/2.0/">The Django Book</a></li>
+                            <li><a href="http://ditaa.org/ditaa/">Diagrams Through ASCII Art</a></li>
+                            <li><a href="http://speakerdeck.com/u/naoya/p/using-only-coffeescript-to-build-an-smartphone-application">Using Only CoffeScript to Build a SmartPhone Application</a></li>
+                            <li><a href="http://diycomputerscience.com/courses/course/the-elements-of-computing-systems">The Elements of Computing Systems (From NAND to Tetris)</a></li>
+                            <li><a href="http://coding.smashingmagazine.com/2010/04/20/seven-javascript-things-i-wish-i-knew-much-earlier-in-my-career/">Seven JavaScript Things I Wish I Knew Much Earlier In My Career</a></li>
+                            <li><a href="http://hacks.mozilla.org/2011/12/faster-canvas-pixel-manipulation-with-typed-arrays/">Faster Canvas Pixel Manipulation with Typed Arrays</a></li>
+                            <li><a href="http://arxiv.org/PS_cache/arxiv/pdf/1110/1110.1556v1.pdf">Jewish Math Problems</a></li>
+                            <li><a href="http://getpython3.com/diveintopython3/">Dive Into Python 3</a></li>
+                            <li><a href="http://slides.html5rocks.com/#landing-slide">Device Orientation in HTML5</a></li>
+                            <li><a href="http://rubylearning.org/class/">Ruby Learning</a></li>
+                        </ul>  
+                    </div><!--/bookmarks-->  
+                    <!-- side bar -->
+                    <div class="span3">
+                        <div class="well sidebar-nav">
+                            <ul class="nav nav-list">
+                                <li class="nav-header">Category</li>
+                                <li class="active"><a href="/javascript">JavaScript (2)</a></li>
+                                <li><a href="/html5">HTML5 (2)</a></li>
+                                <li><a href="/bookmarks">Bookmarks</a></li>
 
-    <div id="footer">
-        <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
-    </div>
+                                <li class="nav-header">Recent Posts</li>
+                                <li><a href="/#bootstrap">Bootstrap Experiment</a></li>
+                                <li><a href="/#euler">Project Euler: Awesome Site to Practice Your Math and ...</a></li>
+                                <li><a href="#chess">Chess</a></li>
+                                <li><a href="/#matrix">JavaScript: Matrix Calculator</a></li>
+                                <li><a href="/#bashrc">.bashrc</a></li>
+                                <li><a href="/#textmate">TextMate - Configure Python Bundle for iTerm</a></li>
+                                <li><a href="#life">JavaScript and Canvas: Conway's Game of Life</a></li>
+                            </ul>
+                        </div> <!--/.well -->
+                    </div> <!--/side bar-->
+                </div><!--/.row--> 
+                <hr>
 
-</body>
+            </div> <!-- /container -->
+        </div><!--/page-->                
+        <footer>
+            <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Theme by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+        </footer>
+    </body>
 </html>
+
+
+

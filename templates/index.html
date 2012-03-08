@@ -1,507 +1,508 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Bao Pham</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
-    <meta name="keywords" content="Bao Pham, bphamworld, javascript, html5, computer science, math, ubc, programming, student, blogs" />
-    <meta name="description" content="Bao Pham's personal website" />
-    <link href="css/default.css" rel="stylesheet" type="text/css" media="screen" />	
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/matrix.js" type="text/javascript"></script>
-    <script src="js/life.js" type="text/javascript"></script>
-    <script src="js/chess.js" type="text/javascript"></script>
-    <script type="text/javascript"> 
-        function toggle (postid, link) { 
-            var e = document.getElementById(postid);
-            if(e.style.display == ''){
-                e.style.display = 'none';
-                link.innerHTML = 'more';
-            } else {
-                e.style.display = '';
-                link.innerHTML = 'less';
-            }
-        } 
-        //Google Analytics
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-27192907-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-         })()
-    </script>
-</head>
-<body>
-<!-- start header -->
-<div id="logo">
-	<h1 id="logo-text"><a href="/">BPm's<span class="gray">World</span></a></h1>
-</div>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bao Pham</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Bao Pham"/>
 
-<div id="menu">
-	<ul>
-		<li class="current_page_item"><a href="/">Homepage</a></li>
-		<li><a href="/resume">Resume</a></li>
-	</ul>
-</div>
-<!-- end header -->
-<!-- start page -->
-<div id="page">
-	<div id="page-bg">
-        <div id="latest-post"> <img src="images/newbao.jpg" alt="Bao's picture" width="180" height="180" class="right" />
-            <h1>Welcome to My Personal Website!</h1>
-            <p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href='http://ubc.ca/' target="_blank">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. I created this website as a place for me to explore new technologies, practice my skills and blog on things that I find interesting.</p>
-            <p>I'm interested in web development, algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery.js"></script>
+        <script src="js/chess.js" type="text/javascript"></script>
+        <script src="js/matrix.js" type="text/javascript"></script>
+        <script src="js/life.js" type="text/javascript"></script>
+        <link href="css/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/prettify.js"></script>
+        <script type="text/javascript"> 
+            function toggle (postid, link) { 
+                var e = document.getElementById(postid);
+                if(e.style.display == ''){
+                    e.style.display = 'none';
+                    link.innerHTML = 'more';
+                } else {
+                    e.style.display = '';
+                    link.innerHTML = 'less';
+                }
+            } 
+            //Google Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27192907-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })()
+        </script>
+    </head>
+
+    <body onload="prettyPrint()">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/"><b>BPm'sWorld</b></a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/resume">Resume</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-->
+            </div>
+
         </div>
-        <!-- start content -->
-        <div id="content">
-            <noscript id="warning">Your javascript is disabled. Please enable your javascript to properly view the page =)</noscript>
-            <!--euler-->
-            <div class="post">
-                <h2 class="title" id="euler">Project Euler: Awesome Site to Practice Your Math and Programming Skills</h2>
-                <p class="byline"><small>Posted on Jan 25, 2012 by <a href="/">bphamworld</a></small></p>
-                <div class="entry">
-                    <p>I've recently started to participate in this site <a href="http://projecteuler.net/">Project Euler</a>. It's a website with a series of mathematics/programming problems, ranging from easy to very hard. Some problems, if not written in the right algorithm can take more than 5 minutes to get the result (personal experience, I forgot that it was running and went to do something else o.o). So it only matters if you use correct and efficient algorithms. These problems are meant to be solved in only less than a minute.</p>
-                    <p>Now I'm quite addicted to the thrilling feeling of getting the right answer :D. There are certainly numerous solutions out there on the web (and I admit, sometimes I have to resort to them when I'm stuck), but it's always more exciting to try and learn new algorithms and apply them to the problems.</p>
-                    <p>Check out my Git repository of my solutions (mostly in Python because I find it faster and neater to code, no?) to some of the Euler questions: <a href="https://github.com/baopham/projectEuler">baopham/projectEuler</a></p>
-                <img src="http://projecteuler.net/profile/baopham.png" alt="My Euler badge"/>
-                </div>
-            </div>
-            <!--end euler-->
-            <!--chess-->
-            <div class="post">
-                <h2 class="title" id="chess">Chess</h2>
-                <p class="byline"><small>Posted on Dec 5, 2011 by <a href="/">bphamworld</a></small></p>
-                <div class="entry">
-                    <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
-                    <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);" style="float: left;">
-                        <table style="border-collapse: collapse" border="1">
-                            <tr>
-                                <td id="1" class="black odd" draggable="true">&#9820;</td>
-                                <td id="2" class="black even" draggable="true">&#9822;</td>
-                                <td id="3" class="black odd" draggable="true">&#9821;</td>
-                                <td id="4" class="black even" draggable="true">&#9819;</td>
-                                <td id="5" class="black odd" draggable="true">&#9818;</td>
-                                <td id="6" class="black even" draggable="true">&#9821;</td>
-                                <td id="7" class="black odd" draggable="true">&#9822;</td>
-                                <td id="8" class="black even" draggable="true">&#9820;</td>
-                            </tr>
-                            <tr>
-                                <td id="9" class="black even" draggable="true">&#9823;</td>
-                                <td id="10" class="black odd" draggable="true">&#9823;</td>
-                                <td id="11" class="black even" draggable="true">&#9823;</td>
-                                <td id="12" class="black odd" draggable="true">&#9823;</td>
-                                <td id="13" class="black even" draggable="true">&#9823;</td>
-                                <td id="14" class="black odd" draggable="true">&#9823;</td>
-                                <td id="15" class="black even" draggable="true">&#9823;</td>
-                                <td id="16" class="black odd" draggable="true">&#9823;</td>
-                            </tr>
-                            <tr>
-                                <td id="17" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="18" class="none even" draggable="true">&nbsp;</td>
-                                <td id="19" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="20" class="none even" draggable="true">&nbsp;</td>
-                                <td id="21" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="22" class="none even" draggable="true">&nbsp;</td>
-                                <td id="23" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="24" class="none even" draggable="true">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td id="25" class="none even" draggable="true">&nbsp;</td>
-                                <td id="26" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="27" class="none even" draggable="true">&nbsp;</td>
-                                <td id="28" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="29" class="none even" draggable="true">&nbsp;</td>
-                                <td id="30" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="31" class="none even" draggable="true">&nbsp;</td>
-                                <td id="32" class="none odd" draggable="true">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td id="33" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="34" class="none even" draggable="true">&nbsp;</td>
-                                <td id="35" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="36" class="none even" draggable="true">&nbsp;</td>
-                                <td id="37" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="38" class="none even" draggable="true">&nbsp;</td>
-                                <td id="39" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="40" class="none even" draggable="true">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td id="41" class="none even" draggable="true">&nbsp;</td>
-                                <td id="42" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="43" class="none even" draggable="true">&nbsp;</td>
-                                <td id="44" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="45" class="none even" draggable="true">&nbsp;</td>
-                                <td id="46" class="none odd" draggable="true">&nbsp;</td>
-                                <td id="47" class="none even" draggable="true">&nbsp;</td>
-                                <td id="48" class="none odd" draggable="true">&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td id="50" class="white odd" draggable="true">&#9817;</td>
-                                <td id="51" class="white even" draggable="true">&#9817;</td>
-                                <td id="52" class="white odd" draggable="true">&#9817;</td>
-                                <td id="53" class="white even" draggable="true">&#9817;</td>
-                                <td id="54" class="white odd" draggable="true">&#9817;</td>
-                                <td id="55" class="white even" draggable="true">&#9817;</td>
-                                <td id="56" class="white odd" draggable="true">&#9817;</td>
-                                <td id="57" class="white even" draggable="true">&#9817;</td>
-                            </tr>
-                            <tr>
-                                <td id="58" class="white even" draggable="true">&#9814;</td>
-                                <td id="59" class="white odd" draggable="true">&#9816;</td>
-                                <td id="60" class="white even" draggable="true">&#9815;</td>
-                                <td id="61" class="white odd" draggable="true">&#9813;</td>
-                                <td id="62" class="white even" draggable="true">&#9812;</td>
-                                <td id="63" class="white odd" draggable="true">&#9815;</td>
-                                <td id="64" class="white even" draggable="true">&#9816;</td>
-                                <td id="65" class="white odd" draggable="true">&#9814;</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="float: right;">
-                        <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);" style="width: 300px; height: 200px; border: 1px dotted; overflow: auto;">
-                        </section>
-                        <div style="padding-top: 5px;">
-                            <input type="button" id="resetChess" value="Reset game" />
-                            <input type="button" id="clearNotes" value="Clear local storage" />
-                        </div>
-                        <p style="width: 300px">Click "clear local storage" if you don't want your notes to be remembered<br>(If your notes are not remembered, it means your browser has <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> turned off or doesn't support it unfortunately)</p>
-                    </div>
-                    <div style="clear: both;">&nbsp;</div>
-                    <script type="text/javascript">
-                        getNotes();
-                        $("#clearNotes").click( function () {
-                                localStorage.clear();
-                        });
-                        $("#resetChess").click( function () {
-                            window.location = window.location; 
-                         });
-                    </script>
-                </div>
-            </div>
-            <!-- end chess-->
-            <!--matrix-->
-            <div class="post">
-                <h2 class="title" id="matrix">JavaScript: Matrix Calculator</h2>
-                <p class="byline"><small>Posted on November 27, 2011 by <a href="/">bphamworld</a></small></p>
-                <div class="entry matrix-post">
-                    <p>A matrix calculator written in JavaScript :)</p>
-                    <div class="matrix">	
-                        <div>
-                            Matrix 1:
-                            <div class="buttons">
-                                <input class="add" type="button" value="+"/>
-                                <input class="remove" type="button" value="&#8211;"/>
+        <div id="page">
+            <div class="container">
+                <div class="hero-unit">
+                    <h2>Welcome to My Personal Website</h2>  <img src="images/newbao.jpg" alt="Bao's picture" width="200" height="200" class="right" />
+                    <p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href='http://ubc.ca/' target="_blank">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. I created this website as a place for me to explore new technologies, practice my skills and blog on things that I find interesting.</p>
+                    <p>I'm interested in web development, algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
+                </div> <!--/.hero-unit-->
+
+                <div class="row">
+                    <div class="span8">
+                        <!--bootstrap post-->
+                        <div class="post">
+                            <h2 id="bootstrap">Bootstrap Experiment</h2>
+                            <p class="byline"><small>Posted on Mar 7, 2012 by <a href="/">bphamworld</a></small></p>
+                            <p>You've probably heard of <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>? If not, follow the link and you'll see what magics it does.</p>
+                            <p>I've grown tired of my old website theme and decided to try out Bootstrap. Although Bootstrap can make people lazier in putting some more personal touch in their website's design, it can be a great starting point for a newbie like me. Hopefully, from here onwards, I can create something more uniquely looking (sigh, when will that day come...?)</p>
+                            <p>Not only Bootstrap that makes a (major) change in the look of this website, from <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>, I converted to <a href="http://code.google.com/p/google-code-prettify/">Google Code Prettify</a>, which is also pretty cool since it can guess what language the code snippet is, however doesn't support the same amounts of languages as SyntaxHighlighter.</p>
+                            <p>This could be a permanent change or just temporary, who knows if tomorrow I will see something even cooler than this?</p>
+                            <p>And finally, here is something for your curiosity: interested in how much different my old website looks compared to this one? Take a look <a href="">here</a> ... Free CSS Template heh &gt;&lt;</p>
+                        </div> <!--/.post bootstrap-->
+                    
+                        <!--euler post-->
+                        <div class="post">
+                            <h2 id="euler">Project Euler: Awesome Site to Practice Your Math and Programming Skills</h2>
+                            <p class="byline"><small>Posted on Jan 25, 2012 by <a href="/">bphamworld</a></small></p>
+                                <p>I've recently started to participate in this site <a href="http://projecteuler.net/">Project Euler</a>. It's a website with a series of mathematics/programming problems, ranging from easy to very hard. Some problems, if not written in the right algorithm can take more than 5 minutes to get the result (personal experience, I forgot that it was running..., and yeah my computer is fine now). So it only matters if you use correct and efficient algorithms. These problems are meant to be solved in only less than a minute.</p>
+                                <p>Now I'm quite addicted to the thrilling feeling of getting the right answer :D. There are certainly numerous solutions out there on the web (and I admit, sometimes I have to resort to them when I'm stuck), but it's always more exciting to try and learn new algorithms and apply them to the problems.</p>
+                                <p>Check out my Git repository of my solutions (mostly in Python because I find it faster and neater to code, no?) to some of the Euler questions: <a href="https://github.com/baopham/projectEuler">baopham/projectEuler</a></p>
+                                <img src="http://projecteuler.net/profile/baopham.png" alt="My Euler badge"/>
+                        </div> <!--/.post euler-->
+                        <!--chess post-->
+                        <div class="post">
+                            <h2 id="chess">Chess</h2>
+                            <p class="byline"><small>Posted on Dec 5, 2011 by <a href="/">bphamworld</a></small></p>
+                            <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
+                            <!-- chess table -->
+                            <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);" style="float: left;">
+                                <table style="border-collapse: collapse" border="1">
+                                    <tr>
+                                        <td id="1" class="black odd" draggable="true">&#9820;</td>
+                                        <td id="2" class="black even" draggable="true">&#9822;</td>
+                                        <td id="3" class="black odd" draggable="true">&#9821;</td>
+                                        <td id="4" class="black even" draggable="true">&#9819;</td>
+                                        <td id="5" class="black odd" draggable="true">&#9818;</td>
+                                        <td id="6" class="black even" draggable="true">&#9821;</td>
+                                        <td id="7" class="black odd" draggable="true">&#9822;</td>
+                                        <td id="8" class="black even" draggable="true">&#9820;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="9" class="black even" draggable="true">&#9823;</td>
+                                        <td id="10" class="black odd" draggable="true">&#9823;</td>
+                                        <td id="11" class="black even" draggable="true">&#9823;</td>
+                                        <td id="12" class="black odd" draggable="true">&#9823;</td>
+                                        <td id="13" class="black even" draggable="true">&#9823;</td>
+                                        <td id="14" class="black odd" draggable="true">&#9823;</td>
+                                        <td id="15" class="black even" draggable="true">&#9823;</td>
+                                        <td id="16" class="black odd" draggable="true">&#9823;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="17" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="18" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="19" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="20" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="21" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="22" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="23" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="24" class="none even" draggable="true">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="25" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="26" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="27" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="28" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="29" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="30" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="31" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="32" class="none odd" draggable="true">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="33" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="34" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="35" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="36" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="37" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="38" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="39" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="40" class="none even" draggable="true">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="41" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="42" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="43" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="44" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="45" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="46" class="none odd" draggable="true">&nbsp;</td>
+                                        <td id="47" class="none even" draggable="true">&nbsp;</td>
+                                        <td id="48" class="none odd" draggable="true">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="50" class="white odd" draggable="true">&#9817;</td>
+                                        <td id="51" class="white even" draggable="true">&#9817;</td>
+                                        <td id="52" class="white odd" draggable="true">&#9817;</td>
+                                        <td id="53" class="white even" draggable="true">&#9817;</td>
+                                        <td id="54" class="white odd" draggable="true">&#9817;</td>
+                                        <td id="55" class="white even" draggable="true">&#9817;</td>
+                                        <td id="56" class="white odd" draggable="true">&#9817;</td>
+                                        <td id="57" class="white even" draggable="true">&#9817;</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="58" class="white even" draggable="true">&#9814;</td>
+                                        <td id="59" class="white odd" draggable="true">&#9816;</td>
+                                        <td id="60" class="white even" draggable="true">&#9815;</td>
+                                        <td id="61" class="white odd" draggable="true">&#9813;</td>
+                                        <td id="62" class="white even" draggable="true">&#9812;</td>
+                                        <td id="63" class="white odd" draggable="true">&#9815;</td>
+                                        <td id="64" class="white even" draggable="true">&#9816;</td>
+                                        <td id="65" class="white odd" draggable="true">&#9814;</td>
+                                    </tr>
+                                </table>
+                            </div> <!--/chess table-->
+                            <div style="float: right;">
+                                <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);" style="width: 365px; height: 335px; border: 1px dotted; overflow: auto;">
+                                </section>
+                                <div style="padding-top: 5px;">
+                                    <input type="button" id="resetChess" value="Reset game" />
+                                    <input type="button" id="clearNotes" value="Clear local storage" />
+                                </div>
+                                <p style="width: 300px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> turned off or doesn't support it unfortunately)</p>
+                            </div> <!--/editable section-->
+
+                            <div style="clear: both;">&nbsp;</div>
+
+                            <script type="text/javascript">
+                                getNotes();
+                                $("#clearNotes").click( function () {
+                                        localStorage.clear();
+                                });
+                                $("#resetChess").click( function () {
+                                    window.location = window.location; 
+                                 });
+                            </script>
+                        </div> <!--/.post chess-->
+                        <!--matrix post--> 
+                        <div class="post">
+                            <h2 id="matrix">JavaScript: Matrix Calculator</h2>
+                            <p class="byline"><small>Posted on November 27, 2011 by <a href="/">bphamworld</a></small></p>
+                            <div class="matrix-post">
+                                <p>A matrix calculator written in JavaScript :)</p>
+                                <div class="matrix">	
+                                    <div>
+                                        Matrix 1:
+                                        <div class="buttons">
+                                            <input class="add" type="button" value="+"/>
+                                            <input class="remove" type="button" value="&#8211;"/>
+                                        </div>
+                                    </div>
+                                    <div class="matrixA inputMatrix">
+                                        <div class="row">
+                                            <input type="text" value="1, 2, 3"/>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" value="4, 5, 6"/>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" value="7, 8, 9"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="matrix">
+                                    <div>
+                                        Matrix 2:
+                                        <div class="buttons">
+                                            <input class="add" type="button" value="+"/>
+                                            <input class="remove" type="button" value="&#8211;"/>
+                                        </div>
+                                    </div>
+                                    <div class="matrixB inputMatrix">
+                                        <div class="row">
+                                            <input type="text" value="1, 2, 3"/>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" value="4, 5, 6"/>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" value="7, 8, 9"/>
+                                        </div>
+                                    </div>		
+                                </div>
+                                <div id="selection">
+                                    <input type="radio" name="method" id="multiply" value="multiply" checked="checked">
+                                    <label for="multiply">Multiply</label>
+                                    <input type="radio" name="method" id="transpose" value="transpose"/>
+                                    <label for="transpose">Transpose</label>
+                                    <input type="radio" name="method" id="add" value="add"/>
+                                    <label for="add">Addition</label>
+                                    <input type="radio" name="method" id="substract" value="subtract"/>
+                                    <label for="substract">Subtraction</label>
+                                </div>
+                                <div id="compute">
+                                    <input type="button" value="Compute"/>
+                                </div>
+                                <div id="answer"></div>
+                                <script type="text/javascript">computeMatrix()</script>
                             </div>
-                        </div>
-                        <div class="matrixA inputMatrix">
-                            <div class="row">
-                                <input type="text" value="1, 2, 3"/>
+                        </div> <!--/.post matrix-->	
+                        <!--bashrc post-->
+                        <div class="post">
+                            <h2 id="bashrc">.bashrc</h2>
+                            <p class="byline"><small>Posted in November 12, 2011 by <a href="/">bphamworld</a></small></p>
+                            <p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
+                            <!--hide-->
+                            <div id="hide_3" style="display:none">
+<pre class="prettyprint linenums pre-scrollable">
+# Configure iTerm's tab title to display current directory 
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+
+# Show git branch in bash prompt
+# e.g: export PS1="\[\033[0;32m\]\u@\h\[\033[0;32m\] \w\$(__git_ps1)\$\[\033[00m\] " 
+__git_ps1() { 
+    local b="$(git symbolic-ref HEAD 2&gt;/dev/null)";
+    if [ -n "$b" ]; then
+        printf " (%s)" "${b##refs/heads/}";
+    fi
+} 
+
+alias la='ls -A'
+alias ll='ls -l'
+alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
+
+# Extract packages
+extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1        ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1       ;;
+            *.rar)       rar x $1     ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xf $1        ;;
+            *.tbz2)      tar xjf $1      ;;
+            *.tgz)       tar xzf $1       ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1    ;;
+            *)           echo "'$1' cannot be extracted via
+extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+clock() { 
+    while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
+}
+
+calc() {
+   echo "scale=4; $1" | bc 
+}
+
+# Weather by us zip code - Can be called two ways # weather 50315 #
+# weather "Des Moines"
+weather() {
+    declare -a WEATHERARRAY
+    WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
+    echo ${WEATHERARRAY[@]}
+}
+
+# Get the time when the file's last modified. Usage: filetime file
+filetime() {
+    for arg
+    do
+        if [ -f $arg ] 
+        then
+            dir=`dirname $arg`
+            name=`basename $arg`
+            time=`ls -lA $dir | awk '{if ($9 == file) {print $6 "-" $7 "-" $8}}' file=$name`
+            echo "$arg: $time"
+        else
+            echo "$arg is not a file"
+        fi
+    done
+}
+
+# Get total number of files in dir
+total() {
+    for arg
+    do
+        if [ -d $arg ]
+        then
+            visible=`ls -1 "$arg" | wc -l` 
+            total=`ls -A -1 "$arg" | wc -l`
+            echo "$arg: $visible visible files"
+            echo "$arg: $total visible and hidden files"
+        else
+            echo "$arg is not a directory"
+        fi     
+    done
+}
+
+# safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
+function rm() {
+    if [ $# -eq 0 ]; then
+            echo "usage: trashit &gt;files...&lt;" &gt;&amp;2
+            exit 2;
+    fi
+
+    for file in "$@"; do
+            # get just file name 
+            destfile="`basename \"$file\"`"
+            suffix='';
+            i=0;
+
+            # If that file already exists, change the name
+            while [ -e "$HOME/.Trash/${destfile}${suffix}" ]; do
+                    suffix=" - copy $i";
+                    i=`expr $i + 1`
+            done
+
+            mv -vi "$file" "$HOME/.Trash/${destfile}${suffix}"
+    done
+}
+
+growl() {
+    echo -e $'\e]9;'${1}'\007' ; return  ;
+}
+</pre>
+                            </div><!--/hide-->
+                            <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_3', this)">more</a></p>
+                        </div> <!--/.post bashrc-->
+                        <!--textmate post-->
+                        <div class="post">
+                            <h2 id="textmate">TextMate - Configure Python Bundle for iTerm</h2>
+                            <p class="byline"><small>Posted on November 18, 2011 by <a href="/">bphamworld</a></small></p>
+                            <p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
+                            <p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
+                            <p>Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
+                            Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
+                            <!--hide-->
+                            <div id="hide_2" style="display:none">
+<pre class="prettyprint linenums">
+#!/bin/bash
+TPY=${TM_PYTHON:-python}
+
+esc () {
+STR="$1" ruby &lt;&lt;"RUBY"
+   str = ENV['STR']
+   str = str.gsub(/'/, "'\\\\''")
+   str = str.gsub(/[\\"]/, '\\\\\\0')
+   print "'#{str}'"
+RUBY
+}
+
+osascript &lt;&lt;- APPLESCRIPT
+    tell application "iTerm"
+        activate
+        make new terminal
+        tell the first terminal 
+            launch session "Default Session"
+            tell the last session
+                write text "python $TM_FILEPATH"
+            end tell
+        end tell
+    end tell
+APPLESCRIPT
+</pre>
+                                <p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
+                                <p>DONE!</p>
+                                <p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
                             </div>
-                            <div class="row">
-                                <input type="text" value="4, 5, 6"/>
+                            <!--/hide-->
+                            <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_2', this)">more</a></p>
+                        </div> <!--/.post textmate-->
+                        <!--Game Of Life-->
+                        <div class="last-post">
+                            <h2 id="life">JavaScript and Canvas: Conway's Game of Life</h2>
+                            <p class="byline"><small>Posted on May 13, 2011 by <a href="/">bphamworld</a></small></p>
+                            <p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
+                            <strong>Supported Browsers:</strong>
+                            <ul>
+                                <li>Firefox 4+</li>
+                                <li>Google Chrome</li>
+                                <li>Opera 10.6+</li>
+                                <li>Apple Safari 4+</li>
+                                <li>Internet Explorer 9</li>
+                            </ul>
+                            <!--hide-->
+                            <div id="hide_1" style="display:none">
+                                <p><i>From wikipedia</i>:</p>
+                                <blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
+                                    <strong>Rules:</strong>
+                                    <ol>
+                                        <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+                                        <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+                                        <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+                                        <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
+                                    </ol>
+                                </blockquote>
+
+                                <canvas id="canvas_life"></canvas>
+                                <div id="buttons_life">
+                                    <button id="generate" type="button">Generate Random Cells</button>
+                                    <button id="run" type="button">Run</button>
+                                    <button id="stop" type="button">Stop</button> 
+                                    <button id="clear" type="button">Clear</button>
+                                </div>
                             </div>
-                            <div class="row">
-                                <input type="text" value="7, 8, 9"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="matrix">
-                        <div>
-                            Matrix 2:
-                            <div class="buttons">
-                                <input class="add" type="button" value="+"/>
-                                <input class="remove" type="button" value="&#8211;"/>
-                            </div>
-                        </div>
-                        <div class="matrixB inputMatrix">
-                            <div class="row">
-                                <input type="text" value="1, 2, 3"/>
-                            </div>
-                            <div class="row">
-                                <input type="text" value="4, 5, 6"/>
-                            </div>
-                            <div class="row">
-                                <input type="text" value="7, 8, 9"/>
-                            </div>
-                        </div>		
-                    </div>
-                    <div id="selection">
-                        <input type="radio" name="method" value="multiply" checked="checked">Multiplication
-                        <input type="radio" name="method" value="transpose"/>Transpose
-                        <input type="radio" name="method" value="add"/>Addition
-                        <input type="radio" name="method" value="subtract"/>Subtraction
-                    </div>
-                    <div id="compute">
-                        <input type="button" value="Compute"/>
-                    </div>
-                    <div id="answer"></div>
-                    <script type="text/javascript">computeMatrix()</script>
-                </div>
-            </div>			
-            <!--end matrix-->
-            <!--bashrc-->
-            <div class="post">
-                <h2 class="title" id="bashrc">.bashrc</h2>
-                <p class="byline"><small>Posted in November 12, 2011 by <a href="/">bphamworld</a></small></p>
-                <div class="entry">
-                    <p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself. Here is part of my bashrc:</p>
-                    <!--hide-->
-                    <div id="hide_3" style="display:none">
-                        <pre class="brush: bash">
-                            # Configure iTerm's tab title to display current directory 
-                            export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+                            <!--/hide-->
+                            <script type="text/javascript">startLife()</script>
+                            <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
+                        </div><!--./post Game of Life-->	
+                    </div><!--/.span-->
 
-                            # Show git branch in bash prompt
-                            # e.g: export PS1="\[\033[0;32m\]\u@\h\[\033[0;32m\] \w\$(__git_ps1)\$\[\033[00m\] " 
-                            __git_ps1() { 
-                                local b="$(git symbolic-ref HEAD 2&gt;/dev/null)";
-                                if [ -n "$b" ]; then
-                                    printf " (%s)" "${b##refs/heads/}";
-                                fi
-                            } 
+                    <!-- side bar -->
+                    <div class="span3">
+                        <div class="well sidebar-nav">
+                            <ul class="nav nav-list">
+                                <li class="nav-header">Category</li>
+                                <li class="active"><a href="/javascript">JavaScript (2)</a></li>
+                                <li><a href="/html5">HTML5 (2)</a></li>
+                                <li><a href="/bookmarks">Bookmarks</a></li>
 
-                            alias la='ls -A'
-                            alias ll='ls -l'
-                            alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
+                                <li class="nav-header">Recent Posts</li>
+                                <li><a href="#bootstrap">Bootstrap Experiment</a></li>
+                                <li><a href="#euler">Project Euler: Awesome Site to Practice Your Math and ...</a></li>
+                                <li><a href="#chess">Chess</a></li>
+                                <li><a href="#matrix">JavaScript: Matrix Calculator</a></li>
+                                <li><a href="#bashrc">.bashrc</a></li>
+                                <li><a href="#textmate">TextMate - Configure Python Bundle for iTerm</a></li>
+                                <li><a href="#life">JavaScript and Canvas: Conway's Game of Life</a></li>
+                            </ul>
+                        </div> <!--/.well -->
+                    </div> <!--/side bar-->
 
-                            # Extract packages
-                            extract() {
-                                if [ -f $1 ] ; then
-                                    case $1 in
-                                        *.tar.bz2)   tar xjf $1        ;;
-                                        *.tar.gz)    tar xzf $1     ;;
-                                        *.bz2)       bunzip2 $1       ;;
-                                        *.rar)       rar x $1     ;;
-                                        *.gz)        gunzip $1     ;;
-                                        *.tar)       tar xf $1        ;;
-                                        *.tbz2)      tar xjf $1      ;;
-                                        *.tgz)       tar xzf $1       ;;
-                                        *.zip)       unzip $1     ;;
-                                        *.Z)         uncompress $1  ;;
-                                        *.7z)        7z x $1    ;;
-                                        *)           echo "'$1' cannot be extracted via
-                            extract()" ;;
-                                    esac
-                                else
-                                    echo "'$1' is not a valid file"
-                                fi
-                            }
+                </div> <!--/.row-->
 
-                            clock() { 
-                                while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
-                            }
+                <hr>
 
-                            calc() {
-                               echo "scale=4; $1" | bc 
-                            }
-
-                            # Weather by us zip code - Can be called two ways # weather 50315 #
-                            # weather "Des Moines"
-                            weather() {
-                                declare -a WEATHERARRAY
-                                WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
-                                echo ${WEATHERARRAY[@]}
-                            }
-
-                            # Get the time when the file's last modified. Usage: filetime file
-                            filetime() {
-                                for arg
-                                do
-                                    if [ -f $arg ] 
-                                    then
-                                        dir=`dirname $arg`
-                                        name=`basename $arg`
-                                        time=`ls -lA $dir | awk '{if ($9 == file) {print $6 "-" $7 "-" $8}}' file=$name`
-                                        echo "$arg: $time"
-                                    else
-                                        echo "$arg is not a file"
-                                    fi
-                                done
-                            }
-
-                            # Get total number of files in dir
-                            total() {
-                                for arg
-                                do
-                                    if [ -d $arg ]
-                                    then
-                                        visible=`ls -1 "$arg" | wc -l` 
-                                        total=`ls -A -1 "$arg" | wc -l`
-                                        echo "$arg: $visible visible files"
-                                        echo "$arg: $total visible and hidden files"
-                                    else
-                                        echo "$arg is not a directory"
-                                    fi     
-                                done
-                            }
-
-                            # safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
-                            function rm() {
-                                if [ $# -eq 0 ]; then
-                                        echo "usage: trashit &gt;files...&lt;" &gt;&amp;2
-                                        exit 2;
-                                fi
-
-                                for file in "$@"; do
-                                        # get just file name 
-                                        destfile="`basename \"$file\"`"
-                                        suffix='';
-                                        i=0;
-
-                                        # If that file already exists, change the name
-                                        while [ -e "$HOME/.Trash/${destfile}${suffix}" ]; do
-                                                suffix=" - copy $i";
-                                                i=`expr $i + 1`
-                                        done
-
-                                        mv -vi "$file" "$HOME/.Trash/${destfile}${suffix}"
-                                done
-                            }
-
-                            growl() {
-                                echo -e $'\e]9;'${1}'\007' ; return  ;
-                            }
-                        </pre>
-                    </div>
-                    <!--end hide-->
-                    <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_3', this)">more</a></p>
-                </div>
-            </div>
-            <!--end bashrc-->
-            <!--Textmate-->
-            <div class="post">
-                <h2 class="title" id="textmate">TextMate - Configure Python Bundle for iTerm</h2>
-                <p class="byline"><small>Posted on November 18, 2011 by <a href="/">bphamworld</a></small></p>
-
-                <div class="entry">
-                    <p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
-                    <p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>
-                    <p>Go to TextMate's menu: <b>Bundles</b> &#8594; <b>Bundle Editor</b> &#8594; <b>Show Bundle Editor</b><br>
-                    Now go to the Python bundle, duplicate the <b>Run Script (Terminal)</b> and rename it to <b>Run Script (iTerm)</b>. Then replace the whole command(s) section with:</p>
-                    <!--hide-->
-                    <div id="hide_2" style="display:none">
-                        <pre class="brush: applescript">
-                            #!/bin/bash
-                            TPY=${TM_PYTHON:-python}
-
-                            esc () {
-                            STR="$1" ruby &lt;&lt;"RUBY"
-                               str = ENV['STR']
-                               str = str.gsub(/'/, "'\\\\''")
-                               str = str.gsub(/[\\"]/, '\\\\\\0')
-                               print "'#{str}'"
-                            RUBY
-                            }
-
-                            osascript &lt;&lt;- APPLESCRIPT
-                                tell application "iTerm"
-                                    activate
-                                    make new terminal
-                                    tell the first terminal 
-                                        launch session "Default Session"
-                                        tell the last session
-                                            write text "python $TM_FILEPATH"
-                                        end tell
-                                    end tell
-                                end tell
-                            APPLESCRIPT
-                        </pre>
-                        <p>Next one is <b>Debug script in Terminal</b>. This one is easier because you can just replace this line <code>TP=${TM_TERM_PROG:=<b>Terminal</b>}</code> with <code>TP=${TM_TERM_PROG:=<b>iTerm</b>}</code>, and now rename your command.</p>
-                        <p>DONE!</p>
-                        <p>Now you can run your scripts in iTerm through the specified shortcuts and not the old school Terminal.</p>
-                    </div>
-                    <!--end hide-->
-                    <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_2', this)">more</a></p>
-                </div>
-            </div>
-		
-            <!--Game Of Life-->
-            <div class="post">
-                <h2 class="title" id="life">JavaScript and Canvas: Conway's Game of Life</h2>
-                <p class="byline"><small>Posted on May 13, 2011 by <a href="/">bphamworld</a></small></p>
-                <div class="entry">
-                    <p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
-                    <strong>Supported Browsers:</strong>
-                    <ul>
-                        <li>Firefox 4+</li>
-                        <li>Google Chrome</li>
-                        <li>Opera 10.6+</li>
-                        <li>Apple Safari 4+</li>
-                        <li>Internet Explorer 9</li>
-                    </ul>
-                    <!--hide-->
-                    <div id="hide_1" style="display:none">
-                        <p><i>From wikipedia</i>:</p>
-                        <blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
-                            <strong>Rules:</strong>
-                            <ol>
-                                <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
-                                <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
-                                <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
-                                <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
-                            </ol>
-                        </blockquote>
-
-                        <canvas id="canvas_life"></canvas>
-                        <div id="buttons_life">
-                            <button id="generate" type="button">Generate Random Cells</button>
-                            <button id="run" type="button">Run</button>
-                            <button id="stop" type="button">Stop</button> 
-                            <button id="clear" type="button">Clear</button>
-                        </div>
-                    </div>
-                    <!--end hide-->
-                    <script type="text/javascript">startLife()</script>
-                </div>
-                <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
-            </div>
-            <!--end Game of Life-->			
-        </div>
-        <!-- end content -->
-		
-        <!-- start sidebar -->
-        <div id="sidebar">
-            <ul>
-                <li>
-                <h2>Categories</h2>
-                <ul>
-                    <li><a href="/javascript">JavaScript</a>(2)</li>
-                    <li><a href="/html5">HTML5</a>(2)</li>
-                    <li><a href="/bookmarks">Bookmarks</a></li>
-                </ul>
-                </li>
-                <li>
-                <h2>Recent Posts</h2>
-                <ul>
-                    <li><a href="#euler">Project Euler: Awesome Site to Practice Your Math...</a></li>
-                    <li><a href="#chess">Chess</a></li>
-                    <li><a href="#matrix">JavaScript: Matrix Calculator</a></li>
-                    <li><a href="#bashrc">.bashrc</a></li>
-                    <li><a href="#textmate">TextMate - Configure Python Bundle for iTerm</a></li>
-                    <li><a href="#life">JavaScript and Canvas: Conway's Game of Life</a></li>
-                </ul>
-                </li>
-            </ul>
-        </div> 
-        <!--end sidebar -->		
-		<div style="clear: both;">&nbsp;</div>
-	</div>
-</div>
-<!-- end page -->
-
-<div id="footer">
-	<p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
-</div>
-<!--SyntaxHighlighter-->
-<link href="css/shCore.css" rel="stylesheet" type="text/css"/>
-<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css"/>
-<script src="js/shCore.js" type="text/javascript"></script>
-<script src="js/shAutoloader.js" type="text/javascript"></script>
-<script src="js/syntaxmain.js" type="text/javascript"></script>
-</body>
+            </div> <!-- /container -->
+        </div><!--/page-->                
+        <footer>
+            <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Theme by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+        </footer>
+    </body>
 </html>
+
