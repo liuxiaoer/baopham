@@ -33,12 +33,21 @@
                         <ul class="nav">
                             <li class="active"><a href="/">Home</a></li>
                             <li><a href="/resume">Resume</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/javascript">JavaScript</a></li>
+                                    <li><a href="/html5">HTML5</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/bookmarks">Bookmarks</a></li>
+                                </ul>
+                            </li><!--/.dropdown-->
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-->
-            </div>
+            </div><!--/.navbar-inner-->
+        </div><!--/.navbar-->
 
-        </div>
         <div id="page">
             <div class="container">
                 <div class="hero-unit">
@@ -58,16 +67,16 @@
                             <p>Not only Bootstrap that makes a (major) change in the look of this website, from <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>, I converted to <a href="http://code.google.com/p/google-code-prettify/">Google Code Prettify</a>, which is also pretty cool since it can guess what language the code snippet is. However, it doesn't support as many languages as SyntaxHighlighter.</p>
                             <p>This could be a permanent change or just temporary, who knows if tomorrow I will see something even cooler than this?</p>
                             <p>And finally, here is something for your curiosity: interested in how much different my old website looks compared to this one? Take a look <a href="http://4.bphamworld.appspot.com/">here</a> ... Free CSS Template heh &gt;&lt;</p>
-                            <p>&bull;</p>
-                            <p>&bull;</p>
-                            <p>&bull;</p>
-                            <p> ✿ </p>
+                            <p>&nbsp;&bull;</p>
+                            <p>&nbsp;&bull;</p>
+                            <p>&nbsp;&bull;</p>
+                            <p style="font-size: 17px;"> ✿ </p>
                         </div> <!--/.post bootstrap-->
                         <!--euler post-->
                         <div class="post">
                             <h2 id="euler">Project Euler: Awesome Site to Practice Your Math and Programming Skills</h2>
                             <p class="byline"><small>Posted on Jan 25, 2012 by <a href="/">bphamworld</a></small></p>
-                                <p>I've recently started to participate in this site <a href="http://projecteuler.net/">Project Euler</a>. It's a website with a series of mathematics/programming problems, ranging from easy to very hard. Some problems, if not written in the right algorithm can take more than 5 minutes to get the result (personal experience, I forgot that it was running..., and yeah my computer is fine now). So it only matters if you use correct and efficient algorithms. These problems are meant to be solved in only less than a minute.</p>
+                                <p>I've recently started to participate in this site <a href="http://projecteuler.net/">Project Euler</a>. It's a website with a series of mathematics/programming problems, ranging from easy to very hard. Some problems, if not written in the right algorithm can take more than 5 minutes to get the result (personal experience, I forgot that it was running...). So it only matters if you use correct and efficient algorithms. These problems are meant to be solved in only less than a minute.</p>
                                 <p>Now I'm quite addicted to the thrilling feeling of getting the right answer :D. There are certainly numerous solutions out there on the web (and I admit, sometimes I have to resort to them when I'm stuck), but it's always more exciting to try and learn new algorithms and apply them to the problems.</p>
                                 <p>Check out my Git repository of my solutions (mostly in Python because I find it faster and neater to code, no?) to some of the Euler questions: <a href="https://github.com/baopham/projectEuler">baopham/projectEuler</a></p>
                                 <img src="http://projecteuler.net/profile/baopham.png" alt="My Euler badge"/>
@@ -485,6 +494,7 @@ APPLESCRIPT
         <footer>
             <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Theme by <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
         </footer>
+        <script type="text/javascript" src="js/bootstrap-dropdown.js"></script> 
         <script type="text/javascript"> 
             function toggle (postid, link) { 
                 var e = document.getElementById(postid);
@@ -506,7 +516,6 @@ APPLESCRIPT
              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
              })()
         </script>
-        <script type="text/javascript" src="js/prettify.js"></script>
     </body>
 </html>
 
