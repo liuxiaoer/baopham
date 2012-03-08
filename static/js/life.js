@@ -137,34 +137,34 @@ function clear(){
 
 function startLife(){
     $(function() {
-            $("#generate").attr('disabled', '');
+            $("#generate").attr('disabled', false);
             $("#run").attr('disabled', '');
             $("#buttons_maze").find("button").attr("disabled", '');
     });
     var gen = false;
     $("#generate").click(function(){
-            $(this).attr('disabled', 'disabled');
-            $("#run").attr('disabled', '');
+            $(this).attr('disabled', true);
+            $("#run").attr('disabled', false);
             gen = true;
             generate();
     });
 
     $("#run").click(function(){
             if(gen===true){
-            $(this).attr('disabled', 'disabled');
+            $(this).attr('disabled', true);
             cellManager.stop = false;
             run();
             } 
     });
 
     $("#stop").click(function(){
-            $("#run").attr('disabled', '');
+            $("#run").attr('disabled', false);
             cellManager.stop = true;
     });
 
     $("#clear").click(function(){
-            $("#generate").attr('disabled', '');
-            $("#run").attr('disabled', '');
+            $("#generate").attr('disabled', false);
+            $("#run").attr('disabled', false);
             gen = false;
             cellManager.stop = true;
             clear();
