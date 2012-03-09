@@ -3496,8 +3496,33 @@ a.thumbnail:hover {
 }
 /* ========= */
 body {
-    background: #333333 repeat-x !important;
+    background-color: #3D4B58 !important;
     color: #666666 !important;
+}
+
+.navbar-inner {
+    background-image: -moz-linear-gradient(center top , #5D8872, #5D8872) !important;
+}
+
+.navbar .nav 
+.active > a, 
+.navbar .nav
+.active > a:hover {
+    background-color: #5D7388 !important;
+}
+
+.navbar .nav > li > a {
+    color: white !important;
+}
+
+.navbar-inner {
+    font-family: Verdana;
+}
+
+.navbar .brand {
+    background: url("/images/stupidpenguin.png") no-repeat scroll 20% 3.7% transparent !important;
+    color: #FAEBD7 !important;
+    font-weight: bold !important;
 }
 
 #page {
