@@ -3500,6 +3500,19 @@ body {
     color: #666666 !important;
 }
 
+a {
+    color: #3499b3;
+}
+
+.nav-list .active > a,
+.nav-list .active > a:hover {
+    background-color: #3499B3;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+    background-color: #3499B3;
+}
+
 .navbar-inner {
     background-image: -moz-linear-gradient(center top , #5D8872, #5D8872) !important;
 }
@@ -3563,7 +3576,7 @@ img.right {
 
 #category h1 {
     display: inline;
-    color: #0088CC;
+    color: #3499b3;
 }
 
 #bookmarks li {
