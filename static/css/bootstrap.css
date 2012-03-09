@@ -3529,7 +3529,7 @@ a {
 }
 
 .navbar-inner {
-    font-family: Verdana;
+    font-family: Monaco;
 }
 
 .navbar .brand {
@@ -3538,6 +3538,20 @@ a {
     font-weight: bold !important;
 }
 
+.nav > li > a:hover {
+    background-color: #e2e2e2;
+}
+.well {
+    background: url("/images/brushed.png") repeat scroll 0 0 padding-box transparent;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    border: 3px solid transparent;
+}
+
+.hero-unit {
+    background: url("/images/brushed.png") repeat scroll 0 0 padding-box transparent;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    border: 3px solid transparent;
+}
 #page {
     padding-top: 60px;
     width: 1100px;
@@ -3607,7 +3621,7 @@ footer a {
 
 #sidebar {
     float: right;
-    width: 20%;
+    width: 21%;
 }
 
 /* Game of Life */
