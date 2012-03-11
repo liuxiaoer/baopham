@@ -1,231 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>JavaScript Posts</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="My personal website"/>
-        <meta name="author" content="Bao Pham"/>
+{% extends "category_base.html" %}
 
-        <link href="css/bootstrap.css" rel="stylesheet"/>
-        <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+{% block title %}JavaScript Posts{% endblock %}
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+{% block js %}
+<script src="js/matrix.js" type="text/javascript"></script>
+<script src="js/life.js" type="text/javascript"></script>
+{% endblock %}
 
-        <script src="js/jquery.js" type="text/javascript"></script>
-        <script src="js/matrix.js" type="text/javascript"></script>
-        <script src="js/life.js" type="text/javascript"></script>
-
-    </head>
-
-    <body onload="detectHash()">
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="brand" href="/"><b>BPm'sWorld</b></a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/resume">Resume</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/javascript">JavaScript</a></li>
-                                    <li><a href="/html5">HTML5</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="/bookmarks">Bookmarks</a></li>
-                                </ul>
-                            </li><!--/.dropdown-->
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container-->
-            </div><!--/.navbar-inner-->
-        </div>
-        <div id="page">
-            <div class="container">
-                <div id="category"> 
-                    <h1>JavaScript Posts</h1>
+{% block content %}
+<!--matrix post--> 
+<div class="post">
+    <h2 id="matrix">JavaScript: Matrix Calculator</h2>
+    <p class="byline"><small>Posted on November 27, 2011 by <a href="/">bphamworld</a></small></p>
+    <div class="matrix-post">
+        <p>A matrix calculator written in JavaScript :)</p>
+        <div class="matrix">	
+            <div>
+                Matrix 1:
+                <div class="buttons">
+                    <input class="add btn" type="button" value="+"/>
+                    <input class="remove btn" type="button" value="&#8211;"/>
+                </div>
+            </div>
+            <div class="matrixA inputMatrix">
+                <div class="row">
+                    <input type="text" value="1, 2, 3"/>
                 </div>
                 <div class="row">
-                    <div class="span7" id="content">
-                         <!--matrix post--> 
-                        <div class="post">
-                            <h2 id="matrix">JavaScript: Matrix Calculator</h2>
-                            <p class="byline"><small>Posted on November 27, 2011 by <a href="/">bphamworld</a></small></p>
-                            <div class="matrix-post">
-                                <p>A matrix calculator written in JavaScript :)</p>
-                                <div class="matrix">	
-                                    <div>
-                                        Matrix 1:
-                                        <div class="buttons">
-                                            <input class="add btn" type="button" value="+"/>
-                                            <input class="remove btn" type="button" value="&#8211;"/>
-                                        </div>
-                                    </div>
-                                    <div class="matrixA inputMatrix">
-                                        <div class="row">
-                                            <input type="text" value="1, 2, 3"/>
-                                        </div>
-                                        <div class="row">
-                                            <input type="text" value="4, 5, 6"/>
-                                        </div>
-                                        <div class="row">
-                                            <input type="text" value="7, 8, 9"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="matrix">
-                                    <div>
-                                        Matrix 2:
-                                        <div class="buttons">
-                                            <input class="add btn" type="button" value="+"/>
-                                            <input class="remove btn" type="button" value="&#8211;"/>
-                                        </div>
-                                    </div>
-                                    <div class="matrixB inputMatrix">
-                                        <div class="row">
-                                            <input type="text" value="1, 2, 3"/>
-                                        </div>
-                                        <div class="row">
-                                            <input type="text" value="4, 5, 6"/>
-                                        </div>
-                                        <div class="row">
-                                            <input type="text" value="7, 8, 9"/>
-                                        </div>
-                                    </div>		
-                                </div>
-                                <div id="selection">
-                                    <input type="radio" name="method" id="multiply" value="multiply" checked="checked">
-                                    <label for="multiply">Multiply</label>
-                                    <input type="radio" name="method" id="transpose" value="transpose"/>
-                                    <label for="transpose">Transpose</label>
-                                    <input type="radio" name="method" id="add" value="add"/>
-                                    <label for="add">Addition</label>
-                                    <input type="radio" name="method" id="substract" value="subtract"/>
-                                    <label for="substract">Subtraction</label>
-                                </div>
-                                <div id="compute">
-                                    <input class="btn" type="button" value="Compute"/>
-                                </div>
-                                <div id="answer"></div>
-                                <script type="text/javascript">computeMatrix()</script>
-                            </div>
-                        </div> <!--/.post matrix-->	
+                    <input type="text" value="4, 5, 6"/>
+                </div>
+                <div class="row">
+                    <input type="text" value="7, 8, 9"/>
+                </div>
+            </div>
+        </div>
+        <div class="matrix">
+            <div>
+                Matrix 2:
+                <div class="buttons">
+                    <input class="add btn" type="button" value="+"/>
+                    <input class="remove btn" type="button" value="&#8211;"/>
+                </div>
+            </div>
+            <div class="matrixB inputMatrix">
+                <div class="row">
+                    <input type="text" value="1, 2, 3"/>
+                </div>
+                <div class="row">
+                    <input type="text" value="4, 5, 6"/>
+                </div>
+                <div class="row">
+                    <input type="text" value="7, 8, 9"/>
+                </div>
+            </div>		
+        </div>
+        <div id="selection">
+            <input type="radio" name="method" id="multiply" value="multiply" checked="checked">
+            <label for="multiply">Multiply</label>
+            <input type="radio" name="method" id="transpose" value="transpose"/>
+            <label for="transpose">Transpose</label>
+            <input type="radio" name="method" id="add" value="add"/>
+            <label for="add">Addition</label>
+            <input type="radio" name="method" id="substract" value="subtract"/>
+            <label for="substract">Subtraction</label>
+        </div>
+        <div id="compute">
+            <input class="btn" type="button" value="Compute"/>
+        </div>
+        <div id="answer"></div>
+        <script type="text/javascript">computeMatrix()</script>
+    </div>
+</div> <!--/.post matrix-->	
 
-                        <!--Game Of Life-->
-                        <div class="last-post">
-                            <h2 id="life">JavaScript and Canvas: Conway's Game of Life</h2>
-                            <p class="byline"><small>Posted on May 13, 2011 by <a href="/">bphamworld</a></small></p>
-                            <p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
-                            <strong>Supported Browsers:</strong>
-                            <ul>
-                                <li>Firefox 4+</li>
-                                <li>Google Chrome</li>
-                                <li>Opera 10.6+</li>
-                                <li>Apple Safari 4+</li>
-                                <li>Internet Explorer 9</li>
-                            </ul>
-                            <!--hide-->
-                            <div id="hide_1" style="display:none">
-                                <p><i>From wikipedia</i>:</p>
-                                <blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
-                                    <strong>Rules:</strong>
-                                    <ol>
-                                        <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
-                                        <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
-                                        <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
-                                        <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
-                                    </ol>
-                                </blockquote>
+<!--Game Of Life-->
+<div class="last-post">
+    <h2 id="life">JavaScript and Canvas: Conway's Game of Life</h2>
+    <p class="byline"><small>Posted on May 13, 2011 by <a href="/">bphamworld</a></small></p>
+    <p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
+    <strong>Supported Browsers:</strong>
+    <ul>
+        <li>Firefox 4+</li>
+        <li>Google Chrome</li>
+        <li>Opera 10.6+</li>
+        <li>Apple Safari 4+</li>
+        <li>Internet Explorer 9</li>
+    </ul>
+    <!--hide-->
+    <div id="hide_1" style="display:none">
+        <p><i>From wikipedia</i>:</p>
+        <blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
+            <strong>Rules:</strong>
+            <ol>
+                <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+                <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+                <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+                <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.&#8221;</li>
+            </ol>
+        </blockquote>
 
-                                <canvas id="canvas_life"></canvas>
-                                <div id="buttons_life">
-                                    <button class="btn" id="generate" type="button">Generate Random Cells</button>
-                                    <button class="btn" id="run" type="button">Run</button>
-                                    <button class="btn" id="stop" type="button">Stop</button> 
-                                    <button class="btn" id="clear" type="button">Clear</button>
-                                </div>
-                            </div>
-                            <!--/hide-->
-                            <script type="text/javascript">startLife()</script>
-                            <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
-                        </div><!--./post Game of Life-->	
-                    </div><!--/.span-->
-
-                    <!-- side bar -->
-                    <div class="span3" id="sidebar">
-                        <div class="well sidebar-nav">
-                            <ul class="nav nav-list">
-                                <li class="nav-header">Categories</li>
-                                <li class="active"><a href="/javascript">JavaScript (2)</a></li>
-                                <li><a href="/html5">HTML5 (2)</a></li>
-                                <li><a href="/bookmarks">Bookmarks</a></li>
-
-                                <li class="nav-header">Recent Posts</li>
-                                <li><a href="/#bootstrap">Bootstrap Experiment</a></li>
-                                <li><a href="/#euler">Project Euler: Practice Your Math and ...</a></li>
-                                <li><a href="/#chess">Chess</a></li>
-                                <li><a href="#matrix">JavaScript: Matrix Calculator</a></li>
-                                <li><a href="/#bashrc">.bashrc</a></li>
-                                <li><a href="/#textmate">TextMate - Configure Python Bundle for iTerm</a></li>
-                                <li><a href="#life">JavaScript and Canvas: Conway's Game of Life</a></li>
-                            </ul>
-                        </div> <!--/.well -->
-                    </div> <!--/side bar-->
-                    <div style="clear: both;">&nbsp;</div>
-                </div> <!--/.row-->
-
-                <hr>
-
-            </div> <!-- /container -->
-        </div><!--/page-->                
-        <footer>
-            <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
-        </footer>
-
-        <script type="text/javascript" src="js/bootstrap-dropdown.js"></script> 
-        <script type="text/javascript"> 
-            function toggle (postid, link) { 
-                var e = document.getElementById(postid);
-                if(e.style.display == ''){
-                    e.style.display = 'none';
-                    link.innerHTML = 'more';
-                } else {
-                    e.style.display = '';
-                    link.innerHTML = 'less';
-                }
-            } 
-            //Google Analytics
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-27192907-1']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-             })()
-        </script>
-        <script type="text/javascript">
-            function detectHash() {
-                function maybeScrollToHash() {
-                    if (window.location.hash && $(window.location.hash).length) {
-                        var newTop = $(window.location.hash).offset().top - 40;
-                        $(window).scrollTop(newTop);
-                    }
-                }
-
-                $(window).bind('hashchange', function() {
-                        maybeScrollToHash();
-                        });
-
-                maybeScrollToHash();
-            };
-        </script>
-    </body>
-</html>
-
-
+        <canvas id="canvas_life"></canvas>
+        <div id="buttons_life">
+            <button class="btn" id="generate" type="button">Generate Random Cells</button>
+            <button class="btn" id="run" type="button">Run</button>
+            <button class="btn" id="stop" type="button">Stop</button> 
+            <button class="btn" id="clear" type="button">Clear</button>
+        </div>
+    </div>
+    <!--/hide-->
+    <script type="text/javascript">startLife()</script>
+    <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_1', this)">more</a></p>
+</div><!--./post Game of Life-->	
+{% endblock %}

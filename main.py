@@ -10,13 +10,13 @@ import logging
 path = os.path.join(os.path.dirname(__file__), 'templates')
 
 class MainHandler(webapp.RequestHandler):
-	def get(self):
- 		self.response.out.write(template.render(path + '/index.html', {}))
+    def get(self):
+        self.response.out.write(template.render(path + '/index.html', {'home_active': 'active', 'resume_active': ''}))
 
 class Contact(webapp.RequestHandler):
-	def get(self):	
- 		self.response.out.write(template.render(path + '/contact.html', {}))
-	
+    def get(self):	
+        self.response.out.write(template.render(path + '/contact.html', {}))
+
 class Contact2(webapp.RequestHandler):
     def post(self):
         try:
@@ -31,29 +31,37 @@ class Contact2(webapp.RequestHandler):
         except apiproxy_errors.OverQuotaError, m:
             logging.error(m)
             self.response.out.write('The email could not be sent. Please try again later.')
- 		
+
 class Resume(webapp.RequestHandler):
-	def get(self):	
- 		self.response.out.write(template.render(path + '/resume.html', {}))
+    def get(self):	
+        self.response.out.write(template.render(path + '/resume.html', {}))
 
 class PDF(webapp.RequestHandler):
-	def get(self):
-		self.response.headers['Content-Type'] = "application/txt"
-		self.response.headers['Content-Disposition'] = "attachment; filename=resume.pdf"
-		f = open(os.path.dirname(__file__) + '/files/Resume.pdf', 'r')
-		self.response.out.write(f.read())
+    def get(self):
+        self.response.headers['Content-Type'] = "application/txt"
+        self.response.headers['Content-Disposition'] = "attachment; filename=resume.pdf"
+        f = open(os.path.dirname(__file__) + '/files/Resume.pdf', 'r')
+        self.response.out.write(f.read())
 
 class Javascript_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/javascript.html', {}))
+        self.response.out.write(template.render(path + '/javascript.html', 
+                                                {'category': 'JavaScript Posts',
+                                                 'matrix_href': '#matrix',
+                                                 'life_href': '#life'}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/html5.html', {}))
+        self.response.out.write(template.render(path + '/html5.html', 
+                                                {'category': 'HTML5 Posts',
+                                                 'chess_href': '#chess',
+                                                 'life_href': '#life'}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/bookmarks.html', {}))
+        self.response.out.write(template.render(path + '/bookmarks.html', 
+                                                {'category': 'My Bookmarks', 
+                                                 'content_id': 'bookmarks'}))
 
 class Sitemap(webapp.RequestHandler):
     def get(self):
@@ -64,20 +72,18 @@ class ErrorHandler(webapp.RequestHandler):
         self.error(404)
         #self.response.out.write(template.render(path + '/404.html', {}))        
         self.response.out.write('''
-        <html>
-            <head>
-                <title>Page not found</title>
-            </head>
-            <body>
-                <h1>Page not found</h1>
-                <hr>
-                <p>Sorry, but the requested page could not be found</p>
+                                <html>
+                                <head>
+                                <title>Page not found</title>
+                                </head>
+                                <body>
+                                <h1>Page not found</h1>
+                                <hr>
+                                <p>Sorry, but the requested page could not be found</p>
 
-            </body>
-        </html>
-                ''')
-
-
+                                </body>
+                                </html>
+                                ''')
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler), 
@@ -88,8 +94,8 @@ def main():
                                           ('/bookmarks', Bookmarks_category),
                                           ('/sitemap', Sitemap),
                                           ('/.*', ErrorHandler)],
-                                         debug=False)
+                                         debug=True)
     util.run_wsgi_app(application)
 
 if __name__ == '__main__':
-	main()
+    main()

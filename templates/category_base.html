@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Bao Pham{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="My personal website"/>
+        <meta name="author" content="Bao Pham"/>
+    
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+        {% block extra_css %}{% endblock %}
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery.js" type="text/javascript"></script>
+        {% block js %}{% endblock %}
+    </head>
+
+    {% block bodytag %}
+    <body onload="detectHash()">
+    {% endblock %}
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/"><b>BPm'sWorld</b></a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="{{ home_active|default:"" }}"><a href="/">Home</a></li>
+                            <li class="{{ resume_active|default:"" }}"><a href="/resume">Resume</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/javascript">JavaScript</a></li>
+                                    <li><a href="/html5">HTML5</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/bookmarks">Bookmarks</a></li>
+                                </ul>
+                            </li><!--/.dropdown-->
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-->
+            </div><!--/.navbar-inner-->
+        </div><!--/.navbar-->
+
+        <div id="page">
+            <div class="container">
+                {% block category %}
+                <div id="category"><h1>{{ category }}</h1></div> 
+                {% endblock %}
+                <div class="row">
+                    <div class="span7" id="{{ content_id|default:"content" }}">
+                        {% block content %}{% endblock %} 
+                    </div><!--/.span7-->
+
+                    <div class="span3" id="sidebar">
+                        <div class="well sidebar-nav">
+                            {% block sidebar %}
+                            <ul class="nav nav-list">
+                                <li class="nav-header">Categories</li>
+                                <li><a href="/javascript">JavaScript (2)</a></li>
+                                <li><a href="/html5">HTML5 (2)</a></li>
+                                <li><a href="/bookmarks">Bookmarks</a></li>
+
+                                <li class="nav-header">Recent Posts</li>
+                                <li><a href="{{ bootstrap_href|default:"/#bootstrap" }}">Bootstrap Experiment</a></li>
+                                <li><a href="{{ euler_href|default:"/#euler" }}">Project Euler: Practice Your Math and ...</a></li>
+                                <li><a href="{{ chess_href|default:"/#chess" }}">Chess</a></li>
+                                <li><a href="{{ matrix_href|default:"/#matrix" }}">JavaScript: Matrix Calculator</a></li>
+                                <li><a href="{{ bashrc_href|default:"/#bashrc" }}">.bashrc</a></li>
+                                <li><a href="{{ textmate_href|default:"/#textmate" }}">TextMate - Configure Python Bundle for iTerm</a></li>
+                                <li><a href="{{ life_href|default:"/#life" }}">JavaScript and Canvas: Conway's Game of Life</a></li>
+                            </ul>
+                            {% endblock %}
+                        </div> <!--/.well -->
+                    </div> <!--/side bar-->
+                    <div style="clear: both;">&nbsp;</div>
+                </div><!--/.row-->
+            </div><!--/.container-->
+        </div><!--/.page-->
+        <footer>
+            <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+        </footer> 
+        <script type="text/javascript" src="js/bootstrap-dropdown.js"></script> 
+        {% block extra_js %}{% endblock %}
+        <script type="text/javascript"> 
+            function toggle (postid, link) { 
+                var e = document.getElementById(postid);
+                if(e.style.display == ''){
+                    e.style.display = 'none';
+                    link.innerHTML = 'more';
+                } else {
+                    e.style.display = '';
+                    link.innerHTML = 'less';
+                }
+            } 
+            //Google Analytics
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27192907-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })()
+        </script>
+        <script type="text/javascript">
+            function detectHash() {
+                function maybeScrollToHash() {
+                    if (window.location.hash && $(window.location.hash).length) {
+                        var newTop = $(window.location.hash).offset().top - 40;
+                        $(window).scrollTop(newTop);
+                    }
+                }
+
+                $(window).bind('hashchange', function() {
+                        maybeScrollToHash();
+                        });
+
+                maybeScrollToHash();
+            };
+        </script>
+    </body>
+</html>
+
