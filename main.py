@@ -48,20 +48,23 @@ class Javascript_category(webapp.RequestHandler):
         self.response.out.write(template.render(path + '/javascript.html', 
                                                 {'category': 'JavaScript Posts',
                                                  'matrix_href': '#matrix',
-                                                 'life_href': '#life'}))
+                                                 'life_href': '#life',
+                                                 'js_active': 'active'}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/html5.html', 
                                                 {'category': 'HTML5 Posts',
                                                  'chess_href': '#chess',
-                                                 'life_href': '#life'}))
+                                                 'life_href': '#life',
+                                                 'html5_active': 'active'}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/bookmarks.html', 
                                                 {'category': 'My Bookmarks', 
-                                                 'content_id': 'bookmarks'}))
+                                                 'content_id': 'bookmarks',
+                                                 'bookmarks_active': 'active'}))
 
 class Sitemap(webapp.RequestHandler):
     def get(self):

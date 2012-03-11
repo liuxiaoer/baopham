@@ -61,9 +61,9 @@
                             {% block sidebar %}
                             <ul class="nav nav-list">
                                 <li class="nav-header">Categories</li>
-                                <li><a href="/javascript">JavaScript (2)</a></li>
-                                <li><a href="/html5">HTML5 (2)</a></li>
-                                <li><a href="/bookmarks">Bookmarks</a></li>
+                                <li class="{{ js_active|default:"" }}"><a href="/javascript">JavaScript (2)</a></li>
+                                <li class="{{ html5_active|default:"" }}"><a href="/html5">HTML5 (2)</a></li>
+                                <li class="{{ bookmarks_active|default:"" }}"><a href="/bookmarks">Bookmarks</a></li>
 
                                 <li class="nav-header">Recent Posts</li>
                                 <li><a href="{{ bootstrap_href|default:"/#bootstrap" }}">Bootstrap Experiment</a></li>
