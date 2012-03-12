@@ -3552,7 +3552,7 @@ a {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border: 3px solid transparent;
 }
-#page {
+.page {
     padding-top: 60px;
     width: 1100px;
     margin: 0 auto;
@@ -3580,7 +3580,7 @@ img.right {
     text-align: right;
 }
 
-#category {
+.category {
     border: 2px solid #E7E7E7; 
     padding-top: 5px; 
     padding-bottom: 5px;
@@ -3588,12 +3588,12 @@ img.right {
     margin-bottom: 20px;
 }
 
-#category h1 {
+.category h1 {
     display: inline;
     color: #3499b3;
 }
 
-#bookmarks li {
+.bookmarks li {
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -3615,13 +3615,13 @@ footer a {
     color: #666666;
 }
 
-#content {
+.content {
     float: left;
 }
 
-#sidebar {
-    float: right;
-    width: 21%;
+.sidebar {
+    float: right !important;
+    width: 21% !important;
 }
 
 /* Game of Life */

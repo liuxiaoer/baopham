@@ -10,8 +10,9 @@
         <link href="css/bootstrap.css" rel="stylesheet"/>
         <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
         <link rel="shortcut icon" href="/favicon.ico" type="image/ico"/>
+        {% block extra_css %}
         <link href="css/prettify.css" type="text/css" rel="stylesheet" />
-
+        {% endblock %}
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -20,10 +21,11 @@
         <script src="js/jquery.js" type="text/javascript"></script>
         {% block js %}{% endblock %}
     </head>
-
+    
     {% block bodytag %}
     <body onload="detectHash(); prettyPrint()">
-    {% endblock %}
+    {% endblock bodytag %}
+        {% block navbar %}
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -46,8 +48,10 @@
                 </div><!--/.container-->
             </div><!--/.navbar-inner-->
         </div><!--/.navbar-->
+        {% endblock navbar %}
 
-        <div id="page">
+        {% block page %}
+        <div class="page">
             <div class="container">
                 {% block hero-unit %}
                 <div class="hero-unit">
@@ -58,19 +62,19 @@
                 {% endblock %}
 
                 <div class="row">
-                    <div class="span7" id="content">
+                    <div class="span7 {{ content_class|default:"content" }}">
                         {% block content %}
                         {% endblock content %} 
                     </div><!--/.span7-->
 
-                    <div class="span3" id="sidebar">
+                    {% block sidebar %}
+                    <div class="span3 sidebar">
                         <div class="well sidebar-nav">
-                            {% block sidebar %}
                             <ul class="nav nav-list">
                                 <li class="nav-header">Categories</li>
-                                <li><a href="/javascript">JavaScript (2)</a></li>
-                                <li><a href="/html5">HTML5 (2)</a></li>
-                                <li><a href="/bookmarks">Bookmarks</a></li>
+                                <li class="{{ js_active|default:"" }}"><a href="/javascript">JavaScript (2)</a></li>
+                                <li class="{{ html5_active|default:"" }}"><a href="/html5">HTML5 (2)</a></li>
+                                <li class="{{ bookmarks_active|default:"" }}"><a href="/bookmarks">Bookmarks</a></li>
 
                                 <li class="nav-header">Recent Posts</li>
                                 <li><a href="{{ bootstrap_href|default:"#bootstrap" }}">Bootstrap Experiment</a></li>
@@ -81,18 +85,22 @@
                                 <li><a href="{{ textmate_href|default:"#textmate" }}">TextMate - Configure Python Bundle for iTerm</a></li>
                                 <li><a href="{{ life_href|default:"#life" }}">JavaScript and Canvas: Conway's Game of Life</a></li>
                             </ul>
-                            {% endblock %}
                         </div> <!--/.well -->
                     </div> <!--/side bar-->
                     <div style="clear: both;">&nbsp;</div>
+                    {% endblock sidebar %}
                 </div><!--/.row-->
             </div><!--/.container-->
         </div><!--/.page-->
+        {% endblock page %}
         <footer>
             <p>&copy;2012 All Rights Reserved. &nbsp;&bull;&nbsp; Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
         </footer> 
+        {% block js_after %}
         <script type="text/javascript" src="js/bootstrap-dropdown.js"></script> 
+        {% block extra_js %}
         <script type="text/javascript" src="js/prettify.js"></script>
+        {% endblock extra_js %}
         <script type="text/javascript"> 
             function toggle (postid, link) { 
                 var e = document.getElementById(postid);
@@ -130,5 +138,6 @@
                 maybeScrollToHash();
             };
         </script>
+        {% endblock js_after %}
     </body>
 </html>

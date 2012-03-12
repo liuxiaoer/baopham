@@ -34,7 +34,7 @@ class Contact2(webapp.RequestHandler):
 
 class Resume(webapp.RequestHandler):
     def get(self):	
-        self.response.out.write(template.render(path + '/resume.html', {}))
+        self.response.out.write(template.render(path + '/resume.html', {'home_active': '', 'resume_active': 'active'}))
 
 class PDF(webapp.RequestHandler):
     def get(self):
@@ -46,24 +46,21 @@ class PDF(webapp.RequestHandler):
 class Javascript_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/javascript.html', 
-                                                {'category': 'JavaScript Posts',
-                                                 'matrix_href': '#matrix',
+                                                {'matrix_href': '#matrix',
                                                  'life_href': '#life',
                                                  'js_active': 'active'}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/html5.html', 
-                                                {'category': 'HTML5 Posts',
-                                                 'chess_href': '#chess',
+                                                {'chess_href': '#chess',
                                                  'life_href': '#life',
                                                  'html5_active': 'active'}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/bookmarks.html', 
-                                                {'category': 'My Bookmarks', 
-                                                 'content_id': 'bookmarks',
+                                                {'content_class': 'bookmarks',
                                                  'bookmarks_active': 'active'}))
 
 class Sitemap(webapp.RequestHandler):
