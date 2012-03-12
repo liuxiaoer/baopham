@@ -52,7 +52,7 @@
 
         {% block page %}
         <div class="page">
-            <div class="container">
+            <div class="container-fluid">
                 {% block hero-unit %}
                 <div class="hero-unit">
                     <h2>Welcome to My Personal Website</h2>  <img src="images/newbao.jpg" alt="Bao's picture" width="190" height="190" class="right" />
@@ -61,8 +61,8 @@
                 </div> <!--/.hero-unit-->
                 {% endblock %}
 
-                <div class="row">
-                    <div class="span7 {{ content_class|default:"content" }}">
+                <div class="row-fluid">
+                    <div class="span8 {{ content_class|default:"content" }}">
                         {% block content %}
                         {% endblock content %} 
                     </div><!--/.span7-->

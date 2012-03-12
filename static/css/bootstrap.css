@@ -3500,6 +3500,27 @@ body {
     color: #666666 !important;
 }
 
+.page {
+    padding-top: 60px;
+    width: 71.2%;
+    margin: 0 auto;
+    background: #FFFFFF;
+}
+
+.container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.content {
+    float: left;
+}
+
+.sidebar {
+    float: right !important;
+    width: 21.7% !important;
+}
+
 a {
     color: #3499b3;
 }
@@ -3552,12 +3573,7 @@ a {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border: 3px solid transparent;
 }
-.page {
-    padding-top: 60px;
-    width: 1100px;
-    margin: 0 auto;
-    background: #FFFFFF;
-}
+
 
 img.right {
     float: right;
@@ -3615,14 +3631,6 @@ footer a {
     color: #666666;
 }
 
-.content {
-    float: left;
-}
-
-.sidebar {
-    float: right !important;
-    width: 21% !important;
-}
 
 /* Game of Life */
 #canvas_life {
