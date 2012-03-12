@@ -3557,6 +3557,7 @@ a {
     background: url("/images/stupidpenguin.png") no-repeat scroll 20% 3.7% transparent !important;
     color: #FAEBD7 !important;
     font-weight: bold !important;
+    margin-left: 13.9% !important;
 }
 
 .nav > li > a:hover {

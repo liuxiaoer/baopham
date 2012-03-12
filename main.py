@@ -34,7 +34,10 @@ class Contact2(webapp.RequestHandler):
 
 class Resume(webapp.RequestHandler):
     def get(self):	
-        self.response.out.write(template.render(path + '/resume.html', {'home_active': '', 'resume_active': 'active'}))
+        self.response.out.write(template.render(path + '/resume.html', 
+                                                {'home_active': '', 
+                                                 'resume_active': 'active',
+                                                 'onload_js': ""}))
 
 class PDF(webapp.RequestHandler):
     def get(self):
@@ -46,21 +49,24 @@ class PDF(webapp.RequestHandler):
 class Javascript_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/javascript.html', 
-                                                {'matrix_href': '#matrix',
+                                                {'onload_js': "detectHash()",
+                                                 'matrix_href': '#matrix',
                                                  'life_href': '#life',
                                                  'js_active': 'active'}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/html5.html', 
-                                                {'chess_href': '#chess',
+                                                {'onload_js': "detectHash()",
+                                                 'chess_href': '#chess',
                                                  'life_href': '#life',
                                                  'html5_active': 'active'}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
         self.response.out.write(template.render(path + '/bookmarks.html', 
-                                                {'content_class': 'bookmarks',
+                                                {'onload_js': "detectHash()",
+                                                 'content_class': 'bookmarks',
                                                  'bookmarks_active': 'active'}))
 
 class Sitemap(webapp.RequestHandler):
@@ -94,7 +100,7 @@ def main():
                                           ('/bookmarks', Bookmarks_category),
                                           ('/sitemap', Sitemap),
                                           ('/.*', ErrorHandler)],
-                                         debug=True)
+                                         debug=False)
     util.run_wsgi_app(application)
 
 if __name__ == '__main__':
