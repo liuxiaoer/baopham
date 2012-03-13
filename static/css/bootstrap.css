@@ -3997,14 +3997,14 @@ body {
 
 .page {
     padding-top: 60px;
-    width: 71.2%;
+    width: 85%;
     margin: 0 auto;
     background: #FFFFFF;
 }
 
 .container-fluid {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .content {
@@ -4053,7 +4053,7 @@ a {
     background: url("/images/stupidpenguin.png") no-repeat scroll 20% 3.7% transparent !important;
     color: #FAEBD7 !important;
     font-weight: bold !important;
-    margin-left: 13.9% !important;
+    margin-left: 6.5% !important;
 }
 
 .nav > li > a:hover {
