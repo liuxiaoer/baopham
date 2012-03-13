@@ -685,3 +685,15 @@
   }
 }
 
+@
+/* iPad horizontal  */
+@media (min-width: 980px) {
+    .page {
+        width: 80%;
+    }
+    .navbar .brand {
+        margin-left: 3.3% !important;
+    }
+}
+
+
