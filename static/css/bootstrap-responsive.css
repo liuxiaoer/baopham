@@ -686,6 +686,51 @@
 }
 
 /* ============== */
+@media (max-width: 800px) {
+    .page {
+        width: 98%;
+    }
+    .navbar .brand {
+        margin-left: -1.5% !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page {
+        width: 98%;
+    }
+    .navbar .brand {
+        margin-left: -1.5% !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .page {
+        width: 72%;
+    }
+    .navbar .brand {
+        margin-left: 13.7% !important;
+    }
+}
+
+@media (min-width: 1680px) {
+    .page {
+        width: 72%;
+    }
+    .navbar .brand {
+        margin-left: 13.7% !important;
+    }
+}
+
+@media (min-width: 2560px) {
+    .page {
+        width: 50%;
+    }
+    .navbar .brand {
+        margin-left: 25.3% !important;
+    }
+}
+
 
 /* For general iPad layouts */
 @media only screen and (device-width: 768px) {
