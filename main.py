@@ -40,7 +40,10 @@ class Resume(webapp.RequestHandler):
         if "iPhone" in self.request.headers["User-Agent"]:
             self.redirect("http://iphone.bphamworld.appspot.com/resume")
         else:
-            self.response.out.write(template.render(path + '/resume.html', {'home_active': '', 'resume_active': 'active'}))
+            self.response.out.write(template.render(path + '/resume.html', 
+                                                    {'home_active': '', 
+                                                     'resume_active': 'active',
+                                                     'onload_js': ''}))
 
 class PDF(webapp.RequestHandler):
     def get(self):
@@ -57,7 +60,8 @@ class Javascript_category(webapp.RequestHandler):
             self.response.out.write(template.render(path + '/javascript.html', 
                                                     {'matrix_href': '#matrix',
                                                      'life_href': '#life',
-                                                     'js_active': 'active'}))
+                                                     'js_active': 'active',
+                                                     'onload_js': 'detectHash()'}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
@@ -67,7 +71,8 @@ class HTML5_category(webapp.RequestHandler):
             self.response.out.write(template.render(path + '/html5.html', 
                                                     {'chess_href': '#chess',
                                                      'life_href': '#life',
-                                                     'html5_active': 'active'}))
+                                                     'html5_active': 'active',
+                                                     'onload_js': 'detectHash()'}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
@@ -76,7 +81,8 @@ class Bookmarks_category(webapp.RequestHandler):
         else:
             self.response.out.write(template.render(path + '/bookmarks.html', 
                                                     {'content_class': 'bookmarks',
-                                                     'bookmarks_active': 'active'}))
+                                                     'bookmarks_active': 'active',
+                                                     'onload_js': 'detectHash()'}))
 
 class Sitemap(webapp.RequestHandler):
     def get(self):
