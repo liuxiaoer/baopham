@@ -11,7 +11,10 @@ path = os.path.join(os.path.dirname(__file__), 'templates')
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/index.html', {'home_active': 'active', 'resume_active': ''}))
+        if "iPhone" in self.request.headers["User-Agent"]:
+            self.redirect("http://iphone.bphamworld.appspot.com")
+        else:
+            self.response.out.write(template.render(path + '/index.html', {'home_active': 'active', 'resume_active': ''}))
 
 class Contact(webapp.RequestHandler):
     def get(self):	
@@ -34,10 +37,10 @@ class Contact2(webapp.RequestHandler):
 
 class Resume(webapp.RequestHandler):
     def get(self):	
-        self.response.out.write(template.render(path + '/resume.html', 
-                                                {'home_active': '', 
-                                                 'resume_active': 'active',
-                                                 'onload_js': ""}))
+        if "iPhone" in self.request.headers["User-Agent"]:
+            self.redirect("http://iphone.bphamworld.appspot.com/resume")
+        else:
+            self.response.out.write(template.render(path + '/resume.html', {'home_active': '', 'resume_active': 'active'}))
 
 class PDF(webapp.RequestHandler):
     def get(self):
@@ -48,26 +51,32 @@ class PDF(webapp.RequestHandler):
 
 class Javascript_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/javascript.html', 
-                                                {'onload_js': "detectHash()",
-                                                 'matrix_href': '#matrix',
-                                                 'life_href': '#life',
-                                                 'js_active': 'active'}))
+        if "iPhone" in self.request.headers["User-Agent"]:
+            self.redirect("http://iphone.bphamworld.appspot.com/javascript")
+        else:
+            self.response.out.write(template.render(path + '/javascript.html', 
+                                                    {'matrix_href': '#matrix',
+                                                     'life_href': '#life',
+                                                     'js_active': 'active'}))
 
 class HTML5_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/html5.html', 
-                                                {'onload_js': "detectHash()",
-                                                 'chess_href': '#chess',
-                                                 'life_href': '#life',
-                                                 'html5_active': 'active'}))
+        if "iPhone" in self.request.headers["User-Agent"]:
+            self.redirect("http://iphone.bphamworld.appspot.com/html5")
+        else:
+            self.response.out.write(template.render(path + '/html5.html', 
+                                                    {'chess_href': '#chess',
+                                                     'life_href': '#life',
+                                                     'html5_active': 'active'}))
 
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
-        self.response.out.write(template.render(path + '/bookmarks.html', 
-                                                {'onload_js': "detectHash()",
-                                                 'content_class': 'bookmarks',
-                                                 'bookmarks_active': 'active'}))
+        if "iPhone" in self.request.headers["User-Agent"]:
+            self.redirect("http://iphone.bphamworld.appspot.com/bookmarks")
+        else:
+            self.response.out.write(template.render(path + '/bookmarks.html', 
+                                                    {'content_class': 'bookmarks',
+                                                     'bookmarks_active': 'active'}))
 
 class Sitemap(webapp.RequestHandler):
     def get(self):
@@ -100,8 +109,9 @@ def main():
                                           ('/bookmarks', Bookmarks_category),
                                           ('/sitemap', Sitemap),
                                           ('/.*', ErrorHandler)],
-                                         debug=False)
+                                         debug=True)
     util.run_wsgi_app(application)
 
 if __name__ == '__main__':
     main()
+

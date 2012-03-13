@@ -4030,7 +4030,8 @@ a {
 }
 
 .navbar-inner {
-    background-image: -moz-linear-gradient(center top , #5D8872, #5D8872) !important;
+    /* background-image: -moz-linear-gradient(center top , #5D8872, #5D8872) !important; */
+    background: #5D8872 !important;
 }
 
 .navbar .nav 
