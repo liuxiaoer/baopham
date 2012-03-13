@@ -2,10 +2,7 @@
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util, template
-from google.appengine.runtime import apiproxy_errors
-from google.appengine.api import mail
 import os
-import logging
 
 path = os.path.join(os.path.dirname(__file__), 'templates')
 
@@ -15,25 +12,6 @@ class MainHandler(webapp.RequestHandler):
             self.redirect("http://iphone.bphamworld.appspot.com")
         else:
             self.response.out.write(template.render(path + '/index.html', {'home_active': 'active', 'resume_active': ''}))
-
-class Contact(webapp.RequestHandler):
-    def get(self):	
-        self.response.out.write(template.render(path + '/contact.html', {}))
-
-class Contact2(webapp.RequestHandler):
-    def post(self):
-        try:
-            sender = self.request.get("email", default_value=str)
-            subject = self.request.get("subject")
-            body = self.request.get("message", default_value=str)
-            message = mail.EmailMessage(sender="Website Viewer <gbaopham@gmail.com>", subject=subject)
-            message.to = "BP <gbao.pham@gmail.com>"
-            message.body = "From: " + sender + "\nMessage:\n" + body
-            message.send()
-            self.response.out.write(template.render(path + '/contact2.html', {}))
-        except apiproxy_errors.OverQuotaError, m:
-            logging.error(m)
-            self.response.out.write('The email could not be sent. Please try again later.')
 
 class Resume(webapp.RequestHandler):
     def get(self):	
@@ -115,7 +93,7 @@ def main():
                                           ('/bookmarks', Bookmarks_category),
                                           ('/sitemap', Sitemap),
                                           ('/.*', ErrorHandler)],
-                                         debug=True)
+                                         debug=False)
     util.run_wsgi_app(application)
 
 if __name__ == '__main__':
