@@ -8,20 +8,28 @@ path = os.path.join(os.path.dirname(__file__), 'templates')
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
-        if "iPhone" in self.request.headers["User-Agent"]:
+        user_agent = self.request.headers["User-Agent"]
+        if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
             self.redirect("http://iphone.bphamworld.appspot.com")
         else:
             self.response.out.write(template.render(path + '/index.html', {'home_active': 'active', 'resume_active': ''}))
 
+    def head(self):
+        return self.response.headers['HEAD']
+
 class Resume(webapp.RequestHandler):
     def get(self):	
-        if "iPhone" in self.request.headers["User-Agent"]:
+        user_agent = self.request.headers["User-Agent"]
+        if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
             self.redirect("http://iphone.bphamworld.appspot.com/resume")
         else:
             self.response.out.write(template.render(path + '/resume.html', 
                                                     {'home_active': '', 
                                                      'resume_active': 'active',
                                                      'onload_js': ''}))
+
+    def head(self):
+        return self.response.headers['HEAD']
 
 class PDF(webapp.RequestHandler):
     def get(self):
@@ -32,7 +40,8 @@ class PDF(webapp.RequestHandler):
 
 class Javascript_category(webapp.RequestHandler):
     def get(self):
-        if "iPhone" in self.request.headers["User-Agent"]:
+        user_agent = self.request.headers["User-Agent"]
+        if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
             self.redirect("http://iphone.bphamworld.appspot.com/javascript")
         else:
             self.response.out.write(template.render(path + '/javascript.html', 
@@ -41,9 +50,13 @@ class Javascript_category(webapp.RequestHandler):
                                                      'js_active': 'active',
                                                      'onload_js': 'detectHash()'}))
 
+    def head(self):
+        return self.response.headers['HEAD']
+
 class HTML5_category(webapp.RequestHandler):
     def get(self):
-        if "iPhone" in self.request.headers["User-Agent"]:
+        user_agent = self.request.headers["User-Agent"]
+        if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
             self.redirect("http://iphone.bphamworld.appspot.com/html5")
         else:
             self.response.out.write(template.render(path + '/html5.html', 
@@ -52,15 +65,22 @@ class HTML5_category(webapp.RequestHandler):
                                                      'html5_active': 'active',
                                                      'onload_js': 'detectHash()'}))
 
+    def head(self):
+        return self.response.headers['HEAD']
+
 class Bookmarks_category(webapp.RequestHandler):
     def get(self):
-        if "iPhone" in self.request.headers["User-Agent"]:
+        user_agent = self.request.headers["User-Agent"]
+        if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
             self.redirect("http://iphone.bphamworld.appspot.com/bookmarks")
         else:
             self.response.out.write(template.render(path + '/bookmarks.html', 
                                                     {'content_class': 'bookmarks',
                                                      'bookmarks_active': 'active',
                                                      'onload_js': 'detectHash()'}))
+
+    def head(self):
+        return self.response.headers['HEAD']
 
 class Sitemap(webapp.RequestHandler):
     def get(self):
