@@ -10,7 +10,7 @@ class MainHandler(webapp.RequestHandler):
     def get(self):
         user_agent = self.request.headers["User-Agent"]
         if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
-            self.redirect("http://iphone.bphamworld.appspot.com")
+            self.redirect("http://mobile.bphamworld.appspot.com")
         else:
             self.response.out.write(template.render(path + '/index.html', {'home_active': 'active', 'resume_active': ''}))
 
@@ -21,7 +21,7 @@ class Resume(webapp.RequestHandler):
     def get(self):	
         user_agent = self.request.headers["User-Agent"]
         if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
-            self.redirect("http://iphone.bphamworld.appspot.com/resume")
+            self.redirect("http://mobile.bphamworld.appspot.com/resume")
         else:
             self.response.out.write(template.render(path + '/resume.html', 
                                                     {'home_active': '', 
@@ -42,7 +42,7 @@ class Javascript_category(webapp.RequestHandler):
     def get(self):
         user_agent = self.request.headers["User-Agent"]
         if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
-            self.redirect("http://iphone.bphamworld.appspot.com/javascript")
+            self.redirect("http://mobile.bphamworld.appspot.com/javascript")
         else:
             self.response.out.write(template.render(path + '/javascript.html', 
                                                     {'matrix_href': '#matrix',
@@ -57,7 +57,7 @@ class HTML5_category(webapp.RequestHandler):
     def get(self):
         user_agent = self.request.headers["User-Agent"]
         if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
-            self.redirect("http://iphone.bphamworld.appspot.com/html5")
+            self.redirect("http://mobile.bphamworld.appspot.com/html5")
         else:
             self.response.out.write(template.render(path + '/html5.html', 
                                                     {'chess_href': '#chess',
@@ -72,7 +72,7 @@ class Bookmarks_category(webapp.RequestHandler):
     def get(self):
         user_agent = self.request.headers["User-Agent"]
         if "iPhone" in user_agent or "Android" in user_agent or "BlackBerry" in user_agent:
-            self.redirect("http://iphone.bphamworld.appspot.com/bookmarks")
+            self.redirect("http://mobile.bphamworld.appspot.com/bookmarks")
         else:
             self.response.out.write(template.render(path + '/bookmarks.html', 
                                                     {'content_class': 'bookmarks',
