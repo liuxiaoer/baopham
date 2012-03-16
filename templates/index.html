@@ -121,6 +121,11 @@
             </tr>
         </table>
     </div> <!--/chess table-->
+    <br>
+    <p><b>BONUS:</b> HTML's <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> and <a href="http://www.w3.org/TR/html5/editing.html#contenteditable">contentEditable</a>.</p>
+    <p>Features that allow you to edit a page's section on the browser and store your scribbles on the client-side database (yours not mine so no worries):</p>
+    <!--hide-->
+    <div id="hide_4" style="display:none">
     <div id="editable-sec">
         <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);">
         </section>
@@ -130,9 +135,8 @@
         </div>
         <p style="width: 350px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> turned off or doesn't support it unfortunately)</p>
     </div> <!--/editable section-->
-
-    <div style="clear: both;">&nbsp;</div>
-
+    </div><!--/hide-->
+    <p class="links"><a href="javascript:void(0)" onclick="toggle('hide_4', this)">more</a></p>
     <script type="text/javascript">
         getNotes();
         $("#clearNotes").click( function () {
