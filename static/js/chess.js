@@ -86,19 +86,19 @@ function isBlocked(elemPos, targetPos, direction, pieces) {
 
 function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
     var elemPiece = elemIDs[1];
-    var elemPos = parseInt(elemIDs[0]);
-    var targetPos = parseInt(targetIDs[0]);
+    var elemPos = parseInt(elemIDs[0], 10);
+    var targetPos = parseInt(targetIDs[0], 10);
     var diff = Math.abs(targetPos - elemPos);
 
     if (elemPiece == 'pawn') {
 
         if (elemColor == 'black') {
             //Move one step forward with nothing in front
-            if ( pieces[elemPos + 8] == 0 && targetPos == elemPos + 8) {
+            if ( !pieces[elemPos + 8] && targetPos == elemPos + 8) {
                 return true;
             } 
             //Move two steps forward from the pawn row with nothing in between
-            else if ( elemPos >= 9 && elemPos <= 16 && targetPos == elemPos + 16 && pieces[elemPos + 8] == 0) {
+            else if ( elemPos >= 9 && elemPos <= 16 && targetPos == elemPos + 16 && !pieces[elemPos + 8]) {
                 return true;
             }     
             //Move diagonally one step only to kill enemy
@@ -111,11 +111,11 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
     
         else {
             //Move one step forward with nothing in front
-            if ( pieces[elemPos - 8] == 0 && targetPos == elemPos - 8) {
+            if ( pieces[elemPos - 8] === 0 && targetPos == elemPos - 8) {
                 return true;
             } 
             //Move two steps forward from the pawn row with nothing in between
-            else if ( elemPos >= 49 && elemPos <= 56 && targetPos == elemPos - 16 && pieces[elemPos - 8] == 0) {
+            else if ( elemPos >= 49 && elemPos <= 56 && targetPos == elemPos - 16 && !pieces[elemPos - 8]) {
                 return true;
             }     
             //Move diagonally one step only to kill enemy
@@ -129,17 +129,17 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
 
     else if (elemPiece == 'rook') {
         //Move vertically or horrizontally
-        if ( diff % 8 == 0 && !isBlocked(elemPos, targetPos, 'vertical', pieces) )
+        if ( diff % 8 === 0 && !isBlocked(elemPos, targetPos, 'vertical', pieces) )
             return true;
-        else if ( diff % 9 != 0 && diff % 7 != 0 && !isBlocked(elemPos, targetPos, 'horizontal', pieces) )
+        else if ( diff % 9 !== 0 && diff % 7 !== 0 && !isBlocked(elemPos, targetPos, 'horizontal', pieces) )
             return true;
     }
 
     else if (elemPiece == 'bishop') {
         //Move diagonally
-        if ( diff % 9 == 0 && !isBlocked(elemPos, targetPos, 'diagonal right', pieces) ) 
+        if ( diff % 9 === 0 && !isBlocked(elemPos, targetPos, 'diagonal right', pieces) ) 
             return true;
-        else if ( diff % 7 == 0 && !isBlocked(elemPos, targetPos, 'diagonal left', pieces) )
+        else if ( diff % 7 === 0 && !isBlocked(elemPos, targetPos, 'diagonal left', pieces) )
             return true;
     } 
 
@@ -159,30 +159,30 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
     }
 
     else if (elemPiece == 'queen') {
-        if ( diff % 8 == 0 && !isBlocked(elemPos, targetPos, 'vertical', pieces) )
+        if ( diff % 8 === 0 && !isBlocked(elemPos, targetPos, 'vertical', pieces) )
             return true;
-        else if ( diff % 9 == 0 && !isBlocked(elemPos, targetPos, 'diagonal right', pieces) )
+        else if ( diff % 9 === 0 && !isBlocked(elemPos, targetPos, 'diagonal right', pieces) )
             return true;
-        else if ( diff % 7 == 0 && !isBlocked(elemPos, targetPos, 'diagonal left', pieces) )
+        else if ( diff % 7 === 0 && !isBlocked(elemPos, targetPos, 'diagonal left', pieces) )
             return true;
-        else if ( diff % 9 != 0 && diff % 7 != 0 && !isBlocked(elemPos, targetPos, 'horizontal', pieces) )
+        else if ( diff % 9 !== 0 && diff % 7 !== 0 && !isBlocked(elemPos, targetPos, 'horizontal', pieces) )
             return true;
     }
 
     else if (elemPiece == 'king') {
         if (targetPos > elemPos) {
-            if ( (diff == 8 && !pieces[elemPos + 8]) 
-                || (diff == 1 && !pieces[elemPos + 1])
-                || (diff == 9 && !pieces[elemPos + 9])
-                || (diff == 7 && !pieces[elemPos + 7])) {
-                    return true
+            if ( (diff == 8 && !pieces[elemPos + 8])  ||
+                 (diff == 1 && !pieces[elemPos + 1])  ||
+                 (diff == 9 && !pieces[elemPos + 9])  ||
+                 (diff == 7 && !pieces[elemPos + 7])) {
+                    return true;
             }
         } else {
-            if ( (diff == 8 && !pieces[elemPos - 8]) 
-                || (diff == 1 && !pieces[elemPos - 1])
-                || (diff == 9 && !pieces[elemPos - 9])
-                || (diff == 7 && !pieces[elemPos - 7])) {
-                    return true
+            if ( (diff == 8 && !pieces[elemPos - 8])  ||
+                 (diff == 1 && !pieces[elemPos - 1])  ||
+                 (diff == 9 && !pieces[elemPos - 9])  ||
+                 (diff == 7 && !pieces[elemPos - 7])) {
+                    return true;
             }
         }
     }
@@ -231,8 +231,8 @@ function drop(event) {
         element.setAttribute('id', elementIDs[0]); //Set old cell's id to its position with no piece name
         
         //Update the dictionary
-        var elemPos = parseInt(elementIDs[0]);
-        var targetPos = parseInt(targetIDs[0]);
+        var elemPos = parseInt(elementIDs[0], 10);
+        var targetPos = parseInt(targetIDs[0], 10);
         PIECES[elemPos] = 0;
         PIECES[targetPos] = 1;
 

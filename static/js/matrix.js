@@ -90,9 +90,6 @@ function dotProduct(vecA, vecB){
 }
 
 function prettify(matrix, name){
-    if(name == null){
-        name = 'Answer';
-    }
     var row = '';
     for(var i=0; i<matrix.length; i++){
         row += '<mtr>';
@@ -106,9 +103,6 @@ function prettify(matrix, name){
 }
 
 function prettify2(matrix, name){
-    if(name == null){
-        name = 'Answer';
-    }
     var html = name + ' = [ ';
     for(var i=0; i<matrix.length; i++){
         html += '[ ';
@@ -123,7 +117,7 @@ function prettify2(matrix, name){
 
 
 function check(matrix){
-    if(matrix.length == 0) return true;
+    if(matrix.length === 0) return true;
     var cols = matrix[0].length;
     for(var i=0; i<matrix.length; i++){
         if(matrix[i].length != cols){
@@ -149,7 +143,7 @@ function computeMatrix(){
             arrayA = [];
             for(var i=0; i<inputs_A.length; i++){
                 var val = $(inputs_A[i]).val();
-                if($.trim(val) != ''){
+                if($.trim(val) !== ''){
                 arrayA.push(val.split(','));
                 }
             }   					
@@ -157,7 +151,7 @@ function computeMatrix(){
             arrayB = [];
             for(var i=0; i<inputs_B.length; i++){
                 var val = $(inputs_B[i]).val();
-                if($.trim(val) != ''){
+                if($.trim(val) !== ''){
                     arrayB.push(val.split(','));
                 }
             } 
@@ -166,7 +160,7 @@ function computeMatrix(){
                     for(var i=0; i<arrayA.length; i++){
                         matrixA[i] = [];
                         for(var j=0; j<arrayA[0].length; j++){
-                            matrixA[i][j] = parseInt(arrayA[i][j]);
+                            matrixA[i][j] = parseInt(arrayA[i][j], 10);
                         }
                     }
 
@@ -174,7 +168,7 @@ function computeMatrix(){
                 for(var i=0; i<arrayB.length; i++){
                     matrixB[i] = [];
                     for(var j=0; j<arrayB[0].length; j++){
-                        matrixB[i][j] = parseInt(arrayB[i][j]);
+                        matrixB[i][j] = parseInt(arrayB[i][j], 10);
                     }
                 } 
             }
@@ -183,31 +177,31 @@ function computeMatrix(){
             answer.empty();
             if(func == 'multiply'){
                 var ans = multiply(matrixA, matrixB);
-                answer.append(prettify(ans));
+                answer.append(prettify(ans, 'Answer'));
                 answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
                 $("#not_display_correctly").click(function(){
-                    answer.append($('<div />').append(prettify2(ans)));
+                    answer.append($('<div />').append(prettify2(ans, 'Answer')));
                 });
             }
             else if(func == 'add'){
                 var ans = add(matrixA, matrixB);
-                answer.append(prettify(ans));  
+                answer.append(prettify(ans, 'Answer'));  
                 answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
                 $("#not_display_correctly").click(function(){
-                    answer.append($('<div />').append(prettify2(ans)));
+                    answer.append($('<div />').append(prettify2(ans, 'Answer')));
                 });
             }
             else if(func == 'subtract'){
                 var ans = subtract(matrixA, matrixB);
-                answer.append(prettify(ans)); 
+                answer.append(prettify(ans, 'Answer')); 
                 answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
                 $("#not_display_correctly").click(function(){
-                    answer.append($('<div />').append(prettify2(ans)));
+                    answer.append($('<div />').append(prettify2(ans, 'Answer')));
                 });
             }
             else if(func == 'transpose'){
                 console.log(matrixB);
-                if(matrixA.length != 0 && matrixB.length != 0){
+                if(matrixA.length !== 0 && matrixB.length !== 0){
                     ansA = transpose(matrixA);
                     answer.append($('<div />').append(prettify(ansA, 'Matrix 1')));
                     ansB = transpose(matrixB);
@@ -219,7 +213,7 @@ function computeMatrix(){
                     });
 
                 }
-                else if(matrixA.length != 0){
+                else if(matrixA.length !== 0){
                     ansA = transpose(matrixA);
                     answer.append($('<div />').append(prettify(ansA, 'Matrix 1')));
                     answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
@@ -227,7 +221,7 @@ function computeMatrix(){
                         answer.append($('<div />').append(prettify2(ansA, 'Matrix 1')));
                     });
                 }
-                else if(matrixB.length != 0){
+                else if(matrixB.length !== 0){
                     ansB = transpose(matrixB);
                     answer.append($('<div />').append(prettify(ansB, 'Matrix 2')));
                     answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
@@ -239,3 +233,4 @@ function computeMatrix(){
     });
 
 }
+
