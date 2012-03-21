@@ -16,10 +16,6 @@ if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
 end
 
-if ENV['HTTP_USER_AGENT'].include? 'iPhone'
-    redirect_to "http://bphamworld.appspot.com"
-end
-
 toto = Toto::Server.new do
     #
     # Add your settings here
