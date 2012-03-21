@@ -3990,14 +3990,16 @@ a.thumbnail:hover {
 }
 
 /* ========= */
-body {
+html, body {
     background-color: #3D4B58 !important;
     color: #666666 !important;
+    height: 100%;
 }
 
 .page {
-    padding-top: 60px;
+    padding-top: 80px;
     width: 85%;
+    min-height: 100%;
     margin: 0 auto;
     background: #FFFFFF;
 }
@@ -4005,6 +4007,7 @@ body {
 .container-fluid {
     padding-left: 60px;
     padding-right: 60px;
+    min-height: 100%;
 }
 
 .content {
@@ -4072,6 +4075,20 @@ a {
     border: 3px solid transparent;
 }
 
+.archive li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+.archive h1 {
+    padding-bottom: 10px;
+}
+
+.tags {
+    font-size: 11px;
+    padding-top: 10px;
+}
 
 img.right {
     float: right;

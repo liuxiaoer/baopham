@@ -1,12 +1,3 @@
-{% extends "base.html" %}
-
-{% block title %}Resume{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" type="text/css" href="css/yui-yahoo.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/resume.css" media="all" />
-{% endblock %}
-
-{% block page %}
 <div class="resume">
     <div id="doc2" class="yui-t7">
         <div id="inner">
@@ -23,7 +14,7 @@
                     <div class="yui-u">
                         <div class="contact-info">
                             <h3>
-                                <a id="pdf" href="/download_resume" name="pdf">Download PDF</a>
+                                <a id="pdf" href="/Resume.pdf" name="pdf">Download PDF</a>
                             </h3>
 
                         </div><!--// .contact-info -->
@@ -223,29 +214,4 @@
         </div><!-- // inner -->
     </div><!--// doc -->
 </div>
-{% endblock page %}
 
-{% block js_after %}
-        <script type="text/javascript" src="js/bootstrap-dropdown.js"></script> 
-        <script type="text/javascript"> 
-            function toggle (postid, link) { 
-                var e = document.getElementById(postid);
-                if(e.style.display == ''){
-                    e.style.display = 'none';
-                    link.innerHTML = 'more';
-                } else {
-                    e.style.display = '';
-                    link.innerHTML = 'less';
-                }
-            } 
-            //Google Analytics
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-27192907-1']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-             })()
-        </script>
-{% endblock js_after %}

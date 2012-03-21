@@ -1,0 +1,24 @@
+<div class="page">
+    <div class="container-fluid">
+        <div class="post">
+            <h1><%= title %></h1>
+            <p><small>Posted on <%= date %> by <a href="/"><%= author %></a></small></p>
+            <%= body %>
+            <% require 'karakuri' %>
+            <% if Karakuri::tag_link_list(article[:tags]) %>
+                <div class="tags">
+                    tags: <%= Karakuri::tag_link_list(article[:tags])  %>
+                </div><% 10.times { %>&nbsp;<%}%>
+            <% end %>
+        </div>
+        <div class="comments">
+    <% if @config[:disqus] %>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript" src="http://disqus.com/forums/<%= @config[:disqus] %>/embed.js"> </script>
+      <noscript><a href="http://<%= @config[:disqus] %>.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    <% end %>
+  </div>
+    </div>
+</div>
+

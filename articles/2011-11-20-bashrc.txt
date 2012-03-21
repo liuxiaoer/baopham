@@ -1,0 +1,122 @@
+title: .bashrc
+author: Bao Pham
+date: 2011/11/20
+
+<p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself.</p>
+<p>Here is part of my bashrc:</p>~
+<pre class="prettyprint linenums pre-scrollable">
+# Configure iTerm's tab title to display current directory 
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+
+# Show git branch in bash prompt
+# e.g: export PS1="\[\033[0;32m\]\u@\h\[\033[0;32m\] \w\$(__git_ps1)\$\[\033[00m\] " 
+__git_ps1() { 
+    local b="$(git symbolic-ref HEAD 2&gt;/dev/null)";
+    if [ -n "$b" ]; then
+        printf " (%s)" "${b##refs/heads/}";
+    fi
+} 
+
+alias la='ls -A'
+alias ll='ls -l'
+alias cleanup='rm -i "#"* "."*~ *~ *.bak *.dvi *.aux'
+
+# Extract packages
+extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1        ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1       ;;
+            *.rar)       rar x $1     ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xf $1        ;;
+            *.tbz2)      tar xjf $1      ;;
+            *.tgz)       tar xzf $1       ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1    ;;
+            *)           echo "'$1' cannot be extracted via
+extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+clock() { 
+    while true;do clear;echo "===========";date +"%r";echo "===========";sleep 1;done 
+}
+
+calc() {
+   echo "scale=4; $1" | bc 
+}
+
+# Weather by us zip code - Can be called two ways # weather 50315 #
+# weather "Des Moines"
+weather() {
+    declare -a WEATHERARRAY
+    WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
+    echo ${WEATHERARRAY[@]}
+}
+
+# Get the time when the file's last modified. Usage: filetime file
+filetime() {
+    for arg
+    do
+        if [ -f $arg ] 
+        then
+            dir=`dirname $arg`
+            name=`basename $arg`
+            time=`ls -lA $dir | awk '{if ($9 == file) {print $6 "-" $7 "-" $8}}' file=$name`
+            echo "$arg: $time"
+        else
+            echo "$arg is not a file"
+        fi
+    done
+}
+
+# Get total number of files in dir
+total() {
+    for arg
+    do
+        if [ -d $arg ]
+        then
+            visible=`ls -1 "$arg" | wc -l` 
+            total=`ls -A -1 "$arg" | wc -l`
+            echo "$arg: $visible visible files"
+            echo "$arg: $total visible and hidden files"
+        else
+            echo "$arg is not a directory"
+        fi     
+    done
+}
+
+# safe rm - put removed files to ~/.Trash, if duplicates found, file is renamed to "&lt;file&gt;-copy $i"
+function rm() {
+    if [ $# -eq 0 ]; then
+            echo "usage: trashit &gt;files...&lt;" &gt;&amp;2
+            exit 2;
+    fi
+
+    for file in "$@"; do
+            # get just file name 
+            destfile="`basename \"$file\"`"
+            suffix='';
+            i=0;
+
+            # If that file already exists, change the name
+            while [ -e "$HOME/.Trash/${destfile}${suffix}" ]; do
+                    suffix=" - copy $i";
+                    i=`expr $i + 1`
+            done
+
+            mv -vi "$file" "$HOME/.Trash/${destfile}${suffix}"
+    done
+}
+
+growl() {
+    echo -e $'\e]9;'${1}'\007' ; return  ;
+}
+</pre>
+
