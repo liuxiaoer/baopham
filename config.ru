@@ -1,5 +1,10 @@
 require 'toto'
 require File.expand_path('../hacks', __FILE__)
+require 'rack/mobile-detect'
+
+# Redirect to mobile site
+use Rack::MobileDetect, :targeted => /BlackBerry|iPhone|Android/,
+                        :redirect_to => 'http://m.example.com/'
 
 # Rack config
 use Rack::Static, 
@@ -9,6 +14,10 @@ use Rack::CommonLogger
 
 if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
+end
+
+if ENV['HTTP_USER_AGENT'].include? 'iPhone'
+    redirect_to "http://bphamworld.appspot.com"
 end
 
 toto = Toto::Server.new do
