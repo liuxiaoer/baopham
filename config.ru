@@ -1,10 +1,5 @@
 require 'toto'
 require File.expand_path('../hacks', __FILE__)
-require 'rack/mobile-detect'
-
-# Redirect to mobile site
-use Rack::MobileDetect, :targeted => /BlackBerry|iPhone|Android/,
-                        :redirect_to => 'http://m.example.com/'
 
 # Rack config
 use Rack::Static, 
@@ -23,7 +18,7 @@ toto = Toto::Server.new do
     # 
     set :author,    "Bao Pham"                                  # blog author
     set :title,     "Bao Pham"
-    set :url,       "http://bphamworld.heroku.com"
+    set :url,       "http://bphamworld-mobile.heroku.com"
     set :root,      "index"                                     # page to load on /
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
     set :markdown,  :smart                                      # use markdown + smart-mode
