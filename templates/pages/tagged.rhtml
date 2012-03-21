@@ -11,6 +11,7 @@
                 <% Karakuri::desired_articles(@articles, desired_tag).each do |article| %>
                     <li>
                         <span class="descr"><a href="<%= article.path %>" alt="<%= article.title %>"><%= article.title %></a><br/></span>
+                        <p><small><%= article.date %></small></p>
                     </li>
                 <% end %>
                 </ul>
