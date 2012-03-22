@@ -3998,6 +3998,7 @@ html, body {
 
 .page {
     padding-top: 80px;
+    padding-bottom: 10px;
     width: 85%;
     min-height: 100%;
     margin: 0 auto;
