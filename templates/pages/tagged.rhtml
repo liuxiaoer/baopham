@@ -6,7 +6,7 @@
                     require 'karakuri'
                     desired_tag = Karakuri::desired_tag(env["QUERY_STRING"])
                 %>
-            <h1><code style="font-size: 23px"><%= desired_tag %></code> </h1>
+                <h1 class="tag"><%= desired_tag %></h1>
                 <ul>
                 <% Karakuri::desired_articles(@articles, desired_tag).each do |article| %>
                     <li>
