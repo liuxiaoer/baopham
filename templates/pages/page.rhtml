@@ -29,13 +29,13 @@
                         <div class="links"><a href="<%= article.path %>">read on &raquo;</a></div>
                     </div><!--/.post-->
                 <% end %>
-                <p class="pagination">
+                <p id="pagination">
                     <% if prev_page %>
-                        <a href="/page/<%=prev_page%>">&laquo; newer</a>
+                        <a class="pagination-prev" href="/page/<%=prev_page%>">newer</a>
                         <% if next_page  %>|<% end %>
                     <% end %>
                     <% if next_page %>
-                        <a href="/page/<%=next_page%>">older &raquo;</a>
+                        <a class="pagination-next" href="/page/<%=next_page%>">older</a>
                     <% end %>
                 </p>
             </div><!--/.span8-->
