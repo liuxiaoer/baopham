@@ -1,5 +1,5 @@
 require 'toto'
-require File.expand_path('../hacks', __FILE__)
+require File.expand_path('../sitemap', __FILE__)
 require 'rack/mobile-detect'
 
 # Redirect to mobile site
