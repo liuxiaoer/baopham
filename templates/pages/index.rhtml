@@ -21,23 +21,6 @@
                         <div class="links"><a href="<%= article.path %>">read on &raquo;</a></div>
                     </div><!--/.post-->
                 <% end %>
-                <%
-                    page = @config[:id]
-                    per_page = @config[:articles_per_page]
-                    page = 1 if (page.nil? or (page-1) * per_page > @articles.length) or page < 1
-                    page_results = @articles[(page-1) * per_page .. page * per_page - 1]
-                    prev_page = page > 1 ? page - 1 : nil
-                    next_page = @articles.length > page * per_page ? page + 1 : nil
-                %>
-                
-                <p class="pagination">
-                <% if prev_page %>
-                    <a href="/page/<%=prev_page%>">&laquo; newer</a>
-                    <% if next_page  %>|<% end %>
-                <% end %>
-                <% if next_page %>
-                    <a href="/page/<%=next_page%>">older &raquo;</a>
-                <% end %>
             </div><!--/.span8-->
 
             <div class="span3 sidebar">
