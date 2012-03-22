@@ -1,7 +1,7 @@
 title: Abandoning AppEngine
 author: Bao Pham
 date: 2012/03/21
-tags: web development, rails, toto, appengine
+tags: web-development, rails, toto, appengine
 
 
 These last 2 days have been insane!! You know why? Let me tell you the story:
