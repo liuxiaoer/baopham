@@ -18,7 +18,8 @@
         <script src="/js/jquery.js" type="text/javascript"></script>
 
         <% require 'karakuri'
-        page_title = Karakuri::seo_friendly_title(@path, title, 'Bao Pham')
+        path = @path == 'page' ? 'index' : @path
+        page_title = Karakuri::seo_friendly_title(path, title, 'Bao Pham')
         %>
 
         <title><%=  page_title %></title>
