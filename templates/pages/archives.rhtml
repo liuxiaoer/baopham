@@ -31,7 +31,7 @@
                         <li class="nav-header">Tags</li>
                         <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
                             <% size = (10 * freq) %>
-                            <li style="font-size:<%= size %>px"><%= tag %></li>
+                            <span style="font-size:<%= size %>px"><%= tag %></span>
                         <% end %>
                     </ul>
                 </div>
