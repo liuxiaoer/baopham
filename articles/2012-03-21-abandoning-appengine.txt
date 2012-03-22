@@ -118,7 +118,7 @@ Github repo: [talison/rack-mobile-detect](https://github.com/talison/rack-mobile
 
 It took me a while to get it to understand and make it work: [cheap toto pagination](http://vincentwoo.com/2011/02/23/cheap-toto-pagination/)
 
-- So first add the class `toto::site` to your `config.ru` (now you see why i have it there)
+- So first add the class `Toto::Site` to your `config.ru` (now you see why i have it there)
 
 - Remember to set your `:root` to `"page"` instead of `"index"`
 
