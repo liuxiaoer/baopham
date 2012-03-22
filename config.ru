@@ -16,6 +16,20 @@ if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
 end
 
+class Toto::Site
+    alias_method :old_go, :go
+
+    def go route, env = {}, type = :html
+        if not route.first =~ /\d{4}/ and route.size == 2 and route.last =~ /(\d+)/
+            @config[:id] = route.last.to_i
+            route.pop
+        end
+        ret = old_go route, env, type
+        @config.delete :id
+        ret
+    end
+end
+
 toto = Toto::Server.new do
     #
     # Add your settings here
@@ -25,6 +39,7 @@ toto = Toto::Server.new do
     set :title,     "Bao Pham"
     set :url,       "http://bphamworld.heroku.com"
     set :root,      "index"                                     # page to load on /
+    set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
     set :markdown,  :smart                                      # use markdown + smart-mode
     set :disqus,    true                                        # disqus id, or false

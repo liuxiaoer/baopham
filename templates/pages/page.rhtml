@@ -1,3 +1,11 @@
+<%
+    page = @config[:id]
+    per_page = @config[:articles_per_page]
+    page = 1 if (page.nil? or (page-1) * per_page > @articles.length) or page < 1
+    page_results = @articles[(page-1) * per_page .. page * per_page - 1]
+    prev_page = page > 1 ? page - 1 : nil
+    next_page = @articles.length > page * per_page ? page + 1 : nil
+%>
 <div class="page">
     <div class="container-fluid">
         <div class="hero-unit">
@@ -7,7 +15,7 @@
         </div><!--/.hero-unit-->
         <div class="row-fluid">
             <div class="span8 content">
-                <% for article in articles[0...6] %>
+                <% for article in page_results %>
                     <div class="post">
                         <h2><a href="<%= article.path %>"><%= article.title %></a></h2>
                         <p><small>Posted on <%= article.date %> by <a href="/"><%= article.author %></a></small></p>
@@ -21,30 +29,22 @@
                         <div class="links"><a href="<%= article.path %>">read on &raquo;</a></div>
                     </div><!--/.post-->
                 <% end %>
-                <%
-                    page = @config[:id]
-                    per_page = @config[:articles_per_page]
-                    page = 1 if (page.nil? or (page-1) * per_page > @articles.length) or page < 1
-                    page_results = @articles[(page-1) * per_page .. page * per_page - 1]
-                    prev_page = page > 1 ? page - 1 : nil
-                    next_page = @articles.length > page * per_page ? page + 1 : nil
-                %>
-                
                 <p class="pagination">
-                <% if prev_page %>
-                    <a href="/page/<%=prev_page%>">&laquo; newer</a>
-                    <% if next_page  %>|<% end %>
-                <% end %>
-                <% if next_page %>
-                    <a href="/page/<%=next_page%>">older &raquo;</a>
-                <% end %>
+                    <% if prev_page %>
+                        <a href="/page/<%=prev_page%>">&laquo; newer</a>
+                        <% if next_page  %>|<% end %>
+                    <% end %>
+                    <% if next_page %>
+                        <a href="/page/<%=next_page%>">older &raquo;</a>
+                    <% end %>
+                </p>
             </div><!--/.span8-->
 
             <div class="span3 sidebar">
                 <div class="well sidebar-nav">
                     <ul class="nav nav-list">
                         <li class="nav-header">Recent Posts</li>
-                        <% for article in articles[0...10] %>
+                        <% for article in @articles[0...10] %>
                             <% if article.title.split.length < 8 and article.title.length < 25 %>
                             <li><a href="<%= article.path %>"><%= article.title %></a></li>
                             <% else %>
@@ -61,3 +61,5 @@
         </div><!--/.row-->
     </div><!--/.container-fluid-->
 </div><!--/.page-->
+
+
