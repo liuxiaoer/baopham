@@ -1,0 +1,65 @@
+<%
+    page = @config[:id]
+    per_page = @config[:articles_per_page]
+    page = 1 if (page.nil? or (page-1) * per_page > @articles.length) or page < 1
+    page_results = @articles[(page-1) * per_page .. page * per_page - 1]
+    prev_page = page > 1 ? page - 1 : nil
+    next_page = @articles.length > page * per_page ? page + 1 : nil
+%>
+<div class="page">
+    <div class="container-fluid">
+        <div class="hero-unit">
+            <h2>Welcome to My Personal Website</h2>  <img src="/images/newbao.jpg" alt="Bao's picture" width="190" height="190" class="right" />
+            <p>Hi! I'm Bao, a 3rd year Math and Computer Science student at <a href='http://ubc.ca/' target="_blank">UBC</a>. Why I chose that major? Math has always come natural to me and I love working on the computer and being able to create things in its own languages. I created this website as a place for me to explore new technologies, practice my skills and blog on things that I find interesting.</p>
+            <p>I'm interested in web development, algorithms, low-level concepts and machine learning (not much experience but that's one of my goals to achieve in the future). Besides that, I also enjoy poetry, literature and music (I have a musical background in piano).</p>
+        </div><!--/.hero-unit-->
+        <div class="row-fluid">
+            <div class="span8 content">
+                <% for article in page_results %>
+                    <div class="post">
+                        <h2><a href="<%= article.path %>"><%= article.title %></a></h2>
+                        <p><small>Posted on <%= article.date %> by <a href="/"><%= article.author %></a></small></p>
+                        <%= article.summary %>
+                        <% require 'karakuri' %>
+                        <% if Karakuri::tag_link_list(article[:tags]) %>
+                            <div class="tags">
+                                tags: <%= Karakuri::tag_link_list(article[:tags])  %>
+                            </div><% 10.times { %>&nbsp;<%}%>
+                        <% end %>
+                        <div class="links"><a href="<%= article.path %>">read on &raquo;</a></div>
+                    </div><!--/.post-->
+                <% end %>
+                <p class="pagination">
+                    <% if prev_page %>
+                        <a href="/page/<%=prev_page%>">&laquo; newer</a>
+                        <% if next_page  %>|<% end %>
+                    <% end %>
+                    <% if next_page %>
+                        <a href="/page/<%=next_page%>">older &raquo;</a>
+                    <% end %>
+                </p>
+            </div><!--/.span8-->
+
+            <div class="span3 sidebar">
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Recent Posts</li>
+                        <% for article in @articles[0...10] %>
+                            <% if article.title.split.length < 8 and article.title.length < 25 %>
+                            <li><a href="<%= article.path %>"><%= article.title %></a></li>
+                            <% else %>
+                                <li><a href="<%= article.path %>"><%= article.title.split[0...5].join(" ") %> ...</a></li>
+                            <% end %>
+                        <% end %>
+                        <li class="nav-header">Archives</li>
+                        <li><a href="/archives">All</a></li>
+                        <li><a href="/2012">2012</a></li>
+                        <li><a href="/2011">2011</a></li>
+                    </ul>
+                </div>
+            </div><!--/.span3-->
+        </div><!--/.row-->
+    </div><!--/.container-fluid-->
+</div><!--/.page-->
+
+
