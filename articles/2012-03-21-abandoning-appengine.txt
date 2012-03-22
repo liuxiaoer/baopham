@@ -8,9 +8,9 @@ These last 2 days have been insane!! You know why? Let me tell you the story:
 
 I was sick. It was a random cold that I caught from someone. But now I'm glad I had it because if not because of it, I wouldn't have had the time to wander around [github](https://github.com), looking at people's repos, and then stumbled upon this project [toto](https://github.com/cloudhead/toto). And now, it's like a dream come true!~
 
-toto is really the tiniest and coolest blogging engine yet! It has all that I love: git and ruby on rails. It makes everything so easy to manage and configure, from archiving all the posts you wrote, to having a markdown converter by default, and articles embeded with metadata (which makes it easy to add tags/categories), etc.
+**toto** is really the tiniest and coolest blogging engine yet! It has all that I love: git and ruby on rails. It makes everything so easy to manage and configure, from archiving all the posts you wrote, to having a markdown converter by default, and articles embeded with metadata (which makes it easy to add tags/categories), etc.
 
-I'm not going to explain all toto's features but as a future reference for myself, I'd like to summarize all the steps that I took during the last 2 days to port my old website from [Google AppEngine](http://code.google.com/appengine/) to [toto](https://github.com/cloudhead/toto) and [Heroku](http://www.heroku.com/).
+I'm not going to explain all **toto's** features but as a future reference for myself, I'd like to summarize all the steps that I took during the last 2 days to port my old website from [Google AppEngine](http://code.google.com/appengine/) to [toto](https://github.com/cloudhead/toto) and [Heroku](http://www.heroku.com/).
 
 <br>
 ### Installation
@@ -70,7 +70,7 @@ toto = Toto::Server.new do
     set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
     set :markdown,  :smart                                      # use markdown + smart-mode
-    set :disqus,    true                                        # disqus id, or false
+    set :disqus,    "bpmsworld"                                 # disqus id, or false
     set :summary,   :max => 150, :delim => /~/                  # length of article summary and delimiter
     set :ext,       'txt'                                       # file extension for articles
     set :cache,      7200                                       # cache duration, in seconds
@@ -152,7 +152,7 @@ Those are the few things that I picked up from playing with toto for 2 days
 <br>
 ### Tags/Categories
 
-toto lacks support for tags unfortunately but no worries you have [karakuri](https://github.com/5v3n/karakuri)
+**toto** lacks support for tags unfortunately but no worries you have [karakuri](https://github.com/5v3n/karakuri)
 
 Follow the README and you're all set to go!
 
