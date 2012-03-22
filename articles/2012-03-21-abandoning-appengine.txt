@@ -1,0 +1,25 @@
+title: Abandoning AppEngine
+author: Bao Pham
+date: 2012/03/21
+
+These last 2 days have been insane!! You know why? Let me tell you the story:
+
+I was sick. It was a random cold that I caught from someone. But now I'm glad I had it because if not because of it, I wouldn't have had the time to wander around [github](https://github.com), looking at some of the people's repos, and then stumbled upon this project [toto](https://github.com/cloudhead/toto). And now, it's like a dream come true!
+
+toto is really the tiniest and coolest blogging engine yet! It has all that I love: git and ruby on rails. It makes everything so easy to manage and configure, from archiving all the posts you wrote, to having a markdown converter by default, and articles embeded with metadata (which makes it easy to add tags/categories), etc.
+
+I'm not going to explain all toto's features but as a future reference for myself, I'd like to summarize all the steps that I took to port my old website hosted by Google AppEngine to toto and Heroku. 
+
+### Install and Clone
+
+    $ gem install toto
+    $ git clone git://github.com/cloudhead/dorothy.git myblog`
+
+`dorothy` is toto's default template. This gives you the bone structure of your blog
+
+### config.ru
+
+Add your own settings to `config.ru`
+
+
+
