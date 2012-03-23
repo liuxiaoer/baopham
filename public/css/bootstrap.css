@@ -4063,6 +4063,11 @@ a {
 .nav > li > a:hover {
     background-color: #e2e2e2;
 }
+
+.nav-list {
+    overflow: hidden;
+}
+
 .well {
     background: url("/images/brushed.png") repeat scroll 0 0 padding-box transparent;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
