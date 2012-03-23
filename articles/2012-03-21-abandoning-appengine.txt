@@ -10,15 +10,15 @@ I was sick. It was a random cold that I caught from someone. But now I'm glad I 
 
 **toto** is really the tiniest and coolest blogging engine yet! It has all that I love: git and ruby on rails. It makes everything so easy to manage and configure, from archiving all the posts you wrote, to having a markdown converter by default, and articles embeded with metadata (which makes it easy to add tags/categories), etc.
 
-I'm not going to explain all **toto's** features but as a future reference for myself, I'd like to summarize all the steps that I took during the last 2 days to port my old website from [Google AppEngine](http://code.google.com/appengine/) to [toto](https://github.com/cloudhead/toto) and [Heroku](http://www.heroku.com/).
+I'm not going to explain all **toto**'s features but as a future reference for myself, I'd like to summarize all the steps that I took during the last 2 days to port my old website from [Google AppEngine](http://code.google.com/appengine/) to [toto](https://github.com/cloudhead/toto) and [Heroku](http://www.heroku.com/).
 
 <br>
 ### Installation
 
     $ gem install toto
-    $ git clone git://github.com/cloudhead/dorothy.git myblog`
+    $ git clone git://github.com/cloudhead/dorothy.git myblog
 
-**dorothy** is toto's default template. This gives you the bone structure of your blog
+**dorothy** is **toto**'s default template. This gives you the bone structure of your blog
 
 <br>
 ### config.ru
@@ -73,7 +73,7 @@ toto = Toto::Server.new do
     set :disqus,    "bpmsworld"                                 # disqus id, or false
     set :summary,   :max => 150, :delim => /~/                  # length of article summary and delimiter
     set :ext,       'txt'                                       # file extension for articles
-    set :cache,      7200                                       # cache duration, in seconds
+    set :cache,     28800                                       # cache duration, in seconds
 
     set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
     
@@ -96,8 +96,6 @@ Some changes I made:
 - Set `:root` to `"page"` (line 41) ................................ [pagination](#paginate) &para;
 
 - Changed the default number of articles per page to 6 (line 42)
-
-- Reduce cache time to 2 hours - I find it help with the page loading time (line 48)
 
 - Added customed error pages in `templates/pages` (line 52)
 
@@ -147,7 +145,7 @@ date: 2012/03/21
 
 - The article can be in markdown format or HTML 
 
-Those are the few things that I picked up from playing with toto for 2 days
+Those are the few things that I picked up from playing with **toto** for 2 days
 
 <br>
 ### Tags/Categories
