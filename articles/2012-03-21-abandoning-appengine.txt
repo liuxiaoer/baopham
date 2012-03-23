@@ -145,7 +145,7 @@ date: 2012/03/21
 
 - The article can be in markdown format or HTML 
 
-Those are the few things that I picked up from playing with toto for 2 days
+Those are the few things that I picked up from playing with **toto** for 2 days
 
 <br>
 ### Tags/Categories
