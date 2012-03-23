@@ -16,7 +16,7 @@ I'm not going to explain all **toto**'s features but as a future reference for m
 ### Installation
 
     $ gem install toto
-    $ git clone git://github.com/cloudhead/dorothy.git myblog`
+    $ git clone git://github.com/cloudhead/dorothy.git myblog
 
 **dorothy** is **toto**'s default template. This gives you the bone structure of your blog
 
@@ -160,4 +160,3 @@ Follow the README and you're all set to go!
 ### Deploy to Heroku
 
 2 days to learn Rack, ERB templates, discover [disqus](http://disqus.com/), and many more interesting projects, finally... goodbye Google AppEngine and Django, I'm joining the Ruby and Rails community! 
-

@@ -1,7 +1,7 @@
 title: Bootstrap Experiment
 author: Bao Pham
 date: 2012/03/07
-tags: web development
+tags: web-development, bootstrap
 
 <p>You've probably heard of <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>? If not, follow the link and you'll see what magics it does.</p>
 <p>I've grown tired of my old website theme and decided to try out Bootstrap. Although Bootstrap gives people the opportunity to be lazy in putting more personal touch in their website's design, it's a great starting point for a newbie like me. Hopefully, from here onwards, I can create something more uniquely looking...</p>
