@@ -1,5 +1,5 @@
 require 'toto'
-require File.expand_path('../hacks', __FILE__)
+require File.expand_path('../sitemap', __FILE__)
 
 # Rack config
 use Rack::Static, 
@@ -37,7 +37,7 @@ toto = Toto::Server.new do
     set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
     set :markdown,  :smart                                      # use markdown + smart-mode
-    set :disqus,    true                                        # disqus id, or false
+    set :disqus,    "bpmsworld"                                 # disqus id, or false
     set :summary,   :max => 150, :delim => /~/                  # length of article summary and delimiter
     set :ext,       'txt'                                       # file extension for articles
     set :cache,      7200                                       # cache duration, in seconds

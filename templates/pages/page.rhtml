@@ -55,6 +55,11 @@
                         <li><a href="/archives">All</a></li>
                         <li><a href="/2012">2012</a></li>
                         <li><a href="/2011">2011</a></li>
+                        <li class="nav-header">Tags</li>
+                        <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
+                            <% size = (10 * freq) %>
+                            <span style="font-size:<%= size %>px"><%= tag %></span>
+                        <% end %>
                     </ul>
                 </div>
             </div><!--/.span3-->
