@@ -6,7 +6,7 @@ tags: javascript, math
 <script src="/js/matrix.js" type="text/javascript"></script>
 <div class="matrix-post">
 <p>A matrix calculator written in JavaScript :)</p>
-<div class="matrix">	
+<div class="matrix">
     <div>
         Matrix 1:
         <div class="buttons">
@@ -44,7 +44,7 @@ tags: javascript, math
         <div class="row">
             <input type="text" value="7, 8, 9"/>
         </div>
-    </div>		
+    </div>
 </div>
 <div id="selection">
     <input type="radio" name="method" id="multiply" value="multiply" checked="checked">

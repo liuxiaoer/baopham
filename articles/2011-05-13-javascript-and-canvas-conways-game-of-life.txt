@@ -28,7 +28,7 @@ tags: javascript, html5
 <div id="buttons_life">
     <button class="btn" id="generate" type="button">Generate Random Cells</button>
     <button class="btn" id="run" type="button">Run</button>
-    <button class="btn" id="stop" type="button">Stop</button> 
+    <button class="btn" id="stop" type="button">Stop</button>
     <button class="btn" id="clear" type="button">Clear</button>
 </div>
 <script type="text/javascript">startLife()</script>

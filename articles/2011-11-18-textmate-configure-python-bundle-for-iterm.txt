@@ -24,7 +24,7 @@ osascript &lt;&lt;- APPLESCRIPT
 tell application "iTerm"
     activate
     make new terminal
-    tell the first terminal 
+    tell the first terminal
         launch session "Default Session"
         tell the last session
             write text "python $TM_FILEPATH"

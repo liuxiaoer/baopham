@@ -22,11 +22,11 @@ Cell.prototype.fillRect = function(ctx) {
 };
 
 Cell.prototype.disableRect = function(ctx) {
-	ctx.fillStyle = this.deadColor; 
+	ctx.fillStyle = this.deadColor;
 	ctx.fillRect(this.x*board.interval, this.y*board.interval, this.interval, this.interval);
 };
 
-var CellManager = function() { 
+var CellManager = function() {
 	this.stop = false;
 	this.gen = false;
 	this.cells2D = new Array();
@@ -47,9 +47,9 @@ CellManager.prototype.removeCell =  function(cell, ctx) {
 	//this.cells = $.grep(this.cells, function(value) {
 	//	return value.id !== cell.id;
 	//});
-	cell.disableRect(ctx);   
-};  
-                                  
+	cell.disableRect(ctx);
+};
+
 CellManager.prototype.nextStep = function(ctx){
 	for(var row=0; row<board.width/board.interval; row++){
 		for(var col=0; col<board.height/board.interval; col++){
@@ -111,17 +111,17 @@ function generate() {
 		var cell = new Cell(true, x, y, board.interval);
 	 	this.cellManager.addCell(cell, ctx);
    	}
-}        
+}
 
 function run(){
 	(function execute() {
-			if (!this.cellManager.stop) { 
+			if (!this.cellManager.stop) {
 				setTimeout(function() {
 				this.cellManager.nextStep(this.ctx);
 				execute();
 				}, 500);
 			}
-	})();	
+	})();
 }
 
 function clear(){
@@ -154,7 +154,7 @@ function startLife(){
             $(this).attr('disabled', true);
             cellManager.stop = false;
             run();
-            } 
+            }
     });
 
     $("#stop").click(function(){

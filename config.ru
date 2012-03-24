@@ -7,8 +7,8 @@ use Rack::MobileDetect, :catchall => /[Bb]lack[Bb]erry|i[Pp]hone|[Aa]ndroid/,
                         :redirect_to => 'http://bphamworld-mobile.heroku.com/'
 
 # Rack config
-use Rack::Static, 
-    :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', 'BingSiteAuth.xml', '/robots.txt'], 
+use Rack::Static,
+    :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', 'BingSiteAuth.xml', '/robots.txt'],
     :root => 'public'
 use Rack::CommonLogger
 
@@ -34,7 +34,7 @@ toto = Toto::Server.new do
     #
     # Add your settings here
     # set [:setting], [value]
-    # 
+    #
     set :author,    "Bao Pham"                                  # blog author
     set :title,     "Bao Pham"
     set :url,       "http://bphamworld.heroku.com"
@@ -48,7 +48,7 @@ toto = Toto::Server.new do
     set :cache,      28800                                      # cache duration, in seconds
 
     set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
-    
+
     set :error,     lambda {|code|
         ERB.new(File.read("templates/pages/#{code}.rhtml")).result
     }

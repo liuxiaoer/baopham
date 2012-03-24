@@ -10,7 +10,7 @@ function add(matA, matB){
             for(var j=0; j<matA[0].length; j++){
                 result[i][j] = matA[i][j] + matB[i][j];
             }
-        } 
+        }
         return result;
     }
     catch(er){
@@ -31,14 +31,14 @@ function subtract(matA, matB){
             for(var j=0; j<matA[0].length; j++){
                 result[i][j] = matA[i][j] - matB[i][j];
             }
-        } 
+        }
         return result;
     }
     catch(er){
         alert("Your matrices don't look right, cannot compute");
         return;
     }
-    
+
 }
 
 function multiply(matA, matB){
@@ -125,7 +125,7 @@ function check(matrix){
             return false;
         }
     }
-    return true; 
+    return true;
 }
 
 function computeMatrix(){
@@ -146,7 +146,7 @@ function computeMatrix(){
                 if($.trim(val) !== ''){
                 arrayA.push(val.split(','));
                 }
-            }   					
+            }
             var inputs_B = $(".matrixB").find("input:text");
             arrayB = [];
             for(var i=0; i<inputs_B.length; i++){
@@ -154,7 +154,7 @@ function computeMatrix(){
                 if($.trim(val) !== ''){
                     arrayB.push(val.split(','));
                 }
-            } 
+            }
             if(check(arrayA) && check(arrayB)) {
                 var matrixA = [];
                     for(var i=0; i<arrayA.length; i++){
@@ -170,7 +170,7 @@ function computeMatrix(){
                     for(var j=0; j<arrayB[0].length; j++){
                         matrixB[i][j] = parseInt(arrayB[i][j], 10);
                     }
-                } 
+                }
             }
             func = $("input:radio[@name='method']:checked").val();
             var answer = $("#answer");
@@ -185,7 +185,7 @@ function computeMatrix(){
             }
             else if(func == 'add'){
                 var ans = add(matrixA, matrixB);
-                answer.append(prettify(ans, 'Answer'));  
+                answer.append(prettify(ans, 'Answer'));
                 answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
                 $("#not_display_correctly").click(function(){
                     answer.append($('<div />').append(prettify2(ans, 'Answer')));
@@ -193,7 +193,7 @@ function computeMatrix(){
             }
             else if(func == 'subtract'){
                 var ans = subtract(matrixA, matrixB);
-                answer.append(prettify(ans, 'Answer')); 
+                answer.append(prettify(ans, 'Answer'));
                 answer.append('<div><a id="not_display_correctly" href="javascript:void(0)">Not display correctly? Click here</a></div>');
                 $("#not_display_correctly").click(function(){
                     answer.append($('<div />').append(prettify2(ans, 'Answer')));

@@ -734,7 +734,7 @@
 
 /* For general iPad layouts */
 @media only screen and (device-width: 768px) {
-     
+
 }
 /* For portrait layouts only */
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
