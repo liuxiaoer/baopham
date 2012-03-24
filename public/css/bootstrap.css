@@ -4157,8 +4157,6 @@ a {
 .tag h1:hover{background: #555;}
 .tag h1:hover:before{border-color: transparent #555 transparent transparent;}
 
-
-
 img.right {
     float: right;
     margin: -13px 0 0 20px;
@@ -4184,27 +4182,23 @@ img.right {
     padding-bottom: 45px;
 }
 
-#pagination a, #pagination a:visited
-{
+#pagination a, #pagination a:visited {
 	color : #999;
 	text-decoration : none
 }
 
-#pagination a:hover
-{
+#pagination a:hover {
 	color : #000;
 	text-decoration : none
 }
 
-#pagination .pagination-prev
-{
+#pagination .pagination-prev {
 	background : url(../images/previous.gif) no-repeat left center;
 	float : left;
 	padding-left : 20px
 }
 
-#pagination .pagination-next
-{
+#pagination .pagination-next {
 	background : url(../images/next.gif) no-repeat right center;
 	float : right;
 	padding-right : 20px;
@@ -4324,4 +4318,5 @@ table .even {
     width: 367px;
     padding-top: 20px;
 }
+
 
