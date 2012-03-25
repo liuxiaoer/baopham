@@ -4175,6 +4175,33 @@ img.right {
     text-align: right;
 }
 
+#pagination {
+    padding-bottom: 45px;
+}
+
+#pagination a, #pagination a:visited {
+	color : #999;
+	text-decoration : none
+}
+	
+#pagination a:hover {
+	color : #000;
+	text-decoration : none
+}
+
+#pagination .pagination-prev {
+	background : url(../images/previous.gif) no-repeat left center;
+	float : left;
+	padding-left : 20px
+}
+
+#pagination .pagination-next {
+	background : url(../images/next.gif) no-repeat right center;
+	float : right;
+	padding-right : 20px;
+	text-align : right
+}
+
 .category {
     border: 2px solid #E7E7E7; 
     padding-top: 5px; 

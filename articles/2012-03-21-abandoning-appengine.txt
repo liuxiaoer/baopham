@@ -73,7 +73,7 @@ toto = Toto::Server.new do
     set :disqus,    "bpmsworld"                                 # disqus id, or false
     set :summary,   :max => 150, :delim => /~/                  # length of article summary and delimiter
     set :ext,       'txt'                                       # file extension for articles
-    set :cache,      7200                                       # cache duration, in seconds
+    set :cache,     28800                                       # cache duration, in seconds
 
     set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
     
@@ -96,8 +96,6 @@ Some changes I made:
 - Set `:root` to `"page"` (line 41) ................................ [pagination](#paginate) &para;
 
 - Changed the default number of articles per page to 6 (line 42)
-
-- Reduce cache time to 2 hours - I find it help with the page loading time (line 48)
 
 - Added customed error pages in `templates/pages` (line 52)
 
