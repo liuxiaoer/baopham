@@ -8,7 +8,7 @@ use Rack::MobileDetect, :catchall => /[Bb]lack[Bb]erry|i[Pp]hone|[Aa]ndroid/,
 
 # Rack config
 use Rack::Static,
-    :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', 'BingSiteAuth.xml', '/robots.txt'],
+    :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', '/BingSiteAuth.xml', '/robots.txt'],
     :root => 'public'
 use Rack::CommonLogger
 
