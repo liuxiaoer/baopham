@@ -1,7 +1,7 @@
 <div class="page">
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span8 content archive">
+            <div class="span8 content">
                 <%
                     require 'karakuri'
                     desired_tag = Karakuri::desired_tag(env["QUERY_STRING"])
@@ -10,10 +10,12 @@
                 <br><br>
                 <ul>
                 <% Karakuri::desired_articles(@articles, desired_tag).each do |article| %>
-                    <li>
-                        <span class="descr"><a href="<%= article.path %>" alt="<%= article.title %>"><%= article.title %></a><br/></span>
-                        <p><small><%= article.date %></small></p>
-                    </li>
+                    <div class="post">
+                        <h2><a href="<%= article.path %>"><%= article.title %></a></h2>
+                        <p><small>Posted on <%= article.date %> by <a href="/"><%= article.author %></a></small></p>
+                        <%= article.summary %>
+                        <div class="links"><a href="<%= article.path %>">read on &raquo;</a></div>
+                    </div><!--/.post-->
                 <% end %>
                 </ul>
             </div>

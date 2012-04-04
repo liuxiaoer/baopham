@@ -4098,8 +4098,8 @@ a {
 
 .tag{
     margin: 0;
-    padding: 0;
-    position: absolute;
+    padding-bottom: 10px;
+    position: auto;
     list-style: none;
 }
 
