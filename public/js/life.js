@@ -6,11 +6,7 @@ var Cell = function (life, x, y, interval) {
 	this.interval = interval;
 	this.aliveColor = "#FF4500";
 	this.deadColor = "#FFFFFF";
-	//this.id = Cell.counter;
-	//Cell.counter++;
 };
-
-//Cell.counter = 0;
 
 Cell.prototype.update = function () {
 	this.alive = this.futureAlive;
@@ -44,9 +40,6 @@ CellManager.prototype.addCell =  function(cell, ctx) {
 
 CellManager.prototype.removeCell =  function(cell, ctx) {
 	cell.alive = false;
-	//this.cells = $.grep(this.cells, function(value) {
-	//	return value.id !== cell.id;
-	//});
 	cell.disableRect(ctx);
 };
 
