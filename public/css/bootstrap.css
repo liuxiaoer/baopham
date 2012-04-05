@@ -4002,7 +4002,11 @@ html, body {
     width: 85%;
     min-height: 100%;
     margin: 0 auto;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
+    -moz-box-shadow:0 0 20px #000000;
+    -webkit-box-shadow: 0 0 20px #000000;
+    box-shadow: 0 0 20px #000000;
+    z-index: 1;
 }
 
 .container-fluid {
