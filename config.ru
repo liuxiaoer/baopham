@@ -4,7 +4,7 @@ require 'rack/mobile-detect'
 
 # Redirect to mobile site
 use Rack::MobileDetect, :catchall => /[Bb]lack[Bb]erry|i[Pp]hone|[Aa]ndroid/,
-                        :redirect_to => 'http://bphamworld-mobile.heroku.com/'
+                        :redirect_to => 'http://baopham-mobile.heroku.com/'
 
 # Rack config
 use Rack::Static,
