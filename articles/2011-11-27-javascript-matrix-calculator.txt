@@ -2,6 +2,7 @@ title: "JavaScript: Matrix Calculator"
 author: Bao Pham
 date: 2011/11/27
 tags: javascript, math
+description: A matrix calculator built in JavaScript
 
 <script src="/js/matrix.js" type="text/javascript"></script>
 <div class="matrix-post">

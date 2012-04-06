@@ -2,6 +2,7 @@ title: Abandoning AppEngine
 author: Bao Pham
 date: 2012/03/21
 tags: web-development, rack, ruby
+description: Migrate from AppEngine Python to toto and Ruby
 
 
 These last 2 days have been insane!! You know why? Let me tell you the story:
@@ -29,10 +30,6 @@ Add personal settings to `config.ru`:
 require 'toto'
 require File.expand_path('../sitemap', __FILE__)
 require 'rack/mobile-detect'
-
-# Redirect to mobile site
-use Rack::MobileDetect, :catchall => /[Bb]lack[Bb]erry|i[Pp]hone|[Aa]ndroid/,
-                        :redirect_to => 'http://baopham-mobile.heroku.com/'
 
 # Rack config
 use Rack::Static,
@@ -65,7 +62,7 @@ toto = Toto::Server.new do
     #
     set :author,    "Bao Pham"                                  # blog author
     set :title,     "Bao Pham"
-    set :url,       "http://baopham.heroku.com"
+    set :url,       "http://baopham-mobile.heroku.com"
     set :root,      "page"                                      # page to load on /
     set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles

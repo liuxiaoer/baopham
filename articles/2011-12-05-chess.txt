@@ -2,6 +2,7 @@ title: Chess
 author: Bao Pham
 date: 2011/12/05
 tags: javascript, html5
+description: An interactive chess board
 
 <script src="/js/chess.js" type="text/javascript"></script>
 <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
