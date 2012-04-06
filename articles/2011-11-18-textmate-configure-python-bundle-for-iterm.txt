@@ -2,6 +2,7 @@ title: "TextMate: Configure Python Bundle for iTerm"
 author: Bao Pham
 date: 2011/11/18
 tags: python, iterm
+description: Textmate bundle hacks
 
 <p>Ever since I migrated to iTerm2, it's become frustrating that I cannot run my Python scripts in iTerm through my editor TextMate, so I decided to dig in the bundle editor:</p>
 <p>To run your Python scripts in <a href="http://www.iterm2.com/">iTerm2</a> or <a href="http://iterm.sourceforge.net/">iTerm</a>:</p>

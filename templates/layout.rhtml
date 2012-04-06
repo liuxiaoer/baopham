@@ -6,7 +6,7 @@
         <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
         <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content="Bao Pham's personal website" />
+        <meta name="description" content="<%= @context[:description] || 'Bao Pham\'s personal website' %>" />
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
