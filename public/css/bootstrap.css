@@ -4041,8 +4041,8 @@ a {
     background: #5D8872 !important;
 }
 
-.navbar .nav 
-.active > a, 
+.navbar .nav
+.active > a,
 .navbar .nav
 .active > a:hover {
     background-color: #537979 !important;
@@ -4187,7 +4187,7 @@ img.right {
 	color : #999;
 	text-decoration : none
 }
-	
+
 #pagination a:hover {
 	color : #000;
 	text-decoration : none
@@ -4207,8 +4207,8 @@ img.right {
 }
 
 .category {
-    border: 2px solid #E7E7E7; 
-    padding-top: 5px; 
+    border: 2px solid #E7E7E7;
+    padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
     margin-bottom: 20px;
@@ -4224,7 +4224,7 @@ img.right {
     padding-bottom: 5px;
 }
 
-:target { 
+:target {
     background-color: #FFF5BB;
 }
 
@@ -4305,10 +4305,10 @@ table .even {
     height: 44px;
     text-align: center;
     font-size: 34px;
-} 
+}
 
 #editable {
-    width: 100%; 
+    width: 100%;
     height: 280px;
     border: 1px dotted;
     overflow: auto;

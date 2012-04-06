@@ -110,6 +110,6 @@ tags: javascript, html5
             localStorage.clear();
     });
     $("#resetChess").click( function () {
-        window.location = window.location; 
+        window.location = window.location;
      });
 </script>
