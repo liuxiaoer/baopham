@@ -12,6 +12,16 @@ xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") do
   end
 
   xml.url do 
+    xml.loc @config[:url] + '/Resume.pdf'
+    xml.changefreq "weekly"
+  end
+
+  xml.url do 
+    xml.loc @config[:url] + '/tags'
+    xml.changefreq "weekly"
+  end
+
+  xml.url do 
     xml.loc @config[:url] + '/archives'
     xml.changefreq "weekly"
   end

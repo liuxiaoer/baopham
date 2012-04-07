@@ -98,13 +98,12 @@ description: An interactive chess board
 <div id="editable-sec">
     <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);">
     </section>
-    <div style="padding-top: 5px;">
+    <div style="padding-top: 10px; padding-bottom: 10px;">
         <input class="btn" type="button" id="resetChess" value="Reset game" />
         <input class="btn" type="button" id="clearNotes" value="Clear local storage" />
     </div>
     <p style="width: 350px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <i>localStorage</i> turned off or doesn't support it unfortunately)</p>
 </div> <!--/editable section-->
-<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_4', this)">more</a></p>
 <script type="text/javascript">
     getNotes();
     $("#clearNotes").click( function () {

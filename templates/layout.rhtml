@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE html<html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="/css/mobile.css">
         <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
         <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
+        <!--google fonts-->
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="description" content="<%= @context[:description] || 'Bao Pham\'s personal website' %>" />
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -23,50 +26,28 @@
         %>
 
         <title><%=  page_title %></title>
-
     </head>
-    <body onload="prettyPrint();">
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <h1><a class="brand" href="/"><b>BPm'sWorld</b></a></h1>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <%
-                                if @path == 'page'
-                                    home_active = "active"
-                                    resume_active = ""
-                                elsif @path == 'resume'
-                                    home_active = ""
-                                    resume_active = "active"
-                                else
-                                    home_active, resume_active = "", ""
-                                end
-                            %>
-                            <li class="<%= home_active %>"><a href="/">Home</a></li>
-                            <li class="<%= resume_active %>"><a href="/resume">Resume</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/tagged?tag=javascript">JavaScript</a></li>
-                                    <li><a href="/tagged?tag=html5">HTML5</a></li>
-                                    <li><a href="/tagged?tag=web-development">Web Development</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="/archives">Archives</a></li>
-                                </ul>
-                            </li><!--/.dropdown-->
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container-->
-            </div><!--/.navbar-inner-->
-        </div><!--/.navbar-->
-
-        <%= yield %>
-
-        <footer>
-            <p>&copy; All Rights Reserved &nbsp;&bull;&nbsp; Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> &amp; Powered by <a href="http://cloudhead.io/toto">toto</a></p>
-        </footer>
-        <script type="text/javascript" src="/js/bootstrap-dropdown.js"></script>
+    <body id="home" onload="prettyPrint();">
+        <div class="wrapper">
+            <header>
+                <h1 class="logo"><a href="/">BPm'sWorld</a></h1>
+                <a class="to_nav" href="#primary_nav">Menu</a>
+            </header>
+            <%= yield %>
+            <nav id="primary_nav">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/Resume.pdf">Resume</a></li>
+                    <li><a href="/tagged?tag=javascript">JavaScript</a></li>
+                    <li><a href="/tagged?tag=html5">HTML5</a></li>
+                    <li><a href="/archives">Archives</a></li>
+                    <li><a href="/tags">Tags</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <p>&copy; <%= Time.new.year %> <%= @config[:author] %> &nbsp;&bull;&nbsp; Powered by <a href="http://cloudhead.io/toto">toto</a></p>
+            </footer>
+        </div>
         <script type="text/javascript" src="/js/prettify.js"></script>
     </body>
 </html>

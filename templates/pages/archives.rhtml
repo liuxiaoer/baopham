@@ -1,43 +1,12 @@
-<div class="page">
-    <div class="container">
-        <div class ="row">
-            <div class="span8 content archive">
-                <h1><%= @path.capitalize %></h1>
-                <ul>
-                    <% if archives.length > 0 %>
-                        <% for entry in archives %>
-                            <li>
-                                <a href="<%= entry.path %>"><%= entry.title %></a> <p><small><%= entry.date %></small></p>
-                            </li>
-                        <% end %>
-                    <% end %>
-                </ul>
-            </div>
-            <div class="span3 sidebar">
-                <div class="well sidebar-nav">
-                    <ul class="nav nav-list">
-                        <li class="nav-header">Recent Posts</li>
-                        <% for article in @articles[0...10] %>
-                            <% if article.title.split.length < 8 and article.title.length < 25 %>
-                                <li><a href="<%= article.path %>"><%= article.title %></a></li>
-                            <% else %>
-                                <li><a href="<%= article.path %>"><%= article.title.split[0...5].join(" ") %> ...</a></li>
-                            <% end %>
-                        <% end %>
-                        <li class="nav-header">Archives</li>
-                        <li><a href="/archives">All</a></li>
-                        <li><a href="/2012">2012</a></li>
-                        <li><a href="/2011">2011</a></li>
-                        <li class="nav-header">Tags</li>
-                        <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
-                            <%= %|<a href="/tagged?tag=#{tag}" alt="articles concerning #{tag}" style="font-size: #{10 * freq}px">#{tag}</a>| %>
-                        <% end %>
-                    </ul>
-                </div>
-            </div><!--/.span3-->
-            <div style="clear: both;">&nbsp;</div>
-
-        </div><!--/.row-->
-    </div><!--/.container-->
-</div><!--/.page-->
-
+<article>
+<h2><%= @path.capitalize %></h2>
+<ul>
+    <% if archives.length > 0 %>
+        <% for entry in archives %>
+            <li>
+                <a href="<%= entry.path %>"><%= entry.title %></a> <p><small><%= entry.date %></small></p>
+            </li>
+        <% end %>
+    <% end %>
+</ul>
+</article>
