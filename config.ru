@@ -3,7 +3,7 @@ require File.expand_path('../sitemap', __FILE__)
 require 'rack/mobile-detect'
 
 # Redirect to mobile site
-use Rack::MobileDetect, :catchall => /[Bb]lack[Bb]erry|i[Pp]hone|[Aa]ndroid/,
+use Rack::MobileDetect, :targeted => /iPhone|BlackBerry|Android/, 
                         :redirect_to => 'http://baopham-mobile.heroku.com/'
 
 # Rack config

@@ -686,6 +686,18 @@
 }
 
 /* ============== */
+@media (max-width: 979px) {
+    .navbar .nav > li > a:hover,
+    .navbar .dropdown-menu a:hover {
+        background-color: transparent;
+    }
+
+    .navbar .nav > li > a,
+    .navbar .dropdown-menu a {
+        font-weight: normal;
+    }
+}
+
 @media (max-width: 800px) {
     .page {
         width: 98%;
