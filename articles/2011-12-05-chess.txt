@@ -104,7 +104,6 @@ description: An interactive chess board
     </div>
     <p style="width: 350px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <i>localStorage</i> turned off or doesn't support it unfortunately)</p>
 </div> <!--/editable section-->
-<p class="links"><a href="javascript:void(0)" onclick="toggle('hide_4', this)">more</a></p>
 <script type="text/javascript">
     getNotes();
     $("#clearNotes").click( function () {
