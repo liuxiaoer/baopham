@@ -430,7 +430,7 @@ p small {
   text-align: center;
   *zoom: 1;
 }
-. pager:before,
+.pager:before,
 .pager:after {
   display: table;
   content: "";
