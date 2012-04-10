@@ -248,10 +248,6 @@ img {
     height: auto;
     vertical-align: middle;
 }
-p small {
-    font-size: 0.8em;
-    color: #999999;
-}
 
 a {
     text-decoration: none;
@@ -337,6 +333,69 @@ a:hover {
 .tag h1:hover{background: #555;}
 .tag h1:hover:before{border-color: transparent #555 transparent transparent;}
 
+:target {
+    background-color: #FFF5BB;
+}
+
+/*----------------- Bootstrap -----------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+h1 small {
+  font-size: 18px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h2 small {
+  font-size: 18px;
+}
+h3 {
+  line-height: 27px;
+  font-size: 18px;
+}
+h3 small {
+  font-size: 14px;
+}
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+h4 {
+  font-size: 14px;
+}
+h4 small {
+  font-size: 12px;
+}
+h5 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+p small {
+    font-size: 0.8em;
+    color: #999999;
+}
+
+/* label */
 .label {
   padding: 1px 4px 2px;
   font-size: 10.998px;
@@ -360,99 +419,8 @@ a:hover {
 }
 .label-warning:hover {
   background-color: #c67605;
-}.label {
-  padding: 1px 4px 2px;
-  font-size: 10.998px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #ffffff;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
-.label:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-.label-warning {
-  background-color: #f89406;
-}
-.label-warning:hover {
-  background-color: #c67605;
-}.label {
-  padding: 1px 4px 2px;
-  font-size: 10.998px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #ffffff;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.label:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-.label-warning {
-  background-color: #f89406;
-}
-.label-warning:hover {
-  background-color: #c67605;
-}.label {
-  padding: 1px 4px 2px;
-  font-size: 10.998px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #ffffff;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.label:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-.label-warning {
-  background-color: #f89406;
-}
-.label-warning:hover {
-  background-color: #c67605;
-}.label {
-  padding: 1px 4px 2px;
-  font-size: 10.998px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #ffffff;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.label:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-.label-warning {
-  background-color: #f89406;
-}
-.label-warning:hover {
-  background-color: #c67605;
-}/* Bootstrap */
+/* pagination */
 .pager {
   margin-left: 0;
   margin-bottom: 18px;
@@ -460,7 +428,7 @@ a:hover {
   text-align: center;
   *zoom: 1;
 }
-.pager:before,
+. pager:before,
 .pager:after {
   display: table;
   content: "";
@@ -496,7 +464,7 @@ a:hover {
   background-color: #fff;
   cursor: default;
 }
-
+/* button */
 .btn {
   display: inline-block;
   *display: inline;
@@ -585,7 +553,7 @@ a:hover {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-
+/* code */
 pre.prettyprint {
     margin-bottom: 18px;
 }
@@ -610,6 +578,13 @@ code, pre {
     padding: 0 3px 2px;
 }
 
+pre code {
+    background-color: transparent;
+    border: 0 none;
+    color: inherit;
+    padding: 0;
+}
+
 code {
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
@@ -617,31 +592,8 @@ code {
     padding: 2px 4px;
 }
 
-.label {
-  padding: 1px 4px 2px;
-  font-size: 10.998px;
-  font-weight: bold;
-  line-height: 13px;
-  color: #ffffff;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.label:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-.label-warning {
-  background-color: #f89406;
-}
-.label-warning:hover {
-  background-color: #c67605;
-}
 
+/*----------------- Posts -----------------*/
 /* Game of Life */
 #canvas_life {
     border-style: solid;
