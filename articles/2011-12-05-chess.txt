@@ -95,6 +95,7 @@ description: An interactive chess board
 <br>
 <p><b>BONUS:</b> HTML's <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> and <a href="http://www.w3.org/TR/html5/editing.html#contenteditable">contentEditable</a>.</p>
 <p>Features that allow you to edit a page's section on the browser and store your scribbles on the client-side database (yours not mine so no worries):</p>
+<p><span class="label label-warning">Warning</span> Opera browser doesn't deal with contentEditable very well, you may see the menu bar expand.</p>
 <div id="editable-sec">
     <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);">
     </section>
