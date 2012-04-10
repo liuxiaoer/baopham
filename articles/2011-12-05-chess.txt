@@ -7,7 +7,7 @@ description: An interactive chess board
 <script src="/js/chess.js" type="text/javascript"></script>
 <p>Want to play some chess? Here is a chess board for you written in HTML5 using the drag and drop feature. Make sure your browser supports HTML5. Now drag away!</p>
 <p><b>UPDATE:</b> Now the chess rules are enforced. It won't move unless you follow the rules :)</p>~
-<!-- chess table -->
+
 <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);">
     <table style="border-collapse: collapse" border="1">
         <tr>
@@ -91,19 +91,20 @@ description: An interactive chess board
             <td id="64 rook" class="white odd" draggable="true">&#9814;</td>
         </tr>
     </table>
-</div> <!--/chess table-->
+</div>
 <br>
 <p><b>BONUS:</b> HTML's <a href="http://en.wikipedia.org/wiki/LocalStorage">localStorage</a> and <a href="http://www.w3.org/TR/html5/editing.html#contenteditable">contentEditable</a>.</p>
 <p>Features that allow you to edit a page's section on the browser and store your scribbles on the client-side database (yours not mine so no worries):</p>
+<p><span class="label label-warning">Warning</span> Opera browser doesn't deal with contentEditable very well, you may see the menu bar expand.</p>
 <div id="editable-sec">
     <section id="editable" contenteditable="true" onkeyup="storeNotes(this.id);">
     </section>
-    <div style="padding-top: 10px; padding-bottom: 10px;">
+    <div style="padding-top: 5px;">
         <input class="btn" type="button" id="resetChess" value="Reset game" />
         <input class="btn" type="button" id="clearNotes" value="Clear local storage" />
     </div>
     <p style="width: 350px">Click "clear local storage" if you don't want your notes to be remembered (If your notes are not remembered, it means your browser has <i>localStorage</i> turned off or doesn't support it unfortunately)</p>
-</div> <!--/editable section-->
+</div>
 <script type="text/javascript">
     getNotes();
     $("#clearNotes").click( function () {
