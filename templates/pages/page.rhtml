@@ -22,12 +22,12 @@
 </article>
 <% end %>
 
-<p id="pagination">
+<ul class="pager">
     <% if prev_page %>
-        <a class="pagination-prev" href="/page/<%=prev_page%>">newer</a>
-        <% if next_page %>|<% end %>
+        <li class="previous"><a href="/page/<%=prev_page%>">&larr; Newer </a></li>
+        <% if next_page  %>|<% end %>
     <% end %>
     <% if next_page %>
-        <a class="pagination-next" href="/page/<%=next_page%>">older</a>
+        <li class="next"><a href="/page/<%=next_page%>">Older &rarr;</a></li>
     <% end %>
-</p>
+</ul>
