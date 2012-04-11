@@ -146,6 +146,15 @@ date: 2012/03/21
 
 - The article can be in markdown format or HTML
 
+<span class="label label-info">Tips</span> Alternately, you can make use of the provided **Rakefile** then you don't have to worry about how to name your article files: just type this in your terminal: **rake Rakefile new**, it will ask for your article's title and creates it for you:
+
+<pre class="prettyprint">
+$ rake Rakefile new
+Title: Emmy's Post
+
+  toto ~ an article was created for you at articles/2012-04-11-emmys-post.txt.
+</pre>
+
 Those are the few things that I picked up from playing with **toto** for 2 days
 
 <br>
