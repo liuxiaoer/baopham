@@ -31,6 +31,10 @@ require 'toto'
 require File.expand_path('../sitemap', __FILE__)
 require 'rack/mobile-detect'
 
+# Redirect to mobile site
+use Rack::MobileDetect, :catchall => /[Bb]lack[Bb]erry|i[Pp]hone|[Aa]ndroid/,
+                        :redirect_to => 'http://baopham-mobile.heroku.com/'
+
 # Rack config
 use Rack::Static,
     :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', 'BingSiteAuth.xml', '/robots.txt'],
@@ -62,7 +66,7 @@ toto = Toto::Server.new do
     #
     set :author,    "Bao Pham"                                  # blog author
     set :title,     "Bao Pham"
-    set :url,       "http://baopham-mobile.heroku.com"
+    set :url,       "http://baopham.heroku.com"
     set :root,      "page"                                      # page to load on /
     set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
@@ -138,9 +142,18 @@ author: Bao Pham
 date: 2012/03/21
 </pre>
 
-- If your title has non-alphabet characters, keep the title in double quote like `title: "Emmy's Post"` or `title: "I-Like-Dashes"` and of course, name the file as **2012-03-21-emmy-post** or **2012-03-21-i---like---dashes** respectively
+- If your title has non-alphabet characters, keep the title in double quote like `title: "Emmy's Post"` or `title: "I-Like-Dashes"` and of course, name the file as **2012-03-21-emmys-post** or **2012-03-21-i---like---dashes** respectively
 
 - The article can be in markdown format or HTML
+
+<span class="label label-info">Tips</span> Alternately, you can make use of the provided **Rakefile** then you don't have to worry about how to name your article files: just type this in your terminal: **rake Rakefile new**, it will ask for your article's title and creates it for you:
+
+<pre class="prettyprint">
+$ rake Rakefile new
+Title: Emmy's Post
+
+  toto ~ an article was created for you at articles/2012-04-11-emmys-post.txt.
+</pre>
 
 Those are the few things that I picked up from playing with **toto** for 2 days
 
