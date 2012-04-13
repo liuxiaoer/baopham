@@ -4183,6 +4183,8 @@ img.about {
     height: 22%;
     max-width: 100%;
     max-height: 100%;
+    min-width: 150px;
+    min-height: 150px;
 }
 
 .links {
