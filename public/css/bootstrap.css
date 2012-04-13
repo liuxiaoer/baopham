@@ -4082,6 +4082,25 @@ a {
     background-color: #3499B3;
 }
 
+/* btn-navbar */
+.btn-navbar {
+  background-color: #5D8872;
+  background-image: -moz-linear-gradient(top, #537965, #5D8872);
+  background-image: -ms-linear-gradient(top, #537965, #5D8872);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#537965), to(#5D8872));
+  background-image: -webkit-linear-gradient(top, #537965, #5D8872);
+  background-image: -o-linear-gradient(top, #537965, #5D8872);
+  background-image: linear-gradient(top, #537965, #5D8872);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#537965', endColorstr='#5D8872', GradientType=0);
+}
+.btn-navbar:hover,
+.btn-navbar:active,
+.btn-navbar.active,
+.btn-navbar.disabled,
+.btn-navbar[disabled] {
+  background-color: #5D8872;
+}
+
 .well {
     background: url("/images/brushed.png") repeat scroll 0 0 padding-box transparent;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
