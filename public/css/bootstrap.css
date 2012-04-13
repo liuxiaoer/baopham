@@ -4173,12 +4173,14 @@ a {
 .tag h1:hover{background: #555;}
 .tag h1:hover:before{border-color: transparent #555 transparent transparent;}
 
-img .right {
+img.right {
     float: right;
     margin: 5px 0 0 20px;
 }
 
-img .right .about {
+img.about {
+    width: 22%;
+    height: 22%;
     max-width: 100%;
     max-height: 100%;
 }
