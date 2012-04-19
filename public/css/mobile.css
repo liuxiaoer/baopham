@@ -2,7 +2,6 @@
    v2.0b1 | 201101
    NOTE: WORK IN PROGRESS
    USE WITH CAUTION AND TEST WITH ABANDON */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote,
 a, abbr, acronym, address, cite,
@@ -40,7 +39,6 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-
 /* remember to highlight inserts somehow! */
 ins {
 	text-decoration: none;
@@ -48,39 +46,30 @@ ins {
 del {
 	text-decoration: line-through;
 }
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /*begin our styles*/
-
 body {
 	font: 16px/1.4em 'PT Sans', sans-serif;;
 	color: #1c1c1c;
 }
-
 p {
     margin: 0 0 9px;
 }
 ul {
 	margin: 0 0 1.5em;
 }
-
 ul {
 	list-style: disc;
 	padding: 0 0 0 20px;
 }
-
 a {
 	color: #1D745A;
 }
-
 h1 {
-
 }
-
 h2 {
 	font-family: 'PT Serif', serif;
 	font-size: 32px;
@@ -88,41 +77,32 @@ h2 {
 	margin: 0 0 .4em;
 	font-weight: bold;
 }
-
 /*layout*/
-
 .wrapper {
 }
-
 article {
 	border-bottom: 1px solid #d8d8d8;
 	padding: 10px 20px 20px 20px;
 	margin: 10px 0;
 }
-
 /*header*/
-
 header {
 	background: #1c1c1c;
 	padding: 15px 20px;
 }
-
 		/*shorter clearfix http://nicolasgallagher.com/micro-clearfix-hack/*/
 		header:before,
 		header:after {
 		    content:"";
 		    display:table;
 		}
-
 		header:after {
 		    clear:both;
 		}
-
 		/* For IE 6/7 (trigger hasLayout) */
 		header {
 		    zoom:1;
 		}
-
 h1.logo a {
 	color: #d8d8d8;
 	text-decoration: none;
@@ -133,7 +113,6 @@ h1.logo a {
 	float: left;
 	letter-spacing: 0.1em;
 }
-
 a.to_nav {
 	float: right;
 	color: #fff;
@@ -150,21 +129,17 @@ a.to_nav {
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 }
-
 a.to_nav:hover,
 a.to_nav:focus {
 	color: #1c1c1c;
 	background: #ccc;
 }
-
 /*navigation*/
-
 #primary_nav ul {
 	list-style: none;
 	background: #1c1c1c;
 	padding: 5px 0;
 }
-
 #primary_nav li a {
 	display: block;
 	padding: 0 20px;
@@ -178,51 +153,40 @@ a.to_nav:focus {
 	height: 2em;
 	border-bottom: 1px solid #383838;
 }
-
 #primary_nav li:last-child a {
 	border-bottom: none;
 }
-
 #primary_nav li a:hover,
 #primary_nav li a:focus {
 	color: #1c1c1c;
 	background: #ccc;
 }
-
 /*footer*/
-
 footer {
 	font-family: 'PT Serif', serif;
 	font-style: italic;
 	text-align: center;
 	font-size: 14px;
 }
-
 /*media queries*/
-
 		@media only screen and (min-width: 768px) {
-
 			a.to_nav {
 				display: none;
 			}
-
 			.wrapper {
 				position: relative;
 				width: 768px;
 				margin: auto;
 			}
-
 			#primary_nav {
 				position: absolute;
 				top: 5px;
 				right: 10px;
 				background: none;
 			}
-
 			#primary_nav li {
 				display: inline;
 			}
-
 			#primary_nav li a {
 				float: left;
 				border: none;
@@ -231,13 +195,10 @@ footer {
 				-moz-border-radius: 2px;
 				border-radius: 2px;
 			}
-
 			#primary_nav li.top {
 				display: none;
 			}
-
 		}
-
 /* ============ */
 /* images */
 img.right {
@@ -249,26 +210,20 @@ img {
     height: auto;
     vertical-align: middle;
 }
-
 /* link */
 a {
     text-decoration: none;
 }
-
 a:hover {
     color: #005580;
 }
-
 .tag-list li {
     padding-top: 10px;
 	margin: 10px 15px;
-
 }
-
 .links {
     text-align: right;
 }
-
 .tags {
     font-size: 0.8em;
     padding-top: 2.3em;
@@ -280,7 +235,6 @@ a:hover {
     position: absolute;
     list-style: none;
 }
-
 .tag h1 {
     float: left;
     height: 32px;
@@ -288,7 +242,6 @@ a:hover {
     position: relative;
     font-size: 25px;
 }
-
 .tag h1 {
     margin-left: 20px;
     padding: 0 10px 0 12px;
@@ -302,7 +255,6 @@ a:hover {
     -webkit-border-top-right-radius: 4px;
     border-top-right-radius: 4px;
 }
-
 .tag h1:before {
     content: "";
     float: left;
@@ -314,7 +266,6 @@ a:hover {
     border-style: solid;
     border-width: 17px 16px 15px 0;
 }
-
 .tag h1:after {
     content: "";
     position: absolute;
@@ -331,14 +282,11 @@ a:hover {
     -webkit-box-shadow: -1px -1px 2px #004977;
     box-shadow: -1px -1px 2px #004977;
 }
-
 .tag h1:hover{background: #555;}
 .tag h1:hover:before{border-color: transparent #555 transparent transparent;}
-
 :target {
     background-color: #FFF5BB;
 }
-
 /*----------------- Bootstrap -----------------*/
 /* text */
 h1,
@@ -495,7 +443,6 @@ p small {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
-
   *zoom: 1;
   padding: 4px 10px 4px;
   margin-bottom: 0;
@@ -583,7 +530,6 @@ p small {
 pre.prettyprint {
     margin-bottom: 18px;
 }
-
 pre {
     background-color: #F5F5F5;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -603,22 +549,18 @@ code, pre {
     font-size: 12px;
     padding: 0 3px 2px;
 }
-
 pre code {
     background-color: transparent;
     border: 0 none;
     color: inherit;
     padding: 0;
 }
-
 code {
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
     color: #DD1144;
     padding: 2px 4px;
 }
-
-
 /*----------------- Fonts -----------------*/
 @font-face {
   font-family: 'PT Serif';
@@ -650,8 +592,6 @@ code {
   font-weight: normal;
   src: local('PT Serif'), local('PTSerif-Regular'), url('./googlefont5.woff') format('woff');
 }
-
-
 /*----------------- Posts -----------------*/
 /* Game of Life */
 #canvas_life {
@@ -659,51 +599,42 @@ code {
     width: 80%;
     height: 300px;
 }
-
 #buttons_life{
     /* padding-top: 15px; */
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
 /* Matrix */
 .matrix {
     float: left;
     padding-left: 30px;
     padding-right: 20px;
 }
-
 .matrix-post #selection {
     clear: both;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
 .row > input {
     width: 180px;
 }
-
 .matrix .buttons {
     float: right;
 }
-
 #compute {
     padding-bottom: 10px;
 }
-
 /* Radio buttons */
 #selection input.radio {
     display: inline;
     position: relative;
     margin-left: 0.2em;
 }
-
 #selection label {
     display: inline;
     position: relative
     margin-left: 0.2em;
 }
-
 /* Chess */
 table .odd {
     background-color: #F8F8F8 ;
@@ -719,7 +650,6 @@ table .even {
     text-align: center;
     font-size: 34px;
 }
-
 #editable {
     width: 100%;
     height: 280px;
@@ -727,9 +657,7 @@ table .even {
     overflow: auto;
     padding: 5px;
 }
-
 #editable-sec {
     width: 95%;
     /* padding-top: 20px; */
 }
-
