@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset='utf-8'>
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css">
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css">
         <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
         <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
         <meta name="description" content="<%= @context[:description] || 'Bao Pham\'s personal website' %>" />
@@ -83,9 +83,8 @@
         <footer>
             <p>&copy; <%= Time.new.year %> <%= @config[:author] %> &nbsp;&bull;&nbsp; Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> &amp; Powered by <a href="http://cloudhead.io/toto">toto</a></p>
         </footer>
-        <script type="text/javascript" src="/js/bootstrap-dropdown.js"></script>
-        <script type="text/javascript" src="/js/prettify.js"></script>
-        <script type="text/javascript" src="/js/bootstrap-collapse.js"></script>
+        <script type="text/javascript" src="/js/bootstrap-js.min.js"></script>
+        <script type="text/javascript" src="/js/prettify.min.js"></script>
     </body>
 </html>
 
