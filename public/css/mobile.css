@@ -561,37 +561,6 @@ code {
     color: #DD1144;
     padding: 2px 4px;
 }
-/*----------------- Fonts -----------------*/
-@font-face {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: bold;
-  src: local('PT Serif Bold'), local('PTSerif-Bold'), url('./googlefont1.woff') format('woff');
-}
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: bold;
-  src: local('PT Sans Bold'), local('PTSans-Bold'), url('./googlefont2.woff') format('woff');
-}
-@font-face {
-  font-family: 'PT Serif';
-  font-style: italic;
-  font-weight: normal;
-  src: local('PT Serif Italic'), local('PTSerif-Italic'), url('./googlefont3.woff') format('woff');
-}
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: normal;
-  src: local('PT Sans'), local('PTSans-Regular'), url('./googlefont4.woff') format('woff');
-}
-@font-face {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: normal;
-  src: local('PT Serif'), local('PTSerif-Regular'), url('./googlefont5.woff') format('woff');
-}
 /*----------------- Posts -----------------*/
 /* Game of Life */
 #canvas_life {
