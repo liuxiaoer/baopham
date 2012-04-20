@@ -2,15 +2,14 @@ require 'toto'
 require File.expand_path('../sitemap', __FILE__)
 require 'rack/mobile-detect'
 
-# Redirect to mobile site
-use Rack::MobileDetect, :targeted => /iPhone|BlackBerry|Android/, 
-                        :redirect_to => 'http://baopham-mobile.heroku.com/'
-
 # Rack config
 use Rack::Static,
     :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', '/BingSiteAuth.xml', '/robots.txt'],
     :root => 'public'
 use Rack::CommonLogger
+
+# Redirect to mobile site
+use Rack::MobileDetect, :redirect_to => 'http://baopham-mobile.heroku.com/'
 
 if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
