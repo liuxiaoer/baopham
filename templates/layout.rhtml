@@ -4,6 +4,11 @@
         <meta charset='utf-8'>
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css">
+        <script type="text/javascript">
+            if (navigator.userAgent.match(/iPhone|Android|BlackBerry|Mobile/i)) {
+                location.replace("http://baopham-mobile.heroku.com")
+            }
+        </script>
         <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
         <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
         <meta name="description" content="<%= @context[:description] || 'Bao Pham\'s personal website' %>" />
