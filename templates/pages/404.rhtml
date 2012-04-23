@@ -1,12 +1,47 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html<html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="/css/mobile.css">
+        <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+        <link rel="alternate" type="application/atom+xml" title="Bao Pham - feed" href="/index.xml" />
+        <!--google fonts-->
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Bao Pham's personal website" />
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
         <title>Page not found</title>
     </head>
-    <body>
-        <h1>Page not found</h1>
-        <hr>
-        <p>Sorry, but the requested page could not be found</p>
+    <body id="home">
+        <div class="wrapper">
+            <header>
+                <h1 class="logo"><a href="/">BPm'sWorld</a></h1>
+                <a class="to_nav" href="#primary_nav">Menu</a>
+            </header>
+            <article>
+                <h2>Page not found</h2>
+                <hr>
+                <p>Are you lost? Try to go back to <a href="/">home</a> or browse through the <a href="/archives">archives</a>...Otherwise, unfortunately, the page you requested does not exist :(</p>
+            </article>
+            <nav id="primary_nav">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/Resume.pdf">Resume</a></li>
+                    <li><a href="/tagged?tag=javascript">JavaScript</a></li>
+                    <li><a href="/tagged?tag=html5">HTML5</a></li>
+                    <li><a href="/archives">Archives</a></li>
+                    <li><a href="/tags">Tags</a></li>
+                </ul>
+            </nav>
+            <footer>
+                <p>&copy; <%= Time.new.year %> <a href="/">Bao Pham</a> &nbsp;&bull;&nbsp; Powered by <a href="http://cloudhead.io/toto">toto</a></p>
+            </footer>
+        </div>
     </body>
 </html>
-        
+
+
