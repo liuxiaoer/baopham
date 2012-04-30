@@ -5212,7 +5212,6 @@ footer a {
 /* Matrix */
 .matrix {
     float: left;
-    padding-left: 30px;
     padding-right: 20px;
 }
 
@@ -5222,12 +5221,8 @@ footer a {
     padding-bottom: 10px;
 }
 
-.row > input {
+.matrix-row > input {
     width: 180px;
-}
-
-.matrix .buttons {
-    float: right;
 }
 
 #compute {
