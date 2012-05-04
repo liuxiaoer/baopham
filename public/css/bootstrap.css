@@ -5097,7 +5097,7 @@ a {
 
 .tags {
     font-size: 11px;
-    padding-top: 4em;
+    margin: 4em 0 0 0;
 }
 
 /* tag */
@@ -5177,7 +5177,7 @@ img.about {
 }
 
 .links {
-    padding-top: 5px;
+    margin: 5px 0 0 0;
     text-align: right;
 }
 
@@ -5206,7 +5206,7 @@ footer a {
 }
 
 #buttons_life{
-    padding-top: 15px;
+    margin: 15px 0 0 0;
 }
 
 /* Matrix */
@@ -5217,8 +5217,8 @@ footer a {
 
 .matrix-post #selection {
     clear: both;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .matrix-row > input {
