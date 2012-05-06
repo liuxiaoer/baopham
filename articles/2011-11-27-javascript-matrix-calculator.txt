@@ -8,41 +8,37 @@ description: A matrix calculator built in JavaScript
 <div class="matrix-post">
 <p>A matrix calculator written in JavaScript :)</p>
 <div class="matrix">
-    <div>
-        Matrix 1:
-        <div class="buttons">
-            <input class="add btn" type="button" value="+"/>
-            <input class="remove btn" type="button" value="&#8211;"/>
-        </div>
+    <div style="margin: 10px 0">
+        <b>Matrix 1</b>
+        <input style="float:right" class="add btn btn-mini" type="button" value="+"/>
+        <input style="float:right" class="remove btn btn-mini" type="button" value="&#8211;"/>
     </div>
     <div class="matrixA inputMatrix">
-        <div class="row">
+        <div class="matrix-row">
             <input type="text" value="1, 2, 3"/>
         </div>
-        <div class="row">
+        <div class="matrix-row">
             <input type="text" value="4, 5, 6"/>
         </div>
-        <div class="row">
+        <div class="matrix-row">
             <input type="text" value="7, 8, 9"/>
         </div>
     </div>
 </div>
 <div class="matrix">
-    <div>
-        Matrix 2:
-        <div class="buttons">
-            <input class="add btn" type="button" value="+"/>
-            <input class="remove btn" type="button" value="&#8211;"/>
-        </div>
+    <div style="margin: 10px 0">
+        <b>Matrix 2</b>
+        <input style="float: right;" class="add btn btn-mini" type="button" value="+"/>
+        <input style="float: right;" class="remove btn btn-mini" type="button" value="&#8211;"/>
     </div>
     <div class="matrixB inputMatrix">
-        <div class="row">
+        <div class="matrix-row">
             <input type="text" value="1, 2, 3"/>
         </div>
-        <div class="row">
+        <div class="matrix-row">
             <input type="text" value="4, 5, 6"/>
         </div>
-        <div class="row">
+        <div class="matrix-row">
             <input type="text" value="7, 8, 9"/>
         </div>
     </div>
