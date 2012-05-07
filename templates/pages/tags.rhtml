@@ -7,7 +7,7 @@
             if freq >= 5
                 color = "#cb4154"
             elsif freq >= 3 and freq < 5
-                color = "#d05566"
+                color = "#db7d8a"
             else
                 color = ""
             end
@@ -15,4 +15,5 @@
         <%= %|<a href="/tagged?tag=#{tag}" title="articles concerning #{tag}"
             style="font-size: #{size}px; color: #{color}">#{tag}</a>| %>
     <% end %>
+    <br>
 </article>
