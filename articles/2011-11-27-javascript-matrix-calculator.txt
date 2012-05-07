@@ -58,4 +58,4 @@ description: A matrix calculator built in JavaScript
 </div>
 <div id="answer"></div>
 </div>
-<script type="text/javascript">computeMatrix()</script>~
+<script type="text/javascript">computeMatrix()</script>~~~
