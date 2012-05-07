@@ -56,7 +56,9 @@ calc() {
 # weather "Des Moines"
 weather() {
     declare -a WEATHERARRAY
-    WEATHERARRAY=( `elinks -dump "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search" | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
+    WEATHERARRAY=( `elinks -dump \
+    "http://www.google.com/search?hl=en&amp;lr=&amp;client=firefox-a&amp;rls=org.mozilla%3Aen-US%3Aofficial&amp;q=weather+${1}&amp;btnG=Search"\
+    | grep -A 5 -m 1 "Weather for" | sed 's;\[26\]Add to iGoogle\[27\]IMG;;g'`)
     echo ${WEATHERARRAY[@]}
 }
 
