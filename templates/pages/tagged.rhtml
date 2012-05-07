@@ -36,7 +36,18 @@
                         <li><a href="/2011">2011</a></li>
                         <li class="nav-header">Tags</li>
                         <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
-                            <%= %|<a href="/tagged?tag=#{tag}" title="articles concerning #{tag}" style="font-size: #{10 * freq}px">#{tag}</a>| %>
+                            <%
+                                size = freq >= 3 ? 21 : freq * 9
+                                if freq >= 5
+                                    color = "#cb4154"
+                                elsif freq >= 3 and freq < 5
+                                    color = "#d05566"
+                                else
+                                    color = ""
+                                end
+                            %>
+                        <%= %|<a href="/tagged?tag=#{tag}" title="articles concerning #{tag}"
+                            style="font-size: #{size}px; color: #{color}">#{tag}</a>| %>
                         <% end %>
                     </ul>
                 </div>
