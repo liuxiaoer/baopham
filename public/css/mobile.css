@@ -555,6 +555,15 @@ code {
     color: #DD1144;
     padding: 2px 4px;
 }
+pre {
+    white-space: pre;
+    word-wrap: normal;
+    overflow: auto !important;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
 /* Blockquote */
 blockquote {
   padding: 0 0 0 15px;
