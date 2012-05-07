@@ -3,7 +3,7 @@ author: Bao Pham
 date: 2011/11/20
 
 <p>I love bash! As much as I love to configure my <a href="#textmate">TextMate and iTerm</a> I also like to collect cool snippets from people for my bash and create some for myself.</p>
-<p>Here is part of my bashrc:</p>~
+<p>Here is part of my bashrc:</p>~~~
 <pre class="prettyprint linenums pre-scrollable">
 # Configure iTerm's tab title to display current directory
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'

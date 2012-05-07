@@ -12,7 +12,7 @@ description: Conway's Game of Life animation with JavasScript and Canvas
     <li>Opera 10.6+</li>
     <li>Apple Safari 4+</li>
     <li>Internet Explorer 9</li>
-</ul>~
+</ul>~~~
 <script src="/js/life.js" type="text/javascript"></script>
 <p><i>From wikipedia</i>:</p>
 <blockquote><p>&#8220;The Game of Life, also known simply as Life, is a <a href="http://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">cellular automaton</a> devised by the British mathematician <a href="http://en.wikipedia.org/wiki/John_Horton_Conway" target="_blank">John Horton Conway</a> in 1970.</p>
