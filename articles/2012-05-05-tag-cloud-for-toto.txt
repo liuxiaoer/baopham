@@ -1,7 +1,7 @@
 ---
 title: Tag Cloud for Toto
 date: 05/05/2012
-tags: ruby
+tags: ruby, web-development
 description: Tag Cloud for Toto
 
 As I mentioned in the [previous post]("/2012/03/21/abandoning-appengine/") about [toto]("http://cloudhead.io/toto") blog engine, and how I have made some customizations, I still felt like something was missing.
