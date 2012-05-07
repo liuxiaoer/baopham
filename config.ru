@@ -1,11 +1,15 @@
 require 'toto'
 require File.expand_path('../sitemap', __FILE__)
+require 'rack/mobile-detect'
 
 # Rack config
 use Rack::Static,
-    :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', 'BingSiteAuth.xml', '/robots.txt'],
+    :urls => ['/css', '/js', '/images', '/favicon.ico', '/Resume.pdf', '/BingSiteAuth.xml', '/robots.txt'],
     :root => 'public'
 use Rack::CommonLogger
+
+# Redirect to mobile site
+use Rack::MobileDetect, :redirect_to => 'http://baopham-mobile.heroku.com/'
 
 if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
@@ -32,15 +36,15 @@ toto = Toto::Server.new do
     #
     set :author,    "Bao Pham"                                  # blog author
     set :title,     "Bao Pham"
-    set :url,       "http://baopham-mobile.heroku.com"
+    set :url,       "http://baopham.heroku.com"
     set :root,      "page"                                      # page to load on /
     set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
     set :markdown,  :smart                                      # use markdown + smart-mode
-    set :disqus,    "bpmsworldmobile"                           # disqus id, or false
+    set :disqus,    "bpmsworld"                                 # disqus id, or false
     set :summary,   :max => 150, :delim => /~~~/                # length of article summary and delimiter
     set :ext,       'txt'                                       # file extension for articles
-    set :cache,     28800                                       # cache duration, in seconds
+    set :cache,      28800                                      # cache duration, in seconds
 
     set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 
@@ -50,5 +54,4 @@ toto = Toto::Server.new do
 end
 
 run toto
-
 
