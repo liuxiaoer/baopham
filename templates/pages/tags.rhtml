@@ -3,7 +3,7 @@
     <% require 'karakuri' %>
     <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
         <%
-            size = freq >= 3 ? 21 : freq * 9
+            size = freq >= 3 ? 25 : freq * 9
             if freq >= 5
                 color = "#cb4154"
             elsif freq >= 3 and freq < 5
