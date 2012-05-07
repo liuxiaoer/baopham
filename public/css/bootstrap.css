@@ -5084,6 +5084,12 @@ a {
     border: 3px solid transparent;
 }
 
+pre {
+    white-space: pre;
+    word-wrap: normal;
+    overflow: auto !important;
+}
+
 /* archive */
 .archive li {
     padding-top: 5px;
