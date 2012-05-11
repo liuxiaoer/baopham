@@ -644,14 +644,14 @@ blockquote:after {
     margin-left: 0.2em;
 }
 /* Chess */
-table .odd {
+.chess .odd {
     background-color: #F8F8F8 ;
     width: 44px;
     height: 44px;
     text-align: center;
     font-size: 34px;
 }
-table .even {
+.chess .even {
     background-color: #BDBDBD;
     width: 44px;
     height: 44px;
@@ -667,4 +667,12 @@ table .even {
 }
 #editable-sec {
     width: 95%;
+}
+[draggable=true] {
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }

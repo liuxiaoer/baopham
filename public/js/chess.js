@@ -81,7 +81,7 @@ function isBlocked(elemPos, targetPos, direction, pieces) {
             return false;
         }
     }
-    
+
 }
 
 function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
@@ -96,11 +96,11 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
             //Move one step forward with nothing in front
             if ( !pieces[elemPos + 8] && targetPos == elemPos + 8) {
                 return true;
-            } 
+            }
             //Move two steps forward from the pawn row with nothing in between
             else if ( elemPos >= 9 && elemPos <= 16 && targetPos == elemPos + 16 && !pieces[elemPos + 8]) {
                 return true;
-            }     
+            }
             //Move diagonally one step only to kill enemy
             else if (targetColor != elemColor && targetColor != 'none') {
                 if (diff == 9 || diff == 7) {
@@ -108,16 +108,16 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
                 }
             }
         }
-    
+
         else {
             //Move one step forward with nothing in front
             if ( pieces[elemPos - 8] === 0 && targetPos == elemPos - 8) {
                 return true;
-            } 
+            }
             //Move two steps forward from the pawn row with nothing in between
             else if ( elemPos >= 49 && elemPos <= 56 && targetPos == elemPos - 16 && !pieces[elemPos - 8]) {
                 return true;
-            }     
+            }
             //Move diagonally one step only to kill enemy
             else if (targetColor != elemColor && targetColor != 'none') {
                 if (diff == 9 || diff == 7) {
@@ -137,11 +137,11 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
 
     else if (elemPiece == 'bishop') {
         //Move diagonally
-        if ( diff % 9 === 0 && !isBlocked(elemPos, targetPos, 'diagonal right', pieces) ) 
+        if ( diff % 9 === 0 && !isBlocked(elemPos, targetPos, 'diagonal right', pieces) )
             return true;
         else if ( diff % 7 === 0 && !isBlocked(elemPos, targetPos, 'diagonal left', pieces) )
             return true;
-    } 
+    }
 
     else if (elemPiece == 'knight') {
         if ( (elemPos + 1) + (2 * 8) ==  targetPos || (elemPos + 1) - (2 * 8) == targetPos ) {
@@ -186,7 +186,7 @@ function validMove(elemIDs, targetIDs, elemColor, targetColor, pieces) {
             }
         }
     }
-    
+
     return false;
 
 }
@@ -209,27 +209,29 @@ function drop(event) {
     var element = document.getElementById(coordinate);
 
     var targetClasses = event.target.getAttribute('class').split(' ');
-    var targetIDs = event.target.getAttribute('id').split(' ');
+    var targetIDs = event.target.getAttribute('id').split('-');
 
     var elementClasses = element.getAttribute('class').split(' ');
-    var elementIDs = element.getAttribute('id').split(' ');
-    
-    
+    var elementIDs = element.getAttribute('id').split('-');
+
+
     //You don't want to kill your own PIECES
     //And enforce chess rules
     if( targetClasses[0] != elementClasses[0] && validMove(elementIDs, targetIDs, elementClasses[0], targetClasses[0], PIECES) ){
         event.target.innerHTML = element.innerHTML; // Move piece to new cell
         var newclass = elementClasses[0] + ' ' + targetClasses[1];
-        var newID = targetIDs[0] + ' ' + elementIDs[1];
+        var newID = targetIDs[0] + '-' + elementIDs[1];
 
         //Set new attrs to the new cell
-        event.target.setAttribute('class', newclass); 
+        event.target.setAttribute('class', newclass);
         event.target.setAttribute('id', newID);
+        event.target.setAttribute('draggable', 'true');
 
         element.innerHTML = ""; // Clear old cell
+        element.setAttribute('draggable', 'false'); // Make the old cell undraggable
         element.setAttribute('class', 'none ' + elementClasses[1]); //Change the old cell's class names
         element.setAttribute('id', elementIDs[0]); //Set old cell's id to its position with no piece name
-        
+
         //Update the dictionary
         var elemPos = parseInt(elementIDs[0], 10);
         var targetPos = parseInt(targetIDs[0], 10);
@@ -237,7 +239,7 @@ function drop(event) {
         PIECES[targetPos] = 1;
 
     }
-    event.preventDefault(); 
+    event.preventDefault();
     return false;
 }
 
