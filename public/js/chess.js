@@ -225,8 +225,10 @@ function drop(event) {
         //Set new attrs to the new cell
         event.target.setAttribute('class', newclass);
         event.target.setAttribute('id', newID);
+        event.target.setAttribute('draggable', 'true');
 
         element.innerHTML = ""; // Clear old cell
+        element.setAttribute('draggable', 'false'); // Make the old cell undraggable
         element.setAttribute('class', 'none ' + elementClasses[1]); //Change the old cell's class names
         element.setAttribute('id', elementIDs[0]); //Set old cell's id to its position with no piece name
 
