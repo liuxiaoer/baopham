@@ -11,24 +11,24 @@ description: An interactive chess board
 <div ondragstart="dragStart(event);" ondragover="return dragOver(event);" ondrop="return drop(event);">
     <table style="border-collapse: collapse" border="1">
         <tr>
-            <td id="1 rook" class="black odd" draggable="true">&#9820;</td>
-            <td id="2 knight" class="black even" draggable="true">&#9822;</td>
-            <td id="3 bishop" class="black odd" draggable="true">&#9821;</td>
-            <td id="4 queen" class="black even" draggable="true">&#9819;</td>
-            <td id="5 king" class="black odd" draggable="true">&#9818;</td>
-            <td id="6 bishop" class="black even" draggable="true">&#9821;</td>
-            <td id="7 knight" class="black odd" draggable="true">&#9822;</td>
-            <td id="8 rook" class="black even" draggable="true">&#9820;</td>
+            <td id="1-rook" class="black odd" draggable="true">&#9820;</td>
+            <td id="2-knight" class="black even" draggable="true">&#9822;</td>
+            <td id="3-bishop" class="black odd" draggable="true">&#9821;</td>
+            <td id="4-queen" class="black even" draggable="true">&#9819;</td>
+            <td id="5-king" class="black odd" draggable="true">&#9818;</td>
+            <td id="6-bishop" class="black even" draggable="true">&#9821;</td>
+            <td id="7-knight" class="black odd" draggable="true">&#9822;</td>
+            <td id="8-rook" class="black even" draggable="true">&#9820;</td>
         </tr>
         <tr>
-            <td id="9 pawn" class="black even" draggable="true">&#9823;</td>
-            <td id="10 pawn" class="black odd" draggable="true">&#9823;</td>
-            <td id="11 pawn" class="black even" draggable="true">&#9823;</td>
-            <td id="12 pawn" class="black odd" draggable="true">&#9823;</td>
-            <td id="13 pawn" class="black even" draggable="true">&#9823;</td>
-            <td id="14 pawn" class="black odd" draggable="true">&#9823;</td>
-            <td id="15 pawn" class="black even" draggable="true">&#9823;</td>
-            <td id="16 pawn" class="black odd" draggable="true">&#9823;</td>
+            <td id="9-pawn" class="black even" draggable="true">&#9823;</td>
+            <td id="10-pawn" class="black odd" draggable="true">&#9823;</td>
+            <td id="11-pawn" class="black even" draggable="true">&#9823;</td>
+            <td id="12-pawn" class="black odd" draggable="true">&#9823;</td>
+            <td id="13-pawn" class="black even" draggable="true">&#9823;</td>
+            <td id="14-pawn" class="black odd" draggable="true">&#9823;</td>
+            <td id="15-pawn" class="black even" draggable="true">&#9823;</td>
+            <td id="16-pawn" class="black odd" draggable="true">&#9823;</td>
         </tr>
         <tr>
             <td id="17" class="none odd" draggable="true">&nbsp;</td>
@@ -71,24 +71,24 @@ description: An interactive chess board
             <td id="48" class="none odd" draggable="true">&nbsp;</td>
         </tr>
         <tr>
-            <td id="49 pawn" class="white odd" draggable="true">&#9817;</td>
-            <td id="50 pawn" class="white even" draggable="true">&#9817;</td>
-            <td id="51 pawn" class="white odd" draggable="true">&#9817;</td>
-            <td id="52 pawn" class="white even" draggable="true">&#9817;</td>
-            <td id="53 pawn" class="white odd" draggable="true">&#9817;</td>
-            <td id="54 pawn" class="white even" draggable="true">&#9817;</td>
-            <td id="55 pawn" class="white odd" draggable="true">&#9817;</td>
-            <td id="56 pawn" class="white even" draggable="true">&#9817;</td>
+            <td id="49-pawn" class="white odd" draggable="true">&#9817;</td>
+            <td id="50-pawn" class="white even" draggable="true">&#9817;</td>
+            <td id="51-pawn" class="white odd" draggable="true">&#9817;</td>
+            <td id="52-pawn" class="white even" draggable="true">&#9817;</td>
+            <td id="53-pawn" class="white odd" draggable="true">&#9817;</td>
+            <td id="54-pawn" class="white even" draggable="true">&#9817;</td>
+            <td id="55-pawn" class="white odd" draggable="true">&#9817;</td>
+            <td id="56-pawn" class="white even" draggable="true">&#9817;</td>
         </tr>
         <tr>
-            <td id="57 rook" class="white even" draggable="true">&#9814;</td>
-            <td id="58 knight" class="white odd" draggable="true">&#9816;</td>
-            <td id="59 bishop" class="white even" draggable="true">&#9815;</td>
-            <td id="60 queen" class="white odd" draggable="true">&#9813;</td>
-            <td id="61 king" class="white even" draggable="true">&#9812;</td>
-            <td id="62 bishop" class="white odd" draggable="true">&#9815;</td>
-            <td id="63 knight" class="white even" draggable="true">&#9816;</td>
-            <td id="64 rook" class="white odd" draggable="true">&#9814;</td>
+            <td id="57-rook" class="white even" draggable="true">&#9814;</td>
+            <td id="58-knight" class="white odd" draggable="true">&#9816;</td>
+            <td id="59-bishop" class="white even" draggable="true">&#9815;</td>
+            <td id="60-queen" class="white odd" draggable="true">&#9813;</td>
+            <td id="61-king" class="white even" draggable="true">&#9812;</td>
+            <td id="62-bishop" class="white odd" draggable="true">&#9815;</td>
+            <td id="63-knight" class="white even" draggable="true">&#9816;</td>
+            <td id="64-rook" class="white odd" draggable="true">&#9814;</td>
         </tr>
     </table>
 </div>

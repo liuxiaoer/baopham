@@ -209,10 +209,10 @@ function drop(event) {
     var element = document.getElementById(coordinate);
 
     var targetClasses = event.target.getAttribute('class').split(' ');
-    var targetIDs = event.target.getAttribute('id').split(' ');
+    var targetIDs = event.target.getAttribute('id').split('-');
 
     var elementClasses = element.getAttribute('class').split(' ');
-    var elementIDs = element.getAttribute('id').split(' ');
+    var elementIDs = element.getAttribute('id').split('-');
 
 
     //You don't want to kill your own PIECES
@@ -220,7 +220,7 @@ function drop(event) {
     if( targetClasses[0] != elementClasses[0] && validMove(elementIDs, targetIDs, elementClasses[0], targetClasses[0], PIECES) ){
         event.target.innerHTML = element.innerHTML; // Move piece to new cell
         var newclass = elementClasses[0] + ' ' + targetClasses[1];
-        var newID = targetIDs[0] + ' ' + elementIDs[1];
+        var newID = targetIDs[0] + '-' + elementIDs[1];
 
         //Set new attrs to the new cell
         event.target.setAttribute('class', newclass);
