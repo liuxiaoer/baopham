@@ -1,5 +1,6 @@
 require 'toto'
 require File.expand_path('../sitemap', __FILE__)
+require 'karakuri'
 
 # Rack config
 use Rack::Static,
@@ -10,6 +11,8 @@ use Rack::CommonLogger
 if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
 end
+
+Karakuri.link_format '<a href="/tagged?tag={tag}" title="articles with tag {tag}">{tag}</a> '
 
 class Toto::Site
     alias_method :old_go, :go
