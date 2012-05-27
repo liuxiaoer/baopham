@@ -5,6 +5,7 @@
                 <%
                     require 'karakuri'
                     desired_tag = Karakuri::desired_tag(env["QUERY_STRING"])
+                    @path = desired_tag
                 %>
                 <div class="tag"><h1><%= desired_tag %></h1></div>
                 <br><br>
