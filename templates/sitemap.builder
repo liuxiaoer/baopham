@@ -1,3 +1,5 @@
+require 'karakuri'
+
 xml.instruct!
 xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") do
 
@@ -19,6 +21,13 @@ xml.urlset("xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9") do
   xml.url do 
     xml.loc @config[:url] + '/tags'
     xml.changefreq "weekly"
+  end
+
+  Karakuri::tag_cloud(articles).each do |tag, freq|
+    xml.url do
+      xml.loc @config[:url] + "/tagged?tag=#{tag}"
+      xml.changefreq "weekly"
+    end
   end
 
   xml.url do 
