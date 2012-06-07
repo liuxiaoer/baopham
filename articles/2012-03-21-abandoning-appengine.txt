@@ -90,7 +90,7 @@ Some changes I made:
 
 - Add sitemap builder (line 2) ....................................... [sitemap](#sitemap) &para;
 
-- Redirect for mobile view (line 6) ................................. [useragent](#useragent) &para;
+- Redirect for mobile view (line 11) ................................ [useragent](#useragent) &para;
 
 - Class `Toto::Site` (lines 19-31) ............................... [pagination](#paginate) &para;
 
