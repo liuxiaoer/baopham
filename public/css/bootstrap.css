@@ -5009,8 +5009,20 @@ a {
     color: #3499b3;
 }
 
-.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+a img {
+    padding:8px;
+    border:solid;
+    border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+    border-width: 1px 2px 2px 1px;
+    background-color:white;}
+    .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
     background-color: #3499B3;
+}
+
+a img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* navbar */
