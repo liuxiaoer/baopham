@@ -74,6 +74,9 @@ Oh, firefox has the new [3D feature](http://blog.mozilla.org/blog/2012/03/13/fir
 <center><strong>1337 !</strong></center>
 <script>
 $(document).ready(function() {
-	$(".fancybox").fancybox();
+	$(".fancybox").fancybox({
+        prevEffect		: 'none',
+        nextEffect		: 'none'
+    });
 });
 </script>
