@@ -6,8 +6,8 @@ tags: javascript, mozilla
 I'm actually a little late for this [Jaw's programming puzzle](http://people.mozilla.org/~jwein/puzzle/), which I only discovered yesterday from reading [a blog](http://msujaws.wordpress.com/2012/05/02/wanna-join-the-firefox-team-at-mozilla-solve-the-puzzle/) written by a Mozilla employee. If I had seen this post a bit earlier, I might even have had a chance to work for them since I solved it! *yay*~~~
 
 <!--fancybox-->
-<link rel="stylesheet" href="http://fancyapps.com/fancybox/source/jquery.fancybox.css?v=2.0.6" type="text/css" media="screen" />
-<script type="text/javascript" src="http://fancyapps.com/fancybox/source/jquery.fancybox.pack.js?v=2.0.6"></script>
+<link rel="stylesheet" href="http://fancyapps.com/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://fancyapps.com/fancybox/source/jquery.fancybox.pack.js"></script>
 <!--/fancybox-->
 
 (btw, if you love solving programming problems, please take a moment to go through the puzzle (it's really worth it) but note that this post contains **SPOILERS**.)
@@ -69,7 +69,7 @@ But there's one more bonus puzzle: `Ever see a webpage in 3D before? Tilt the pa
 
 Oh, firefox has the new [3D feature](http://blog.mozilla.org/blog/2012/03/13/firefox-adds-new-developer-tools-and-add-on-sync/), which is extremely cool. To activate it, right click on the page and select "Inspect Element" (and not "Inspect Element with Firebug"). You will see at the bottom of your browser there's a button "3D View", click on it. (If your browser complains, it's probably because you don't have the [Tilt add-on](https://addons.mozilla.org/en-US/firefox/addon/tilt/?src=search) installed). Play around, tilt the page, zoom it in and out to see the magic:
 
-<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" title="1337"><img class="center img-border" src="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" style="max-width: 70%; max-height: 20%" alt="1337"></a>
+<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" title="1337"><img class="center img-border" src="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" style="max-width: 90%; max-height: 25%" alt="1337"></a>
 
 <center><strong>1337 !</strong></center>
 <script>
