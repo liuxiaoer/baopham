@@ -5014,7 +5014,7 @@ img.img-border {
     -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
     border: 1px solid transparent;
-    padding: 8px;
+    padding: 5px;
 }
 .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
     background-color: #3499B3;
