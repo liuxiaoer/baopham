@@ -5009,17 +5009,18 @@ a {
     color: #3499b3;
 }
 
-a img {
+img.img-border {
     padding:8px;
     border:solid;
-    border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
-    border-width: 1px 2px 2px 1px;
-    background-color:white;}
-    .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
+    border-color: #dddddd;
+    border-width: 1px;
+    background-color:white;
+}
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
     background-color: #3499B3;
 }
 
-a img.center {
+.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
