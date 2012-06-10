@@ -5086,6 +5086,8 @@ img.img-border {
 
 .well {
     background: url("/images/brushed.png") repeat scroll 0 0 padding-box transparent;
+    -moz-box-shadow:0 0 8px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border: 3px solid transparent;
     padding: 18px;
@@ -5093,6 +5095,8 @@ img.img-border {
 
 .hero-unit {
     background: url("/images/brushed.png") repeat scroll 0 0 padding-box transparent;
+    -moz-box-shadow:0 0 8px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border: 3px solid transparent;
 }
