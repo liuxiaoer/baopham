@@ -206,11 +206,11 @@ a:hover {
     color: #005580;
 }
 img.img-border {
-    padding:8px;
-    border:solid;
-    border-color: #dddddd;
-    border-width: 1px;
-    background-color:white;
+    -moz-box-shadow:0 0 6px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    border: 1px solid transparent;
+    padding: 8px;
 }
 .center {
     display: block;
