@@ -205,14 +205,14 @@ a {
 a:hover {
     color: #005580;
 }
-a img {
+img.img-border {
     padding:8px;
     border:solid;
-    border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
-    border-width: 1px 2px 2px 1px;
+    border-color: #dddddd;
+    border-width: 1px;
     background-color:white;
 }
-a img.center {
+.center {
     display: block;
     margin-left: auto;
     margin-right: auto;

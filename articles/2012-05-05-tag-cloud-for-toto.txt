@@ -10,7 +10,7 @@ Okay, I have sitemap, pagination, mobile redirect, tags... what else could be mi
 
 **tag cloud** of course!! Duh...
 
-<a href="http://www.flickr.com/photos/willrad/209637446/" title="DUH. by Willrad, on Flickr"><img src="http://farm1.staticflickr.com/66/209637446_ee265fbfa6.jpg" width="400" height="275" alt="DUH."></a>
+<a href="http://www.flickr.com/photos/willrad/209637446/" title="DUH. by Willrad, on Flickr"><img class="img-border" src="http://farm1.staticflickr.com/66/209637446_ee265fbfa6.jpg" width="400" height="275" alt="DUH."></a>
 
 <small>*Just joking...*</small>
 

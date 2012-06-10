@@ -20,11 +20,11 @@ var _0x9827=["\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x66\x6
 
 Yeah, but it's okay, [firebug](http://getfirebug.com/) will make life much easier for us. So first thing we need to do is to find out what this javascript code does. It looks like the variable `_0x9827` holds some sort of information, so let's check it out in the DOM:
 
-<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7233/7170645001_2a3b963519_z.jpg" title="var _0x9827"><img class="center" src="http://farm8.staticflickr.com/7233/7170645001_2a3b963519_z.jpg" style="max-width:80%; max-height:20%" alt="var _0x9827"></a>
+<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7233/7170645001_2a3b963519_z.jpg" title="var _0x9827"><img class="center img-border" src="http://farm8.staticflickr.com/7233/7170645001_2a3b963519_z.jpg" style="max-width:80%; max-height:20%" alt="var _0x9827"></a>
 
 Now expand it:
 
-<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7079/7352747356_88d84fa81c_b.jpg" title="expanded _0x9827"><img class="center" src="http://farm8.staticflickr.com/7079/7352747356_88d84fa81c_z.jpg" style="max-width: 80%; max-height: 50%" alt="expanded _0x9827"></a>
+<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7079/7352747356_88d84fa81c_b.jpg" title="expanded _0x9827"><img class="center img-border" src="http://farm8.staticflickr.com/7079/7352747356_88d84fa81c_z.jpg" style="max-width: 80%; max-height: 50%" alt="expanded _0x9827"></a>
 
 Sweet! Now I have some clue:
 
@@ -57,11 +57,11 @@ verify(proxy);
 
 Then put the snippet in the javascript source code using firebug (in the HTML section, right click on the javascript line then select "Edit HTML"):
 
-<a class="fancybox" rel="fancybox" href="http://farm9.staticflickr.com/8141/7167576505_0d4079cc65_z.jpg" title="edit js on firebug"><img class="center" src="http://farm9.staticflickr.com/8141/7167576505_0d4079cc65_z.jpg" style="max-width:80%; max-height=30%" alt="edit js"></a>
+<a class="fancybox" rel="fancybox" href="http://farm9.staticflickr.com/8141/7167576505_0d4079cc65_z.jpg" title="edit js on firebug"><img class="center img-border" src="http://farm9.staticflickr.com/8141/7167576505_0d4079cc65_z.jpg" style="max-width:80%; max-height=30%" alt="edit js"></a>
 
 And it works!
 
-<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7241/7167580677_1229fdedaa_c.jpg" title="answer"><img class="center" src="http://farm8.staticflickr.com/7241/7167580677_1229fdedaa_c.jpg" style="max-width: 90%; max-height: 30%" alt="answer"></a>
+<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7241/7167580677_1229fdedaa_c.jpg" title="answer"><img class="center img-border" src="http://farm8.staticflickr.com/7241/7167580677_1229fdedaa_c.jpg" style="max-width: 90%; max-height: 30%" alt="answer"></a>
 
 Ok cool, the answer is: `jaws+WINNERWINNER@mozilla.com`
 
@@ -69,7 +69,7 @@ But there's one more bonus puzzle: `Ever see a webpage in 3D before? Tilt the pa
 
 Oh, firefox has the new [3D feature](http://blog.mozilla.org/blog/2012/03/13/firefox-adds-new-developer-tools-and-add-on-sync/), which is extremely cool. To activate it, right click on the page and select "Inspect Element" (and not "Inspect Element with Firebug"). You will see at the bottom of your browser there's a button "3D View", click on it. (If your browser complains, it's probably because you don't have the [Tilt add-on](https://addons.mozilla.org/en-US/firefox/addon/tilt/?src=search) installed). Play around, tilt the page, zoom it in and out to see the magic:
 
-<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" title="1337"><img class="center" src="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" style="max-width: 70%; max-height: 20%" alt="1337"></a>
+<a class="fancybox" rel="fancybox" href="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" title="1337"><img class="center img-border" src="http://farm8.staticflickr.com/7236/7352811076_823e27c4bd.jpg" style="max-width: 70%; max-height: 20%" alt="1337"></a>
 
 <center><strong>1337 !</strong></center>
 <script>
