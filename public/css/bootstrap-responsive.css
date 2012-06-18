@@ -58,6 +58,9 @@
 }
 
 @media (max-width: 767px) {
+.navbar .navbar-fixed-top {
+    margin-bottom: 0 !important;
+}
   .visible-phone {
     display: inherit !important;
   }
@@ -824,17 +827,23 @@
     .page {
         width: 98%;
     }
-    .navbar .brand {
-        margin-left: -1.5% !important;
-    }
+    /* .navbar .brand { */
+    /*     margin-left: -1.5% !important; */
+    /* } */
 }
 
 @media (max-width: 1024px) {
+    body {
+        padding: 0;
+    }
     .page {
-        width: 98%;
+        width: 100%;
+        padding-top: 40px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
     .navbar .brand {
-        margin-left: -1.5% !important;
+        margin-left: -1.5%;
     }
 }
 
