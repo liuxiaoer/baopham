@@ -9,9 +9,6 @@ use Rack::Static,
     :root => 'public'
 use Rack::CommonLogger
 
-# Redirect to mobile site
-use Rack::MobileDetect, :redirect_to => 'http://baopham-mobile.heroku.com/'
-
 if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
 end
