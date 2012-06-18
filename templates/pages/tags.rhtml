@@ -1,0 +1,25 @@
+<div class="page">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span8">
+                <h2>Tags</h2>
+                <br>
+                <% require 'karakuri' %>
+                <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
+                    <%
+                        size = freq >= 3 ? 25 : freq * 9
+                        if freq >= 5
+                            color = "#cb4154"
+                        elsif freq >= 3 and freq < 5
+                            color = "#db7d8a"
+                        else
+                            color = ""
+                        end
+                    %>
+                    <%= %|<a href="/tagged?tag=#{tag}" title="articles with tag #{tag}"
+                        style="font-size: #{size}px; color: #{color}">#{tag}</a>| %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
