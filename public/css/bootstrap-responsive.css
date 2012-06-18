@@ -831,9 +831,6 @@
     .page {
         width: 100%;
     }
-    /* .navbar .brand { */
-    /*     margin-left: -1.5% !important; */
-    /* } */
 }
 
 @media (max-width: 1024px) {
@@ -843,12 +840,10 @@
     }
     .page {
         width: 100%;
-        /* padding-right: 10px; */
-        /* padding-left: 10px; */
     }
     .container-fluid {
         padding-right: 10px;
-        padding-left: 10px
+        padding-left: 10px;
     }
     .navbar .brand {
         margin-left: -1.5%;
