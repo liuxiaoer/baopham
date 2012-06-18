@@ -5082,6 +5082,7 @@ img.img-border {
   background-image: -o-linear-gradient(top, #537965, #5D8872) !important;
   background-image: linear-gradient(top, #537965, #5D8872) !important;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#537965', endColorstr='#5D8872', GradientType=0) !important;
+  margin-right: 15px;
 }
 .navbar .btn-navbar:hover,
 .btn-navbar:active,
