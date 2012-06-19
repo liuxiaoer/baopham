@@ -811,14 +811,6 @@
 }
 
 /* ============== */
-@media (min-width: 980px) {
-    .page {
-        width: 98%;
-    }
-    .navbar .brand {
-        margin-left: -1% !important;
-    }
-}
 @media (max-width: 979px) {
     .navbar .nav > li > a,
     .navbar .dropdown-menu a {
