@@ -4987,6 +4987,13 @@ html, body {
     background-color: #3D4B58 !important;
     color: #666666 !important;
     height: 100%;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 300;
+}
+
+p small {
+    font-size: 12px;
 }
 
 .page {
@@ -5121,6 +5128,7 @@ img.img-border {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     border: 3px solid transparent;
     padding: 18px;
+    font-size: 14px;
 }
 
 .hero-unit {
@@ -5149,7 +5157,7 @@ pre {
 }
 
 .tags {
-    font-size: 11px;
+    font-size: 12px;
     margin: 4em 0 0 0;
 }
 
