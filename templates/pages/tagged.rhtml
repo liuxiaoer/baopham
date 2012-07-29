@@ -25,11 +25,7 @@
                     <ul class="nav nav-list">
                         <li class="nav-header">Recent Posts</li>
                         <% for article in @articles[0...10] %>
-                            <% if article.title.split.length < 8 and article.title.length < 25 %>
-                                <li><a href="<%= article.path %>"><%= article.title %></a></li>
-                            <% else %>
-                                <li><a href="<%= article.path %>"><%= article.title.split[0...5].join(" ") %> ...</a></li>
-                            <% end %>
+                            <li><a class="truncate" href="<%= article.path %>"><%= article.title %></a></li>
                         <% end %>
                         <li class="nav-header">Archives</li>
                         <li><a href="/archives">All</a></li>
