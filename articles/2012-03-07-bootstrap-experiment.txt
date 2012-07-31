@@ -8,7 +8,7 @@ description: A make over with bootstrap
 <p>Not only Bootstrap that makes a (major) change in the look of this website, from <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>, I converted to <a href="http://code.google.com/p/google-code-prettify/">Google Code Prettify</a>, which is also pretty cool since it can guess what language the code snippet is. However, it doesn't support as many languages as SyntaxHighlighter.</p>
 <p>This could be a permanent change or just temporary, who knows if tomorrow I will see something even cooler than this?</p>
 <p>And finally, here is something for your curiosity: interested in how much different my old website looks compared to this one? Take a look <a href="http://www.freezepage.com/1332826054FPICHYYSPN" target="_blank">here</a> ... Free CSS Template heh &gt;&lt;</p>
-<p>&nbsp;&bull;</p>
-<p>&nbsp;&bull;</p>
-<p>&nbsp;&bull;</p>
-<p style="font-size: 17px;"> &#10047; </p>
+<p>&nbsp;&nbsp;&bull;</p>
+<p>&nbsp;&nbsp;&bull;</p>
+<p>&nbsp;&nbsp;&bull;</p>
+<p style="font-size: 22px;">&nbsp;&#10047;</p>
