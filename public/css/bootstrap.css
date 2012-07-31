@@ -4992,6 +4992,10 @@ html, body {
     font-weight: 300;
 }
 
+li {
+  line-height: 22px;
+}
+
 p small {
     font-size: 12px;
 }
