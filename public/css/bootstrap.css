@@ -4985,6 +4985,7 @@ a.badge:hover {
 /* ========= */
 html, body {
     background-color: #3D4B58 !important;
+    background-image: url("../img/denim.png");
     color: #666666 !important;
     height: 100%;
     font-size: 15px;
