@@ -1,6 +1,5 @@
 require 'toto'
 require File.expand_path('../sitemap', __FILE__)
-require 'rack/mobile-detect'
 require 'karakuri'
 
 # Rack config
