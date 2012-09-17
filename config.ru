@@ -10,8 +10,6 @@ use Rack::CommonLogger
 
 if ENV['RACK_ENV'] == 'development'
     use Rack::ShowExceptions
-else
-    require 'newrelic_rpm'
 end
 
 Karakuri.link_format '<a href="/tagged?tag={tag}" title="articles with tag {tag}">{tag}</a> '
