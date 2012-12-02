@@ -907,4 +907,9 @@
     }
 }
 
+@media (min-width: 768px) and (max-width: 979px) {
+  .span8 {
+        width: 100% !important;
+  }
+}
 
