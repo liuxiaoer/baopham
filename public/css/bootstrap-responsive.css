@@ -841,8 +841,8 @@
         width: 100%;
     }
     .container-fluid {
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: 25px;
+        padding-left: 25px;
     }
     .navbar .brand {
         margin-left: 1% !important;
@@ -888,8 +888,8 @@
     }
 
     .container-fluid {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
     .navbar .brand {
