@@ -4984,9 +4984,9 @@ a.badge:hover {
 
 /* ========= */
 html, body {
-    background-color: #3D4B58 !important;
-    background-image: url("../img/denim.png") !important;
-    color: #666666 !important;
+    background-color: #3D4B58;
+    background-image: url("../img/denim.png");
+    color: #666666;
     height: 100%;
     font-size: 15px;
     line-height: 22px;
