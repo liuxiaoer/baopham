@@ -4989,12 +4989,12 @@ html, body {
     color: #666666;
     height: 100%;
     font-size: 15px;
-    line-height: 22px;
+    line-height: 23px;
     font-weight: 300;
 }
 
 li {
-  line-height: 22px;
+  line-height: 23px;
 }
 
 p small {
