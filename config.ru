@@ -4,7 +4,7 @@ require 'karakuri'
 
 # Rack config
 use Rack::Static,
-    :urls => ['/css', '/js', '/img', '/favicon.ico', '/Resume.pdf', '/BingSiteAuth.xml', '/robots.txt'],
+    :urls => ['/css', '/js', '/img', '/favicon.ico', '/Resume.pdf', '/BingSiteAuth.xml', '/robots.txt', '/exclude.html'],
     :root => 'public'
 use Rack::CommonLogger
 
