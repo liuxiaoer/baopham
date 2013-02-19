@@ -51,8 +51,9 @@
                         <% end %>
                         <li class="nav-header">Archives</li>
                         <li><a href="/archives">All</a></li>
-                        <li><a href="/2012">2012</a></li>
-                        <li><a href="/2011">2011</a></li>
+                        <% (Time.now.year - 2..Time.now.year).each do |year| %>
+                            <li><a href="/<%= year %>"><%= year %></a></li>
+                        <% end %>
                         <li class="nav-header">Tags</li>
                         <%  Karakuri::tag_cloud(@articles).each do |tag, freq| %>
                             <%
