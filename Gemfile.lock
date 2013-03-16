@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     builder (3.0.0)
     karakuri-bao (0.1.5)
