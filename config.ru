@@ -35,7 +35,7 @@ toto = Toto::Server.new do
     #
     set :author,    "Bao Pham"                                  # blog author
     set :title,     "Bao Pham"
-    set :url,       "http://baopham.heroku.com"
+    set :url,       "http://baopham.herokuapp.com"
     set :root,      "page"                                      # page to load on /
     set :articles_per_page,     6
     set :date,      lambda {|now| now.strftime("%d/%m/%Y") }    # date format for articles
