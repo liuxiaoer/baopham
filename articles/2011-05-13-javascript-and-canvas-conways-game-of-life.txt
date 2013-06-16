@@ -4,7 +4,7 @@ date: 2011/05/13
 tags: javascript, html5
 description: Conway's Game of Life animation with JavasScript and Canvas
 
-<p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).</p>
+<p>Being inspired by my school project from CS111 <b>Introduction to Computation</b>, I implemented the game again in JavaScript and used HTML5 canvas to display the cells and animation (HTML5 browser support is required).~~~</p>
 <strong>Supported Browsers:</strong>
 <ul>
     <li>Firefox 4+</li>

@@ -3,7 +3,7 @@ title: Mozilla Jaw's Puzzle
 date: 08/06/2012
 tags: javascript, mozilla
 
-I'm actually a little late for this [Jaw's programming puzzle](http://people.mozilla.org/~jwein/puzzle/), which I only discovered yesterday from reading [a blog](http://msujaws.wordpress.com/2012/05/02/wanna-join-the-firefox-team-at-mozilla-solve-the-puzzle/) written by a Mozilla employee. If I had seen this post a bit earlier, I might even have had a chance to work for them since I solved it! *yay*~~~
+I'm actually a little late for this [Jaw's programming puzzle](http://people.mozilla.org/~jwein/puzzle/), which I only discovered yesterday from reading [a blog](http://msujaws.wordpress.com/2012/05/02/wanna-join-the-firefox-team-at-mozilla-solve-the-puzzle/) written by a Mozilla employee. If I had seen this post a bit earlier, I might even have had a chance to work for them since I solved it! *yay*.~~~
 
 <!--fancybox-->
 <link rel="stylesheet" href="http://baophamcdn.appspot.com/libs/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
@@ -74,6 +74,6 @@ Oh, firefox has the new [3D feature](http://blog.mozilla.org/blog/2012/03/13/fir
 <center><strong>1337 !</strong></center>
 <script>
 $(document).ready(function() {
-	$(".fancybox").fancybox();
+    $(".fancybox").fancybox();
 });
 </script>
